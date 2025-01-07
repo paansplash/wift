@@ -20,7 +20,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
 
     <!-- Web Fonts -->
-    <link id="googleFonts" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800%7COverpass:200,400,600,700,800,900%7CPT+Serif&display=swap"
+    <link id="googleFonts"
+        href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800%7COverpass:200,400,600,700,800,900%7CPT+Serif&display=swap"
         rel="stylesheet" type="text/css">
 
     <!-- Vendor CSS -->
@@ -59,9 +60,13 @@
         </div>
     </div>
 
+    @include('layouts.header')
+
     <div class="body">
         @yield('content')
     </div>
+
+    @include('layouts.footer')
 
     <!-- Scripts -->
     <script src="{{ asset('assets/vendor/plugins/js/plugins.min.js') }}"></script>
@@ -69,7 +74,8 @@
     <script src="{{ asset('assets/js/demos/demo-architecture-2.js') }}"></script>
     <script src="{{ asset('assets/js/custom.js') }}"></script>
     <script src="{{ asset('assets/js/theme.init.js') }}"></script>
-    
+    <script src="{{ asset('assets/js/views/view.contact.js') }}"></script>
+
     @stack('scripts')
 </body>
 
