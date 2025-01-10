@@ -1,0 +1,33 @@
+/* Header */
+
+/* Default state */
+
+#header .header-nav.header-nav-line nav > ul:not(:hover) li > a.active {
+    color: #f586a3 !important;
+}
+
+#header .header-nav.header-nav-line nav>ul li>a {
+    color: #ffb9c4 !important;
+}
+
+#header .header-nav.header-nav-line nav>ul li>a:before {
+    background: #f586a3 !important;
+}
+
+/* Active state */
+#header .header-nav.header-nav-line nav>ul li>a.active {
+    color: #ffb9c4 !important;
+}
+
+#header .header-nav.header-nav-line nav>ul li>a.active:before {
+    background: #ffb9c4 !important;
+}
+
+/* Hover state */
+#header .header-nav.header-nav-line nav>ul li>a:hover {
+    color: #f586a3 !important;
+}
+
+#header .header-nav.header-nav-line nav>ul li>a:hover:before {
+    background: #f586a3 !important;
+}

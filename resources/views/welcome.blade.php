@@ -5,112 +5,7 @@
 
     <div role="main" class="main">
 
-        <section class="section bg-primary border-0 position-relative z-index-1 py-0 m-0">
-            <div class="custom-slider-background overflow-hidden">
-                <div class="custom-slider-background-image-stage-outer appear-animation" data-appear-animation="maskUp"
-                    data-appear-animation-delay="1600">
-                    <div class="custom-slider-background-image-stage">
-                        <div class="custom-slider-background-image-item overlay overlay-show overlay-op-6"
-                            style="background-image: url(assets/img/demos/architecture-2/slides/slide-1-1.jpg); background-size: cover; background-position: center;">
-                        </div>
-                        <div class="custom-slider-background-image-item overlay overlay-show overlay-op-6"
-                            style="background-image: url(assets/img/demos/architecture-2/slides/slide-1-2.jpg); background-size: cover; background-position: center;">
-                        </div>
-                        <div class="custom-slider-background-image-item overlay overlay-show overlay-op-6"
-                            style="background-image: url(assets/img/demos/architecture-2/generic/generic-1.jpg); background-size: cover; background-position: center;">
-                        </div>
-                        <div class="custom-slider-background-image-item overlay overlay-show overlay-op-6"
-                            style="background-image: url(assets/img/demos/architecture-2/generic/generic-2.jpg); background-size: cover; background-position: center;">
-                        </div>
-                    </div>
-                </div>
-                <div class="custom-slider-background-image-stage-outer appear-animation" data-appear-animation="maskUp"
-                    data-appear-animation-delay="1600">
-                    <div class="custom-slider-background-image-stage reverse">
-                        <div class="custom-slider-background-image-item overlay overlay-show overlay-op-6"
-                            style="background-image: url(assets/img/demos/architecture-2/generic/generic-2.jpg); background-size: cover; background-position: center;">
-                        </div>
-                        <div class="custom-slider-background-image-item overlay overlay-show overlay-op-6"
-                            style="background-image: url(assets/img/demos/architecture-2/generic/generic-1.jpg); background-size: cover; background-position: center;">
-                        </div>
-                        <div class="custom-slider-background-image-item overlay overlay-show overlay-op-6"
-                            style="background-image: url(assets/img/demos/architecture-2/slides/slide-1-1.jpg); background-size: cover; background-position: center;">
-                        </div>
-                        <div class="custom-slider-background-image-item overlay overlay-show overlay-op-6"
-                            style="background-image: url(assets/img/demos/architecture-2/slides/slide-1-2.jpg); background-size: cover; background-position: center;">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="owl-carousel-wrapper appear-animation" data-appear-animation="maskUp"
-                data-appear-animation-delay="1600" style="height: 800px;">
-                <div id="slider"
-                    class="owl-carousel dots-inside dots-horizontal-center show-dots-xs custom-dots-position nav-style-1 nav-inside nav-inside-plus nav-light nav-lg nav-font-size-lg mb-0"
-                    data-plugin-options="{'responsive': {'0': {'items': 1, 'dots': true, 'nav': false}, '479': {'items': 1}, '768': {'items': 1}, '979': {'items': 1}, '1199': {'items': 1, 'nav': true, 'navVerticalOffset': '-100px', 'dots': false}}, 'loop': false, 'autoHeight': false, 'margin': 0, 'dots': true, 'dotsVerticalOffset': '-115px', 'nav': false, 'animateIn': 'fadeIn', 'animateOut': 'fadeOut', 'mouseDrag': false, 'touchDrag': false, 'pullDrag': false, 'autoplay': false, 'autoplayTimeout': 9000, 'autoplayHoverPause': true, 'rewind': true}">
-
-                    <!-- Carousel Slide 1 -->
-                    <div class="position-relative overflow-hidden"
-                        data-dynamic-height="['800px','800px','800px','550px','500px']" style="height: 800px;">
-                        <div
-                            class="container container-xl-custom custom-container-style-2 position-relative z-index-3 h-100 pt-5 mt-5 mt-sm-3">
-                            <div class="row align-items-center h-100">
-                                <div class="col">
-                                    <div class="overflow-hidden mb-2 mb-sm-1 mb-md-0">
-                                        <h1 class="text-color-light font-weight-black line-height-1 text-10 text-md-13 text-lg-15 ls-0 mb-0 appear-animation"
-                                            data-appear-animation="maskUp">Arch Design Studio</h1>
-                                    </div>
-                                    <div class="overflow-hidden opacity-8 mb-1">
-                                        <h2 class="text-color-light line-height-6 line-height-md-2 text-5 text-md-6 positive-ls-3 mb-0 appear-animation"
-                                            data-appear-animation="maskUp" data-appear-animation-delay="250">A
-                                            Very Personal Approach to Every Client</h2>
-                                    </div>
-                                    <div class="overflow-hidden opacity-6 mb-5">
-                                        <p class="text-color-light text-3-5 mb-0 appear-animation"
-                                            data-appear-animation="maskUp" data-appear-animation-delay="500">
-                                            Elegant Solutions to Complex Problems</p>
-                                    </div>
-                                    <a href="#start" data-hash data-hash-offset="0" data-hash-offset-lg="140"
-                                        class="btn btn-primary custom-btn-style-1 font-weight-bold text-3 px-5 py-3 appear-animation"
-                                        data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="750">GET
-                                        STARTED</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Carousel Slide 2 -->
-                    <div class="position-relative overflow-hidden"
-                        data-dynamic-height="['800px','800px','800px','550px','500px']" style="height: 800px;">
-                        <div
-                            class="container container-xl-custom custom-container-style-2 position-relative z-index-3 h-100 pt-5 mt-5 mt-sm-3">
-                            <div class="row align-items-center justify-content-end h-100">
-                                <div class="col text-end">
-                                    <div class="overflow-hidden mb-2 mb-sm-1 mb-md-0">
-                                        <h1 class="text-color-light font-weight-black line-height-1 text-10 text-md-13 text-lg-15 ls-0 mb-0 appear-animation d-none"
-                                            data-appear-animation="maskUp">Arch Design Studio</h1>
-                                    </div>
-                                    <div class="overflow-hidden opacity-8 mb-1">
-                                        <h2 class="text-color-light line-height-6 line-height-md-2 text-5 text-md-6 positive-ls-3 mb-0 appear-animation d-none"
-                                            data-appear-animation="maskUp" data-appear-animation-delay="250">A
-                                            Very Personal Approach to Every Client</h2>
-                                    </div>
-                                    <div class="overflow-hidden opacity-6 mb-5">
-                                        <p class="text-color-light text-3-5 mb-0 appear-animation d-none"
-                                            data-appear-animation="maskUp" data-appear-animation-delay="500">
-                                            Elegant Solutions to Complex Problems</p>
-                                    </div>
-                                    <a href="#start" data-hash data-hash-offset="0" data-hash-offset-lg="140"
-                                        class="btn btn-primary custom-btn-style-1 custom-btn-style-1-right font-weight-bold text-3 px-5 py-3 appear-animation d-none"
-                                        data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="750">GET
-                                        STARTED</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
+        @include('pages.welcomes.carousels')
 
         <div class="position-relative">
             <img src="assets/img/demos/architecture-2/backgrounds/arch-plan-1.jpg"
@@ -120,91 +15,9 @@
         <div class="custom-page-wrapper">
             <section class="section bg-transparent border-0 position-relative py-0 m-0">
                 <div class="container container-xl-custom custom-container-style custom-margin-top">
-                    <div class="row mb-5">
-                        <div class="col">
-                            <div class="overflow-hidden">
-                                <div class="owl-carousel-wrapper position-relative z-index-1 appear-animation"
-                                    data-appear-animation="maskUp" data-appear-animation-delay="1000"
-                                    style="height: 373px;">
-                                    <div class="owl-carousel owl-theme dots-horizontal-center custom-dots-style-1 mb-0"
-                                        data-plugin-options="{'responsive': {'576': {'items': 1}, '768': {'items': 1}, '992': {'items': 2}, '1200': {'items': 3}}, 'margin': 25, 'loop': true, 'nav': false, 'dots': true, 'autoplay': true, 'autoplayTimeout': 7000}">
-                                        <div>
-                                            <a href="demo-architecture-2-services-detail.html"
-                                                class="text-decoration-none">
-                                                <div class="card custom-card-style-1 border-radius-0">
-                                                    <div class="card-body text-center p-5 mb-4">
-                                                        <img width="75" height="75"
-                                                            src="assets/img/demos/architecture-2/icons/house-plant.svg"
-                                                            alt="" data-icon
-                                                            data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary mt-3 mb-4 pb-3'}" />
-                                                        <h2
-                                                            class="text-color-dark font-weight-bold line-height-1 text-6-5 mb-3">
-                                                            Design & Planning</h2>
-                                                        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur
-                                                            adipiscing elit. Nunc viverra erat orci.</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div>
-                                            <a href="demo-architecture-2-services-detail.html"
-                                                class="text-decoration-none">
-                                                <div class="card custom-card-style-1 border-radius-0">
-                                                    <div class="card-body text-center p-5 mb-4">
-                                                        <img width="75" height="75"
-                                                            src="assets/img/demos/architecture-2/icons/sofa.svg"
-                                                            alt="" data-icon
-                                                            data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary mt-3 mb-4 pb-3'}" />
-                                                        <h2
-                                                            class="text-color-dark font-weight-bold line-height-1 text-6-5 mb-3">
-                                                            Interior Design</h2>
-                                                        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur
-                                                            adipiscing elit. Nunc viverra erat orci.</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div>
-                                            <a href="demo-architecture-2-services-detail.html"
-                                                class="text-decoration-none">
-                                                <div class="card custom-card-style-1 border-radius-0">
-                                                    <div class="card-body text-center p-5 mb-4">
-                                                        <img width="75" height="75"
-                                                            src="assets/img/demos/architecture-2/icons/wallpaper.svg"
-                                                            alt="" data-icon
-                                                            data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary mt-3 mb-4 pb-3'}" />
-                                                        <h2
-                                                            class="text-color-dark font-weight-bold line-height-1 text-6-5 mb-3">
-                                                            Exterior Design</h2>
-                                                        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur
-                                                            adipiscing elit. Nunc viverra erat orci.</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div>
-                                            <a href="demo-architecture-2-services-detail.html"
-                                                class="text-decoration-none">
-                                                <div class="card custom-card-style-1 border-radius-0">
-                                                    <div class="card-body text-center p-5 mb-4">
-                                                        <img width="75" height="75"
-                                                            src="assets/img/demos/architecture-2/icons/house-plant.svg"
-                                                            alt="" data-icon
-                                                            data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary mt-3 mb-4 pb-3'}" />
-                                                        <h2
-                                                            class="text-color-dark font-weight-bold line-height-1 text-6-5 mb-3">
-                                                            Design & Planning</h2>
-                                                        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur
-                                                            adipiscing elit. Nunc viverra erat orci.</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+                    @include('pages.welcomes.steps')
+
                     <div id="start" class="row align-items-center pb-xl-5 mb-xl-5">
                         <div class="col-9 col-lg-4 col-xl-5 pb-5 pb-lg-0 mb-5 mb-lg-0">
                             <div class="position-relative">
@@ -225,45 +38,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-7 col-xl-5 offset-lg-1 position-relative pt-5 pt-lg-0">
-                            <div class="position-absolute z-index-0 left-0 appear-animation"
-                                data-appear-animation="fadeInRightShorter" data-appear-animation-delay="2000"
-                                style="top: 190px;">
-                                <h2
-                                    class="text-color-dark custom-stroke-text-effect-1 custom-big-font-size-1 font-weight-black opacity-1 mb-0">
-                                    YOUR PLACE</h2>
-                            </div>
-                            <div class="pt-lg-5 ps-lg-5 mt-lg-5">
-                                <div class="overflow-hidden mb-2">
-                                    <h2 class="text-color-default positive-ls-3 line-height-3 text-4 mb-0 appear-animation"
-                                        data-appear-animation="maskUp" data-appear-animation-delay="800">WE'RE
-                                        HERE TO HELP</h2>
-                                </div>
-                                <div class="overflow-hidden mb-3">
-                                    <h3 class="text-transform-none text-color-dark font-weight-black text-10 line-height-2 mb-0 appear-animation"
-                                        data-appear-animation="maskUp" data-appear-animation-delay="1000">You need
-                                        space for better living.</h3>
-                                </div>
-                                <div class="appear-animation" data-appear-animation="fadeInUpShorter"
-                                    data-appear-animation-delay="1200">
-                                    <img src="assets/img/demos/architecture-2/divider.jpg"
-                                        class="img-fluid opacity-5 mb-4" alt="" />
-                                </div>
-                                <p class="custom-font-tertiary text-5 line-height-4 mb-4 appear-animation"
-                                    data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1400">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed imperdiet libero id
-                                    nisi euismod, sed porta est consectetur.</p>
-                                <p class="text-3-5 pb-3 mb-4 appear-animation" data-appear-animation="fadeInUpShorter"
-                                    data-appear-animation-delay="1600">
-                                    Vestibulum auctor felis eget orci semper vestibulum. Pellentesque ultricies nibh
-                                    gravida, accumsan libero luctus, molestie nunc. In nibh ipsum, blandit id
-                                    faucibus ac, finibus.</p>
-                                <a href="demo-architecture-2-contact.html"
-                                    class="btn btn-primary custom-btn-style-1 font-weight-bold text-3 px-5 py-3 appear-animation"
-                                    data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1800">CONTACT
-                                    US</a>
-                            </div>
-                        </div>
+                        @include('pages.welcomes.objectives')
                     </div>
                 </div>
                 <div class="container-fluid">
@@ -273,28 +48,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="container container-xl-custom pb-3">
-                    <div class="row align-items-center text-center py-5 my-3">
-                        <div class="col-sm-4 col-xl-2 mb-5 mb-xl-0">
-                            <img src="assets/img/logos/logo-8.png" alt class="img-fluid" style="max-width: 90px;" />
-                        </div>
-                        <div class="col-sm-4 col-xl-2 mb-5 mb-xl-0">
-                            <img src="assets/img/logos/logo-9.png" alt class="img-fluid" style="max-width: 140px;" />
-                        </div>
-                        <div class="col-sm-4 col-xl-2 mb-5 mb-xl-0">
-                            <img src="assets/img/logos/logo-10.png" alt class="img-fluid" style="max-width: 140px;" />
-                        </div>
-                        <div class="col-sm-4 col-xl-2 mb-5 mb-lg-0">
-                            <img src="assets/img/logos/logo-11.png" alt class="img-fluid" style="max-width: 140px;" />
-                        </div>
-                        <div class="col-sm-4 col-xl-2 mb-5 mb-lg-0">
-                            <img src="assets/img/logos/logo-12.png" alt class="img-fluid" style="max-width: 100px;" />
-                        </div>
-                        <div class="col-sm-4 col-xl-2">
-                            <img src="assets/img/logos/logo-13.png" alt class="img-fluid" style="max-width: 100px;" />
-                        </div>
-                    </div>
-                </div>
+                @include('pages.welcomes.collaborators')
+
                 <div class="custom-section">
                     <div class="custom-section-left-content parallax p-0 m-0" data-plugin-parallax
                         data-plugin-options="{'speed': 1.5, 'fadeIn': true}"
@@ -397,44 +152,7 @@
                     </div>
                 </div>
             </section>
-            <section class="section section-height-3 border-0 m-0">
-                <div class="container py-2">
-                    <div class="row counters counters-sm">
-                        <div class="col-sm-6 col-lg-3 mb-5 mb-lg-0">
-                            <div class="counter">
-                                <strong class="text-color-dark font-weight-bold line-height-1 text-12 mb-2" data-to="15"
-                                    data-append="+">0</strong>
-                                <label class="text-color-default positive-ls-3 font-weight-normal text-3-5 mb-0">YEARS
-                                    OF EXPERIENCE</label>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-lg-3 mb-5 mb-lg-0">
-                            <div class="counter">
-                                <strong class="text-color-dark font-weight-bold line-height-1 text-12 mb-2" data-to="350"
-                                    data-append="+">0</strong>
-                                <label class="text-color-default positive-ls-3 font-weight-normal text-3-5 mb-0">SATISFIED
-                                    CLIENTS</label>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-lg-3 mb-5 mb-sm-0">
-                            <div class="counter">
-                                <strong class="text-color-dark font-weight-bold line-height-1 text-12 mb-2" data-to="20"
-                                    data-append="+">0</strong>
-                                <label class="text-color-default positive-ls-3 font-weight-normal text-3-5 mb-0">TEAM
-                                    MEMBERS</label>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-lg-3">
-                            <div class="counter">
-                                <strong class="text-color-dark font-weight-bold line-height-1 text-12 mb-2" data-to="45"
-                                    data-append="+">0</strong>
-                                <label class="text-color-default positive-ls-3 font-weight-normal text-3-5 mb-0">AWARDS
-                                    WINNING</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            @include('pages.welcomes.statistics')
 
             <div class="container container-xl-custom py-4 my-3">
                 <div class="lightbox"

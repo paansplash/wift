@@ -17,34 +17,32 @@
                         class="header-nav header-nav-line header-nav-bottom-line header-nav-bottom-line-effect-1 header-nav-dropdowns-dark header-nav-light-text justify-content-end">
                         <div
                             class="header-nav-main header-nav-main-arrows header-nav-main-mobile-dark header-nav-main-dropdown-no-borders header-nav-main-effect-3 header-nav-main-sub-effect-1">
-                            <nav class="collapse">
+                            <nav class="collapse"> 
                                 <ul class="nav nav-pills" id="mainNav">
-                                    <li><a href="{{ route('welcome') }}" class="nav-link active">Home</a></li>
-                                    <li><a href="{{ route('about-us') }}" class="nav-link">About</a></li>
-                                    <li><a href="{{ route('projects') }}" class="nav-link">Projects</a></li>
+                                    <li><a href="{{ route('welcome') }}" class="nav-link {{ Request::routeIs('welcome') ? 'active' : '' }}">Home</a></li>
+                                    <li><a href="{{ route('about-us') }}" class="nav-link {{ Request::routeIs('about-us') ? 'active' : '' }}">About</a></li>
+                                    <li><a href="{{ route('projects') }}" class="nav-link {{ Request::routeIs('projects') ? 'active' : '' }}">Projects</a></li>
                                     <li class="dropdown">
-                                        <a href="{{ route('services') }}" class="nav-link dropdown-toggle">Services</a>
+                                        <a href="{{ route('services') }}" 
+                                           class="nav-link dropdown-toggle {{ Request::routeIs('services') || Request::routeIs('services-detail') ? 'active' : '' }}">
+                                           Services
+                                        </a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="{{ route('services') }}" class="dropdown-item">View All</a>
-                                            </li>
-                                            <li><a href="{{ route('services-detail') }}" class="dropdown-item">Design &
-                                                    Planning</a></li>
-                                            <li><a href="{{ route('services-detail') }}" class="dropdown-item">Interior
-                                                    Design</a></li>
-                                            <li><a href="{{ route('services-detail') }}" class="dropdown-item">Exterior
-                                                    Design</a></li>
-                                            <li><a href="{{ route('services-detail') }}"
-                                                    class="dropdown-item">Construction Drawings</a></li>
+                                            <li><a href="{{ route('services') }}" class="dropdown-item {{ Request::routeIs('services') ? 'active' : '' }}">View All</a></li>
+                                            <li><a href="{{ route('services-detail') }}" class="dropdown-item {{ Request::routeIs('services-detail') ? 'active' : '' }}">Design & Planning</a></li>
+                                            <li><a href="{{ route('services-detail') }}" class="dropdown-item {{ Request::routeIs('services-detail') ? 'active' : '' }}">Interior Design</a></li>
+                                            <li><a href="{{ route('services-detail') }}" class="dropdown-item {{ Request::routeIs('services-detail') ? 'active' : '' }}">Exterior Design</a></li>
+                                            <li><a href="{{ route('services-detail') }}" class="dropdown-item {{ Request::routeIs('services-detail') ? 'active' : '' }}">Construction Drawings</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="{{ route('blog') }}" class="nav-link">Blog</a></li>
-                                    <li><a href="{{ route('contact') }}" class="nav-link">Contact</a></li>
+                                    <li><a href="{{ route('blog') }}" class="nav-link {{ Request::routeIs('blog') ? 'active' : '' }}">Blog</a></li>
+                                    <li><a href="{{ route('contact') }}" class="nav-link {{ Request::routeIs('contact') ? 'active' : '' }}">Contact</a></li>
                                 </ul>
-
                             </nav>
+                            
                         </div>
                     </div>
-                    <div class="header-nav-features ps-0 ms-3">
+                    {{-- <div class="header-nav-features ps-0 ms-3">
                         <div class="header-nav-features-search-reveal-container">
                             <div
                                 class="header-nav-feature header-nav-features-search header-nav-features-search-reveal d-inline-flex">
@@ -53,7 +51,7 @@
                                         class="icons icon-magnifier header-nav-top-icon text-color-light text-4 font-weight-bold position-relative top-1"></i></a>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     <button
                         class="btn header-btn-collapse-nav bg-transparent border-0 text-4 position-relative top-2 p-0 ms-4"
                         data-bs-toggle="collapse" data-bs-target=".header-nav-main nav">
