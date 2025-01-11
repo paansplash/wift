@@ -99,6 +99,7 @@ h1, h2, h3, h4, h5, h6, .btn {
 		position: relative;
 		border-radius: 0;
 		left: 5px;
+		color: #f586a3;
 }
 
 .custom-btn-style-1:before {
@@ -577,7 +578,7 @@ html.sticky-header-active #header .header-body {
 * Footer
 */
 #footer p, #footer li, #footer span, #footer a:not(.btn):not(.no-footer-css) {
-		color: #999;
+		color: #ffb9c4;
 }
 
 #footer .footer-copyright p {
@@ -601,16 +602,17 @@ html.sticky-header-active #header .header-body {
 * Card
 */
 .custom-card-style-1:hover {
-		background-color: var(--primary) !important;
+		background-color: var(--primary-100) !important;
 }
 
 .custom-card-style-1:hover h2, .custom-card-style-1:hover p {
-		color: var(--light) !important;
+		color: #f586a3 !important;
 }
 
 .custom-card-style-1:hover .animated-icon svg path, .custom-card-style-1:hover .animated-icon svg rect {
 		fill: #FFF !important;
 }
+
 
 /*
 * Owl Carousel

@@ -1,4 +1,4 @@
-<footer id="footer" class="bg-primary border-0">
+<footer id="footer" class="bg-primary-100 border-0">
     <div class="container container-xl-custom pt-5 pb-3">
         <div class="row py-5">
             <div class="col-md-4 col-lg-2 mb-4 mb-lg-0">
@@ -86,20 +86,20 @@
             </div>
         </div>
     </div>
-    <div class="footer-copyright bg-primary">
-        <div class="container container-xl-custom pb-4">
+    <div class="footer-copyright bg-primary-100">
+        <div class="container container-xl-custom pb-2">
             <div class="row">
                 <div class="col opacity-3">
                     <hr class="my-0 bg-color-light opacity-1">
                 </div>
             </div>
-            <div class="row py-5 my-3">
+            <div class="row py-2">
                 <div class="col text-center">
-                    <a href="demo-architecture-2.html" class="d-inline-block mb-3">
+                    {{-- <a href="demo-architecture-2.html" class="d-inline-block mb-3">
                         <img alt="Porto" width="115" height="30"
                             src="assets/img/demos/architecture-2/logo.png">
-                    </a>
-                    <p class="text-3 mb-0">Porto Architecture 2. © 2024. All Rights Reserved</p>
+                    </a> --}}
+                    <p class="text-3 mb-0">Wift. © 2024. All Rights Reserved</p>
                 </div>
             </div>
         </div>

@@ -4,7 +4,7 @@
     <div role="main" class="main">
 
         <section
-            class="custom-page-header-1 page-header page-header-modern page-header-lg bg-primary border-0 z-index-1 my-0">
+            class="custom-page-header-1 page-header page-header-modern page-header-lg bg-primary-100 border-0 z-index-1 my-0">
             <div class="custom-page-header-1-wrapper overflow-hidden">
                 <div class="custom-bg-grey-1 py-5 appear-animation" data-appear-animation="maskUp"
                     data-appear-animation-delay="800">
@@ -40,7 +40,7 @@
                     <div class="col-lg-8 col-xl-9 order-1 order-lg-2">
                         <div class="float-end ps-4 appear-animation" data-appear-animation="fadeInUpShorter"
                             data-appear-animation-delay="1900">
-                            <img width="137" src="img/demos/architecture-2/icons/house-plant.svg" alt=""
+                            <img width="137" src="assets/img/demos/architecture-2/icons/house-plant.svg" alt=""
                                 data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" />
                         </div>
                         <p class="custom-font-tertiary text-5 line-height-4 mb-4 appear-animation"
@@ -51,9 +51,9 @@
                             data-appear-animation-delay="1700">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
                             do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
                             nostrud exercitation.</p>
-                        <img src="img/demos/architecture-2/generic/generic-14.jpg" class="img-fluid mb-4 appear-animation"
+                        <img src="assets/img/demos/architecture-2/generic/generic-14.jpg" class="img-fluid mb-4 appear-animation"
                             data-appear-animation="fadeInUpShorter" data-appear-animation-delay="2100" alt="" />
-                        <img src="img/demos/architecture-2/generic/generic-15.jpg" class="img-fluid appear-animation"
+                        <img src="assets/img/demos/architecture-2/generic/generic-15.jpg" class="img-fluid appear-animation"
                             data-appear-animation="fadeInUpShorter" data-appear-animation-delay="250" alt="" />
                     </div>
                     <div class="col-lg-4 col-xl-3 order-2 order-lg-1 position-relative">
@@ -96,7 +96,7 @@
                                 </div>
                             </div>
 
-                            <div class="card bg-primary border-0 rounded-0">
+                            <div class="card bg-primary-100 border-0 rounded-0">
                                 <div class="card-body text-center p-5 my-3">
                                     <h2 class="text-color-light font-weight-extra-bold text-10 line-height-4 pb-3 mb-4">
                                         Let's Talk About Your New Porject, We Can do It!</h2>

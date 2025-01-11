@@ -4,7 +4,7 @@
     <div role="main" class="main">
 
         <section
-            class="custom-page-header-1 page-header page-header-modern page-header-lg bg-primary border-0 z-index-1 my-0">
+            class="custom-page-header-1 page-header page-header-modern page-header-lg bg-primary-100 border-0 z-index-1 my-0">
             <div class="custom-page-header-1-wrapper overflow-hidden">
                 <div class="custom-bg-grey-1 py-5 appear-animation" data-appear-animation="maskUp"
                     data-appear-animation-delay="800">
@@ -49,7 +49,7 @@
                                             class="opacity-3 d-inline-block px-2">|</span> John Doe</p>
 
                                     <div class="post-image pb-4">
-                                        <img class="card-img-top border-radius-0" src="img/blog/wide/blog-37.jpg"
+                                        <img class="card-img-top border-radius-0" src="assets/img/blog/wide/blog-37.jpg"
                                             alt="Card Image">
                                     </div>
 
@@ -101,7 +101,7 @@
                                                 Author</h3>
                                             <div class="img-thumbnail img-thumbnail-no-borders d-block pb-3">
                                                 <a href="blog-post.html">
-                                                    <img src="img/avatars/avatar.jpg" class="rounded-circle" alt="">
+                                                    <img src="assets/img/avatars/avatar.jpg" class="rounded-circle" alt="">
                                                 </a>
                                             </div>
                                             <p><strong class="name"><a href="#"
@@ -123,7 +123,7 @@
                                                         <div
                                                             class="img-thumbnail img-thumbnail-no-borders d-none d-sm-block">
                                                             <img class="avatar rounded-circle" alt=""
-                                                                src="img/avatars/avatar-2.jpg">
+                                                                src="assets/img/avatars/avatar-2.jpg">
                                                         </div>
                                                         <div class="comment-block">
                                                             <div class="comment-arrow"></div>
@@ -152,7 +152,7 @@
                                                                 <div
                                                                     class="img-thumbnail img-thumbnail-no-borders d-none d-sm-block">
                                                                     <img class="avatar rounded-circle" alt=""
-                                                                        src="img/avatars/avatar-3.jpg">
+                                                                        src="assets/img/avatars/avatar-3.jpg">
                                                                 </div>
                                                                 <div class="comment-block">
                                                                     <div class="comment-arrow"></div>
@@ -178,7 +178,7 @@
                                                                 <div
                                                                     class="img-thumbnail img-thumbnail-no-borders d-none d-sm-block">
                                                                     <img class="avatar rounded-circle" alt=""
-                                                                        src="img/avatars/avatar-4.jpg">
+                                                                        src="assets/img/avatars/avatar-4.jpg">
                                                                 </div>
                                                                 <div class="comment-block">
                                                                     <div class="comment-arrow"></div>
@@ -206,7 +206,7 @@
                                                         <div
                                                             class="img-thumbnail img-thumbnail-no-borders d-none d-sm-block">
                                                             <img class="avatar rounded-circle" alt=""
-                                                                src="img/avatars/avatar.jpg">
+                                                                src="assets/img/avatars/avatar.jpg">
                                                         </div>
                                                         <div class="comment-block">
                                                             <div class="comment-arrow"></div>
@@ -227,7 +227,7 @@
                                                         <div
                                                             class="img-thumbnail img-thumbnail-no-borders d-none d-sm-block">
                                                             <img class="avatar rounded-circle" alt=""
-                                                                src="img/avatars/avatar.jpg">
+                                                                src="assets/img/avatars/avatar.jpg">
                                                         </div>
                                                         <div class="comment-block">
                                                             <div class="comment-arrow"></div>

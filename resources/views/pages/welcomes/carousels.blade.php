@@ -1,42 +1,43 @@
-<section class="section bg-primary border-0 position-relative z-index-1 py-0 m-0">
+<section class="section bg-primary-100 border-0 position-relative z-index-1 py-0 m-0">
     <div class="custom-slider-background overflow-hidden">
         <div class="custom-slider-background-image-stage-outer appear-animation" data-appear-animation="maskUp"
             data-appear-animation-delay="1600">
             <div class="custom-slider-background-image-stage">
                 <div class="custom-slider-background-image-item overlay overlay-show overlay-op-6"
-                    style="background-image: url(assets/img/demos/architecture-2/slides/slide-1-1.jpg); background-size: cover; background-position: center;">
+                    style="background-image: url({{ asset('assets/images/aa.jpg') }}); background-size: cover; background-position: center;">
                 </div>
                 <div class="custom-slider-background-image-item overlay overlay-show overlay-op-6"
-                    style="background-image: url(assets/img/demos/architecture-2/slides/slide-1-2.jpg); background-size: cover; background-position: center;">
+                    style="background-image: url({{ asset('assets/images/ah.jpg') }}); background-size: cover; background-position: center;">
+                </div>
+                {{-- <div class="custom-slider-background-image-item overlay overlay-show overlay-op-6"
+                    style="background-image: url({{ asset('assets/images/aa.jpg') }}); background-size: cover; background-position: center;">
                 </div>
                 <div class="custom-slider-background-image-item overlay overlay-show overlay-op-6"
-                    style="background-image: url(assets/img/demos/architecture-2/generic/generic-1.jpg); background-size: cover; background-position: center;">
-                </div>
-                <div class="custom-slider-background-image-item overlay overlay-show overlay-op-6"
-                    style="background-image: url(assets/img/demos/architecture-2/generic/generic-2.jpg); background-size: cover; background-position: center;">
-                </div>
+                    style="background-image: url({{ asset('assets/images/aa.jpg') }}); background-size: cover; background-position: center;">
+                </div> --}}
             </div>
         </div>
         <div class="custom-slider-background-image-stage-outer appear-animation" data-appear-animation="maskUp"
             data-appear-animation-delay="1600">
             <div class="custom-slider-background-image-stage reverse">
                 <div class="custom-slider-background-image-item overlay overlay-show overlay-op-6"
-                    style="background-image: url(assets/img/demos/architecture-2/generic/generic-2.jpg); background-size: cover; background-position: center;">
+                    style="background-image: url({{ asset('assets/images/aa.jpg') }}); background-size: cover; background-position: center;">
                 </div>
                 <div class="custom-slider-background-image-item overlay overlay-show overlay-op-6"
-                    style="background-image: url(assets/img/demos/architecture-2/generic/generic-1.jpg); background-size: cover; background-position: center;">
+                    style="background-image: url({{ asset('assets/images/aa.jpg') }}); background-size: cover; background-position: center;">
                 </div>
                 <div class="custom-slider-background-image-item overlay overlay-show overlay-op-6"
-                    style="background-image: url(assets/img/demos/architecture-2/slides/slide-1-1.jpg); background-size: cover; background-position: center;">
+                    style="background-image: url({{ asset('assets/images/aa.jpg') }}); background-size: cover; background-position: center;">
                 </div>
                 <div class="custom-slider-background-image-item overlay overlay-show overlay-op-6"
-                    style="background-image: url(assets/img/demos/architecture-2/slides/slide-1-2.jpg); background-size: cover; background-position: center;">
+                    style="background-image: url({{ asset('assets/images/ah.jpg') }}); background-size: cover; background-position: center;">
                 </div>
             </div>
         </div>
     </div>
-    <div class="owl-carousel-wrapper appear-animation" data-appear-animation="maskUp"
-        data-appear-animation-delay="1600" style="height: 800px;">
+
+    <div class="owl-carousel-wrapper appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="1600"
+        style="height: 800px;">
         <div id="slider"
             class="owl-carousel dots-inside dots-horizontal-center show-dots-xs custom-dots-position nav-style-1 nav-inside nav-inside-plus nav-light nav-lg nav-font-size-lg mb-0"
             data-plugin-options="{'responsive': {'0': {'items': 1, 'dots': true, 'nav': false}, '479': {'items': 1}, '768': {'items': 1}, '979': {'items': 1}, '1199': {'items': 1, 'nav': true, 'navVerticalOffset': '-100px', 'dots': false}}, 'loop': false, 'autoHeight': false, 'margin': 0, 'dots': true, 'dotsVerticalOffset': '-115px', 'nav': false, 'animateIn': 'fadeIn', 'animateOut': 'fadeOut', 'mouseDrag': false, 'touchDrag': false, 'pullDrag': false, 'autoplay': false, 'autoplayTimeout': 9000, 'autoplayHoverPause': true, 'rewind': true}">

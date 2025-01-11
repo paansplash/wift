@@ -970,7 +970,7 @@ $sizes: 0px, 5px, 10px, 20px, 30px, 40px;
 			position: absolute;
 			right: calc(100% - 74px);
 			bottom: -6px;
-			background: url(../img/pencil-blue-line.png);
+			background: url(../assets/img/pencil-blue-line.png);
 			width: 0;
 			height: 15px;
 			animation-name: pencilAnimation;
@@ -992,7 +992,7 @@ $sizes: 0px, 5px, 10px, 20px, 30px, 40px;
 		}
 		&.highlighted-word-animation-1-dark {
 			&:after {
-				background: url(../img/pencil-blue-line-dark.png);
+				background: url(../assets/img/pencil-blue-line-dark.png);
 			}
 		}
 		&.highlighted-word-animation-1-no-rotate {
@@ -1010,7 +1010,7 @@ $sizes: 0px, 5px, 10px, 20px, 30px, 40px;
 			&:after {
 				animation-name: pencilAnimation2;
 				right: calc(100% - 115px);
-				background: url(../img/pencil-blue-line-2.png);
+				background: url(../assets/img/pencil-blue-line-2.png);
 				background-repeat: no-repeat;
 			}
 		}

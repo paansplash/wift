@@ -11,8 +11,8 @@
                             class="text-decoration-none">
                             <div class="card custom-card-style-1 border-radius-0">
                                 <div class="card-body text-center p-5 mb-4">
-                                    <img width="75" height="75"
-                                        src="assets/img/demos/architecture-2/icons/house-plant.svg"
+                                    <img width="75" height="75" class="color-icon"
+                                        src="{{ asset('assets/img/demos/architecture-2/icons/house-plant.svg') }}"
                                         alt="" data-icon
                                         data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary mt-3 mb-4 pb-3'}" />
                                     <h2

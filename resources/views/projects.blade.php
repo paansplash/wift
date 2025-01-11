@@ -4,7 +4,7 @@
     <div role="main" class="main">
 
         <section
-            class="custom-page-header-1 page-header page-header-modern page-header-lg bg-primary border-0 z-index-1 my-0">
+            class="custom-page-header-1 page-header page-header-modern page-header-lg bg-primary-100 border-0 z-index-1 my-0">
             <div class="custom-page-header-1-wrapper overflow-hidden">
                 <div class="custom-bg-grey-1 py-5 appear-animation" data-appear-animation="maskUp"
                     data-appear-animation-delay="800">
@@ -50,7 +50,7 @@
                             <h3 class="text-transform-none text-color-dark font-weight-black text-10 line-height-2 mb-0 appear-animation"
                                 data-appear-animation="maskUp" data-appear-animation-delay="1700">Selected Portfolio</h3>
                         </div>
-                        <img src="img/demos/architecture-2/divider.jpg" class="img-fluid opacity-5 appear-animation"
+                        <img src="assets/img/demos/architecture-2/divider.jpg" class="img-fluid opacity-5 appear-animation"
                             data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="1900" alt="" />
                     </div>
                 </div>
@@ -81,7 +81,7 @@
                                             <div
                                                 class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-centered-icons border-radius-0">
                                                 <div class="thumb-info-wrapper border-radius-0">
-                                                    <img src="img/demos/architecture-2/projects/project-1.jpg"
+                                                    <img src="assets/img/demos/architecture-2/projects/project-1.jpg"
                                                         class="img-fluid border-radius-0" alt="">
                                                     <div class="thumb-info-action flex-column align-items-center">
                                                         <h4
@@ -101,7 +101,7 @@
                                             <div
                                                 class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-centered-icons border-radius-0">
                                                 <div class="thumb-info-wrapper border-radius-0">
-                                                    <img src="img/demos/architecture-2/projects/project-2.jpg"
+                                                    <img src="assets/img/demos/architecture-2/projects/project-2.jpg"
                                                         class="img-fluid border-radius-0" alt="">
                                                     <div class="thumb-info-action flex-column align-items-center">
                                                         <h4
@@ -121,7 +121,7 @@
                                             <div
                                                 class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-centered-icons border-radius-0">
                                                 <div class="thumb-info-wrapper border-radius-0">
-                                                    <img src="img/demos/architecture-2/projects/project-3.jpg"
+                                                    <img src="assets/img/demos/architecture-2/projects/project-3.jpg"
                                                         class="img-fluid border-radius-0" alt="">
                                                     <div class="thumb-info-action flex-column align-items-center">
                                                         <h4
@@ -141,7 +141,7 @@
                                             <div
                                                 class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-centered-icons border-radius-0">
                                                 <div class="thumb-info-wrapper border-radius-0">
-                                                    <img src="img/demos/architecture-2/projects/project-4.jpg"
+                                                    <img src="assets/img/demos/architecture-2/projects/project-4.jpg"
                                                         class="img-fluid border-radius-0" alt="">
                                                     <div class="thumb-info-action flex-column align-items-center">
                                                         <h4
@@ -161,7 +161,7 @@
                                             <div
                                                 class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-centered-icons border-radius-0">
                                                 <div class="thumb-info-wrapper border-radius-0">
-                                                    <img src="img/demos/architecture-2/projects/project-5.jpg"
+                                                    <img src="assets/img/demos/architecture-2/projects/project-5.jpg"
                                                         class="img-fluid border-radius-0" alt="">
                                                     <div class="thumb-info-action flex-column align-items-center">
                                                         <h4
@@ -181,7 +181,7 @@
                                             <div
                                                 class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-centered-icons border-radius-0">
                                                 <div class="thumb-info-wrapper border-radius-0">
-                                                    <img src="img/demos/architecture-2/projects/project-6.jpg"
+                                                    <img src="assets/img/demos/architecture-2/projects/project-6.jpg"
                                                         class="img-fluid border-radius-0" alt="">
                                                     <div class="thumb-info-action flex-column align-items-center">
                                                         <h4

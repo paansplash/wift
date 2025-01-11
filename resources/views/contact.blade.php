@@ -4,7 +4,7 @@
     <div role="main" class="main">
 
         <section
-            class="custom-page-header-1 page-header page-header-modern page-header-lg bg-primary border-0 z-index-1 my-0">
+            class="custom-page-header-1 page-header page-header-modern page-header-lg bg-primary-100 border-0 z-index-1 my-0">
             <div class="custom-page-header-1-wrapper overflow-hidden">
                 <div class="custom-bg-grey-1 py-5 appear-animation" data-appear-animation="maskUp"
                     data-appear-animation-delay="800">
@@ -51,7 +51,7 @@
                             <h3 class="text-transform-none text-color-dark font-weight-black text-10 line-height-2 mb-0 appear-animation"
                                 data-appear-animation="maskUp" data-appear-animation-delay="1700">Get Your Project Done</h3>
                         </div>
-                        <img src="img/demos/architecture-2/divider.jpg"
+                        <img src="assets/img/demos/architecture-2/divider.jpg"
                             class="img-fluid opacity-5 mb-4 mt-2 appear-animation"
                             data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="1900" alt="" />
                         <p class="custom-font-tertiary text-5 line-height-4 mb-4 mt-2 appear-animation"

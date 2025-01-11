@@ -4,7 +4,7 @@
     <div role="main" class="main">
 
         <section
-            class="custom-page-header-1 page-header page-header-modern page-header-lg bg-primary border-0 z-index-1 my-0">
+            class="custom-page-header-1 page-header page-header-modern page-header-lg bg-primary-100 border-0 z-index-1 my-0">
             <div class="custom-page-header-1-wrapper overflow-hidden">
                 <div class="custom-bg-grey-1 py-5 appear-animation" data-appear-animation="maskUp"
                     data-appear-animation-delay="800">
@@ -33,7 +33,7 @@
         </section>
 
         <div class="position-relative">
-            <img src="img/demos/architecture-2/backgrounds/arch-plan-1.jpg"
+            <img src="assets/img/demos/architecture-2/backgrounds/arch-plan-1.jpg"
                 class="img-fluid position-absolute top-0 right-0" alt="" />
         </div>
 
@@ -58,7 +58,7 @@
                         </div>
                         <div class="appear-animation" data-appear-animation="fadeInUpShorter"
                             data-appear-animation-delay="1900">
-                            <img src="img/demos/architecture-2/divider.jpg" class="img-fluid opacity-5 mb-4"
+                            <img src="assets/img/demos/architecture-2/divider.jpg" class="img-fluid opacity-5 mb-4"
                                 alt="" />
                         </div>
                         <p class="custom-font-tertiary text-5 line-height-4 mb-4 appear-animation"
@@ -85,21 +85,21 @@
                         <div class="col-md-4 mb-4 mb-md-0">
                             <a class="d-inline-block custom-img-thumbnail-style-1 img-thumbnail img-thumbnail-no-borders img-thumbnail-hover-icon rounded-0"
                                 href="img/demos/architecture-2/generic/generic-11.jpg">
-                                <img src="img/demos/architecture-2/generic/generic-11.jpg" class="img-fluid rounded-0"
+                                <img src="assets/img/demos/architecture-2/generic/generic-11.jpg" class="img-fluid rounded-0"
                                     alt="" />
                             </a>
                         </div>
                         <div class="col-md-4 mb-4 mb-md-0">
                             <a class="d-inline-block custom-img-thumbnail-style-1 img-thumbnail img-thumbnail-no-borders img-thumbnail-hover-icon rounded-0"
                                 href="img/demos/architecture-2/generic/generic-11.jpg">
-                                <img src="img/demos/architecture-2/generic/generic-12.jpg" class="img-fluid rounded-0"
+                                <img src="assets/img/demos/architecture-2/generic/generic-12.jpg" class="img-fluid rounded-0"
                                     alt="" />
                             </a>
                         </div>
                         <div class="col-md-4">
                             <a class="d-inline-block custom-img-thumbnail-style-1 img-thumbnail img-thumbnail-no-borders img-thumbnail-hover-icon rounded-0"
                                 href="img/demos/architecture-2/generic/generic-11.jpg">
-                                <img src="img/demos/architecture-2/generic/generic-13.jpg" class="img-fluid rounded-0"
+                                <img src="assets/img/demos/architecture-2/generic/generic-13.jpg" class="img-fluid rounded-0"
                                     alt="" />
                             </a>
                         </div>
@@ -133,7 +133,7 @@
                             <div>
                                 <div class="card border-radius-0">
                                     <img class="card-img-top border-radius-0"
-                                        src="img/demos/architecture-2/authors/author-1.jpg" alt="" />
+                                        src="assets/img/demos/architecture-2/authors/author-1.jpg" alt="" />
                                     <div class="card-body text-center">
                                         <h4 class="card-title font-weight-extra-bold text-color-dark text-5 mb-1">John Doe
                                         </h4>
@@ -147,7 +147,7 @@
                             <div>
                                 <div class="card border-radius-0">
                                     <img class="card-img-top border-radius-0"
-                                        src="img/demos/architecture-2/authors/author-2.jpg" alt="" />
+                                        src="assets/img/demos/architecture-2/authors/author-2.jpg" alt="" />
                                     <div class="card-body text-center">
                                         <h4 class="card-title font-weight-extra-bold text-color-dark text-5 mb-1">Janice
                                             Doe</h4>
@@ -161,7 +161,7 @@
                             <div>
                                 <div class="card border-radius-0">
                                     <img class="card-img-top border-radius-0"
-                                        src="img/demos/architecture-2/authors/author-1.jpg" alt="" />
+                                        src="assets/img/demos/architecture-2/authors/author-1.jpg" alt="" />
                                     <div class="card-body text-center">
                                         <h4 class="card-title font-weight-extra-bold text-color-dark text-5 mb-1">John Doe
                                         </h4>
@@ -186,7 +186,7 @@
                         <h2 class="text-color-default positive-ls-3 line-height-3 text-4 mb-2">THE BEST PROFESSIONALS</h2>
                         <h3 class="text-transform-none text-color-dark font-weight-black text-10 line-height-2 mb-4">Meet
                             Our Team</h3>
-                        <img src="img/demos/architecture-2/divider.jpg" class="img-fluid opacity-5 mb-4 mt-2"
+                        <img src="assets/img/demos/architecture-2/divider.jpg" class="img-fluid opacity-5 mb-4 mt-2"
                             alt="" />
                         <p class="custom-font-tertiary text-5 line-height-4 mb-4 mt-2">Lorem ipsum dolor sit amet,
                             consectetur adipiscing elit. Sed imperdiet libero</p>
@@ -202,7 +202,7 @@
             <section class="section parallax bg-transparent border-0 py-0 m-0" data-plugin-parallax
                 data-plugin-options="{'speed': 1.5, 'scrollableParallax': true, 'scrollableParallaxMinWidth': 991, 'startOffset': 13, 'cssProperty': 'width', 'cssValueStart': 40, 'cssValueEnd': 100, 'cssValueUnit': 'vw'}">
                 <div class="d-flex justify-content-center">
-                    <div class="scrollable-parallax-wrapper bg-primary overflow-hidden">
+                    <div class="scrollable-parallax-wrapper bg-primary-100 overflow-hidden">
                         <div
                             class="container container-xl-custom custom-container-style-3 custom-container-position-1 py-5 my-5 mx-0">
                             <div class="row justify-content-center pt-3 mb-5">
@@ -261,22 +261,22 @@
             <div class="container container-xl-custom pb-3">
                 <div class="row align-items-center text-center py-5 my-5">
                     <div class="col-sm-4 col-xl-2 mb-5 mb-xl-0">
-                        <img src="img/logos/logo-8.png" alt class="img-fluid" style="max-width: 90px;" />
+                        <img src="assets/img/logos/logo-8.png" alt class="img-fluid" style="max-width: 90px;" />
                     </div>
                     <div class="col-sm-4 col-xl-2 mb-5 mb-xl-0">
-                        <img src="img/logos/logo-9.png" alt class="img-fluid" style="max-width: 140px;" />
+                        <img src="assets/img/logos/logo-9.png" alt class="img-fluid" style="max-width: 140px;" />
                     </div>
                     <div class="col-sm-4 col-xl-2 mb-5 mb-xl-0">
-                        <img src="img/logos/logo-10.png" alt class="img-fluid" style="max-width: 140px;" />
+                        <img src="assets/img/logos/logo-10.png" alt class="img-fluid" style="max-width: 140px;" />
                     </div>
                     <div class="col-sm-4 col-xl-2 mb-5 mb-lg-0">
-                        <img src="img/logos/logo-11.png" alt class="img-fluid" style="max-width: 140px;" />
+                        <img src="assets/img/logos/logo-11.png" alt class="img-fluid" style="max-width: 140px;" />
                     </div>
                     <div class="col-sm-4 col-xl-2 mb-5 mb-lg-0">
-                        <img src="img/logos/logo-12.png" alt class="img-fluid" style="max-width: 100px;" />
+                        <img src="assets/img/logos/logo-12.png" alt class="img-fluid" style="max-width: 100px;" />
                     </div>
                     <div class="col-sm-4 col-xl-2">
-                        <img src="img/logos/logo-13.png" alt class="img-fluid" style="max-width: 100px;" />
+                        <img src="assets/img/logos/logo-13.png" alt class="img-fluid" style="max-width: 100px;" />
                     </div>
                 </div>
                 <div class="row">

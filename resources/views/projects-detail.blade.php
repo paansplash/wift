@@ -4,7 +4,7 @@
     <div role="main" class="main">
 
         <section
-            class="custom-page-header-1 page-header page-header-modern page-header-lg bg-primary border-0 z-index-1 my-0">
+            class="custom-page-header-1 page-header page-header-modern page-header-lg bg-primary-100 border-0 z-index-1 my-0">
             <div class="custom-page-header-1-wrapper overflow-hidden">
                 <div class="custom-bg-grey-1 py-5 appear-animation" data-appear-animation="maskUp"
                     data-appear-animation-delay="800">
@@ -137,7 +137,7 @@
                                 </div>
                             </div>
 
-                            <div class="card bg-primary border-0 rounded-0">
+                            <div class="card bg-primary-100 border-0 rounded-0">
                                 <div class="card-body text-center p-5 my-3">
                                     <h2 class="text-color-light font-weight-extra-bold text-10 line-height-4 pb-3 mb-4">
                                         Let's Talk About Your New Porject, We Can do It!</h2>

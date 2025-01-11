@@ -2323,6 +2323,7 @@ html.sticky-header-enabled.sticky-header-active #header .header-logo-sticky-chan
 
 	#header .header-nav.header-nav-line.header-nav-bottom-line.header-nav-bottom-line-effect-1 nav > ul > li > a.active:before {
 		right: 15px;
+		background: #f586a3 !important;
 	}
 
 	#header .header-nav.header-nav-line.header-nav-bottom-line.header-nav-bottom-line-effect-1 nav > ul > li:hover > a:before {
@@ -12829,7 +12830,7 @@ html body .rounded-circle {
 }
 
 #footer h1, #footer h2, #footer h3, #footer h4, #footer h5, #footer h6 {
-	color: var(--light);
+	color: #f586a3;
 }
 
 #footer a:not(.btn):not(.no-footer-css) {
@@ -12839,7 +12840,7 @@ html body .rounded-circle {
 
 #footer a:not(.btn):not(.no-footer-css):hover {
 	text-decoration: none;
-	color: var(--light);
+	color: #f586a3 !important;
 }
 
 #footer a:not(.btn):not(.no-footer-css):focus, #footer a:not(.btn):not(.no-footer-css):active {
@@ -12847,11 +12848,12 @@ html body .rounded-circle {
 }
 
 #footer a:not(.btn):not(.no-footer-css).text-color-light {
-	color: var(--light) !important;
+		color: #ffb9c4 !important;
 }
 
 #footer a:not(.btn):not(.no-footer-css).text-color-light:hover {
-	color: var(--light-200) !important;
+	color: #f586a3 !important;
+
 }
 
 #footer a:not(.btn):not(.no-footer-css).text-color-light:focus, #footer a:not(.btn):not(.no-footer-css).text-color-light:active {
@@ -13059,7 +13061,7 @@ html body .rounded-circle {
 }
 
 #footer .footer-copyright p {
-	color: #555;
+	color: #ffb9c4 !important;
 	margin: 0;
 	padding: 0;
 	font-size: 0.9em;

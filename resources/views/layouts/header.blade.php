@@ -1,6 +1,6 @@
 <header id="header" class="header-transparent header-effect-shrink"
     data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'shrink', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': false, 'stickyHeaderContainerHeight': 80, 'stickyStartAt': 50, 'stickyChangeLogo': false}">
-    <div class="header-body border-top-0 bg-primary appear-animation" data-appear-animation="fadeInUpShorterPlus"
+    <div class="header-body border-top-0 bg-primary-100 appear-animation" data-appear-animation="fadeInUpShorterPlus"
         data-appear-animation-delay="2000" data-plugin-options="{'forceAnimation': true}">
         <div class="header-container container-fluid">
             <div class="header-row">

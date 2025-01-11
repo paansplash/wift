@@ -55,7 +55,7 @@
                         data-plugin-options="{'speed': 1.5, 'fadeIn': true}"
                         data-image-src="assets/img/demos/architecture-2/generic/generic-3.jpg" style="min-height: 400px">
                     </div>
-                    <div class="custom-section-middle-content bg-primary p-5">
+                    <div class="custom-section-middle-content bg-primary-100 p-5">
                         <div class="owl-carousel owl-theme nav-style-1 nav-svg-arrows-1 nav-light custom-hide-prev-nav custom-dots-style-1 custom-dots-style-1-light mb-0"
                             data-plugin-options="{'responsive': {'0': { 'items': 1}, '576': {'items': 1}, '768': {'items': 1, 'dots': true, 'nav': false}, '992': {'items': 1}, '1200': {'items': 1}}, 'loop': true, 'nav': true, 'dots': false, 'margin': 20, 'refresh': true}">
                             <div class="pt-4 pb-3">
@@ -213,7 +213,7 @@
                 </div>
             </div>
 
-            <section class="section section-height-3 bg-primary border-0 m-0">
+            <section class="section section-height-3 bg-primary-100 border-0 m-0">
                 <div class="container container-xl-custom">
                     <div class="row align-items-center justify-content-center text-center text-xl-start">
                         <div class="col-md-8 col-xl-9 mb-4 mb-xl-0 appear-animation"
@@ -431,7 +431,7 @@
             <section class="section parallax bg-transparent border-0 py-0 m-0" data-plugin-parallax
                 data-plugin-options="{'speed': 1.5, 'scrollableParallax': true, 'scrollableParallaxMinWidth': 991, 'startOffset': 13, 'cssProperty': 'width', 'cssValueStart': 40, 'cssValueEnd': 100, 'cssValueUnit': 'vw'}">
                 <div class="d-flex justify-content-center">
-                    <div class="scrollable-parallax-wrapper bg-primary overflow-hidden">
+                    <div class="scrollable-parallax-wrapper bg-primary-100 overflow-hidden">
                         <div
                             class="container container-xl-custom custom-container-style-3 custom-container-position-1 py-5 my-5 mx-0">
                             <div class="row justify-content-center pt-3 mb-5">

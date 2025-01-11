@@ -1467,7 +1467,7 @@ Theme Version:	10.2.0
 	position: absolute;
 	right: calc(100% - 74px);
 	bottom: -6px;
-	background: url(../img/pencil-blue-line.png);
+	background: url(../assets/img/pencil-blue-line.png);
 	width: 0;
 	height: 15px;
 	animation-name: pencilAnimation;
@@ -1487,7 +1487,7 @@ Theme Version:	10.2.0
 }
 
 .highlighted-word.highlighted-word-animation-1.highlighted-word-animation-1-dark:after {
-	background: url(../img/pencil-blue-line-dark.png);
+	background: url(../assets/img/pencil-blue-line-dark.png);
 }
 
 .highlighted-word.highlighted-word-animation-1.highlighted-word-animation-1-no-rotate:after {
@@ -1502,7 +1502,7 @@ Theme Version:	10.2.0
 .highlighted-word.highlighted-word-animation-1.highlighted-word-animation-1-2:after {
 	animation-name: pencilAnimation2;
 	right: calc(100% - 115px);
-	background: url(../img/pencil-blue-line-2.png);
+	background: url(../assets/img/pencil-blue-line-2.png);
 	background-repeat: no-repeat;
 }
 
@@ -7627,7 +7627,7 @@ hr.pattern.pattern-2:after, .divider.pattern.pattern-2:after {
 .flag {
 	width: 16px;
 	height: 11px;
-	background: url(../img/flags.png) no-repeat;
+	background: url(../assets/img/flags.png) no-repeat;
 }
 
 .flag.flag-ad {
@@ -10599,7 +10599,7 @@ i.pi.pi-close:after {
 /* Custom Image Icons */
 .icon-bg {
 	display: inline-block;
-	background: url(../img/icons/icons.png) no-repeat;
+	background: url(../assets/img/icons/icons.png) no-repeat;
 	width: 80px;
 	height: 80px;
 }
@@ -15482,7 +15482,7 @@ section.section.section-overlay .section-angled-layer-bottom {
 }
 
 section.section.section-overlay-dot:before {
-	background: url(../img/overlay-dot.png) repeat scroll 0 0 transparent;
+	background: url(../assets/img/overlay-dot.png) repeat scroll 0 0 transparent;
 }
 
 section.section.section-overlay-opacity {

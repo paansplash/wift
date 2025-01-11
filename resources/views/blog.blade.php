@@ -4,7 +4,7 @@
     <div role="main" class="main">
 
         <section
-            class="custom-page-header-1 page-header page-header-modern page-header-lg bg-primary border-0 z-index-1 my-0">
+            class="custom-page-header-1 page-header page-header-modern page-header-lg bg-primary-100 border-0 z-index-1 my-0">
             <div class="custom-page-header-1-wrapper overflow-hidden">
                 <div class="custom-bg-grey-1 py-5 appear-animation" data-appear-animation="maskUp"
                     data-appear-animation-delay="800">
@@ -44,7 +44,7 @@
                                 <div class="card-body p-0 z-index-1">
                                     <a href="demo-architecture-2-blog-post.html">
                                         <img class="card-img-top border-radius-0 hover-effect-2"
-                                            src="img/blog/wide/blog-37.jpg" alt="Card Image">
+                                            src="assets/img/blog/wide/blog-37.jpg" alt="Card Image">
                                     </a>
                                     <p class="text-uppercase text-1 mb-3 pt-1 text-color-default">
                                         <time pubdate datetime="2024-01-10">10 Jan 2024</time>
@@ -76,7 +76,7 @@
                                 <div class="card-body p-0 z-index-1">
                                     <a href="demo-architecture-2-blog-post.html">
                                         <img class="card-img-top border-radius-0 hover-effect-2"
-                                            src="img/blog/wide/blog-11.jpg" alt="Card Image">
+                                            src="assets/img/blog/wide/blog-11.jpg" alt="Card Image">
                                     </a>
                                     <p class="text-uppercase text-1 mb-3 pt-1 text-color-default">
                                         <time pubdate datetime="2024-01-10">10 Jan 2024</time>

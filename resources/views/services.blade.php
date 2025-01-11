@@ -4,7 +4,7 @@
     <div role="main" class="main">
 
         <section
-            class="custom-page-header-1 page-header page-header-modern page-header-lg bg-primary border-0 z-index-1 my-0">
+            class="custom-page-header-1 page-header page-header-modern page-header-lg bg-primary-100 border-0 z-index-1 my-0">
             <div class="custom-page-header-1-wrapper overflow-hidden">
                 <div class="custom-bg-grey-1 py-5 appear-animation" data-appear-animation="maskUp"
                     data-appear-animation-delay="800">
@@ -53,7 +53,7 @@
                         <a href="demo-architecture-2-services-detail.html" class="text-decoration-none">
                             <div class="card custom-card-style-1 border-radius-0">
                                 <div class="card-body text-center p-5 mb-4">
-                                    <img width="75" height="75" src="img/demos/architecture-2/icons/house-plant.svg"
+                                    <img width="75" height="75" src="assets/img/demos/architecture-2/icons/house-plant.svg"
                                         alt="" data-icon
                                         data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary mt-3 mb-4 pb-3'}" />
                                     <h2 class="text-color-dark font-weight-bold line-height-1 text-6-5 mb-3">Design &
@@ -69,7 +69,7 @@
                         <a href="demo-architecture-2-services-detail.html" class="text-decoration-none">
                             <div class="card custom-card-style-1 border-radius-0">
                                 <div class="card-body text-center p-5 mb-4">
-                                    <img width="75" height="75" src="img/demos/architecture-2/icons/sofa.svg"
+                                    <img width="75" height="75" src="assets/img/demos/architecture-2/icons/sofa.svg"
                                         alt="" data-icon
                                         data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary mt-3 mb-4 pb-3'}" />
                                     <h2 class="text-color-dark font-weight-bold line-height-1 text-6-5 mb-3">Interior Design
@@ -85,7 +85,7 @@
                         <a href="demo-architecture-2-services-detail.html" class="text-decoration-none">
                             <div class="card custom-card-style-1 border-radius-0">
                                 <div class="card-body text-center p-5 mb-4">
-                                    <img width="75" height="75" src="img/demos/architecture-2/icons/wallpaper.svg"
+                                    <img width="75" height="75" src="assets/img/demos/architecture-2/icons/wallpaper.svg"
                                         alt="" data-icon
                                         data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary mt-3 mb-4 pb-3'}" />
                                     <h2 class="text-color-dark font-weight-bold line-height-1 text-6-5 mb-3">Exterior Design
@@ -101,7 +101,7 @@
                         <a href="demo-architecture-2-services-detail.html" class="text-decoration-none">
                             <div class="card custom-card-style-1 border-radius-0">
                                 <div class="card-body text-center p-5 mb-4">
-                                    <img width="75" height="75" src="img/demos/architecture-2/icons/sofa.svg"
+                                    <img width="75" height="75" src="assets/img/demos/architecture-2/icons/sofa.svg"
                                         alt="" data-icon
                                         data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary mt-3 mb-4 pb-3'}" />
                                     <h2 class="text-color-dark font-weight-bold line-height-1 text-6-5 mb-3">Interior Design
@@ -117,7 +117,7 @@
                         <a href="demo-architecture-2-services-detail.html" class="text-decoration-none">
                             <div class="card custom-card-style-1 border-radius-0">
                                 <div class="card-body text-center p-5 mb-4">
-                                    <img width="75" height="75" src="img/demos/architecture-2/icons/wallpaper.svg"
+                                    <img width="75" height="75" src="assets/img/demos/architecture-2/icons/wallpaper.svg"
                                         alt="" data-icon
                                         data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary mt-3 mb-4 pb-3'}" />
                                     <h2 class="text-color-dark font-weight-bold line-height-1 text-6-5 mb-3">Exterior
@@ -144,7 +144,7 @@
                         <h2 class="text-color-default positive-ls-3 line-height-3 text-4 mb-2">CUSTOM SERVICES</h2>
                         <h3 class="text-transform-none text-color-dark font-weight-black text-9 line-height-2 mb-4">Design.
                             Build. Better.</h3>
-                        <img src="img/demos/architecture-2/divider.jpg" class="img-fluid opacity-5 mb-4 mt-2"
+                        <img src="assets/img/demos/architecture-2/divider.jpg" class="img-fluid opacity-5 mb-4 mt-2"
                             alt="" />
                         <p class="custom-font-tertiary text-5 line-height-4 mb-4 mt-2">Discover how our unique process
                             improves your building experience.</p>
@@ -180,7 +180,7 @@
                 </div>
             </div>
 
-            <section class="section section-height-3 bg-primary border-0 m-0">
+            <section class="section section-height-3 bg-primary-100 border-0 m-0">
                 <div class="container container-xl-custom">
                     <div class="row align-items-center justify-content-center text-center text-xl-start">
                         <div class="col-md-8 col-xl-9 mb-4 mb-xl-0 appear-animation"
@@ -213,7 +213,7 @@
                         <h2 class="text-color-default positive-ls-3 line-height-3 text-4 mb-2">COMMON QUESTIONS</h2>
                         <h3 class="text-transform-none text-color-dark font-weight-black text-10 line-height-2 mb-4">
                             Frequent Questions</h3>
-                        <img src="img/demos/architecture-2/divider.jpg" class="img-fluid opacity-5 mb-4 mt-2"
+                        <img src="assets/img/demos/architecture-2/divider.jpg" class="img-fluid opacity-5 mb-4 mt-2"
                             alt="" />
                         <p class="custom-font-tertiary text-5 line-height-4 mb-4 mt-2">Lorem ipsum dolor sit amet,
                             consectetur adipiscing elit. Sed imperdiet libero</p>
