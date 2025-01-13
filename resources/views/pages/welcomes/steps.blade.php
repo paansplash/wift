@@ -1,85 +1,52 @@
-<div class="row mb-5">
-    <div class="col">
-        <div class="overflow-hidden">
-            <div class="owl-carousel-wrapper position-relative z-index-1 appear-animation"
-                data-appear-animation="maskUp" data-appear-animation-delay="1000"
-                style="height: 373px;">
-                <div class="owl-carousel owl-theme dots-horizontal-center custom-dots-style-1 mb-0"
-                    data-plugin-options="{'responsive': {'576': {'items': 1}, '768': {'items': 1}, '992': {'items': 2}, '1200': {'items': 3}}, 'margin': 25, 'loop': true, 'nav': false, 'dots': true, 'autoplay': true, 'autoplayTimeout': 7000}">
-                    <div>
-                        <a href="demo-architecture-2-services-detail.html"
-                            class="text-decoration-none">
-                            <div class="card custom-card-style-1 border-radius-0">
-                                <div class="card-body text-center p-5 mb-4">
-                                    <img width="75" height="75" class="color-icon"
-                                        src="{{ asset('assets/img/demos/architecture-2/icons/house-plant.svg') }}"
-                                        alt="" data-icon
-                                        data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary mt-3 mb-4 pb-3'}" />
-                                    <h2
-                                        class="text-color-dark font-weight-bold line-height-1 text-6-5 mb-3">
-                                        Design & Planning</h2>
-                                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing elit. Nunc viverra erat orci.</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="demo-architecture-2-services-detail.html"
-                            class="text-decoration-none">
-                            <div class="card custom-card-style-1 border-radius-0">
-                                <div class="card-body text-center p-5 mb-4">
-                                    <img width="75" height="75"
-                                        src="assets/img/demos/architecture-2/icons/sofa.svg"
-                                        alt="" data-icon
-                                        data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary mt-3 mb-4 pb-3'}" />
-                                    <h2
-                                        class="text-color-dark font-weight-bold line-height-1 text-6-5 mb-3">
-                                        Interior Design</h2>
-                                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing elit. Nunc viverra erat orci.</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="demo-architecture-2-services-detail.html"
-                            class="text-decoration-none">
-                            <div class="card custom-card-style-1 border-radius-0">
-                                <div class="card-body text-center p-5 mb-4">
-                                    <img width="75" height="75"
-                                        src="assets/img/demos/architecture-2/icons/wallpaper.svg"
-                                        alt="" data-icon
-                                        data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary mt-3 mb-4 pb-3'}" />
-                                    <h2
-                                        class="text-color-dark font-weight-bold line-height-1 text-6-5 mb-3">
-                                        Exterior Design</h2>
-                                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing elit. Nunc viverra erat orci.</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="demo-architecture-2-services-detail.html"
-                            class="text-decoration-none">
-                            <div class="card custom-card-style-1 border-radius-0">
-                                <div class="card-body text-center p-5 mb-4">
-                                    <img width="75" height="75"
-                                        src="assets/img/demos/architecture-2/icons/house-plant.svg"
-                                        alt="" data-icon
-                                        data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary mt-3 mb-4 pb-3'}" />
-                                    <h2
-                                        class="text-color-dark font-weight-bold line-height-1 text-6-5 mb-3">
-                                        Design & Planning</h2>
-                                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing elit. Nunc viverra erat orci.</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+<div class="custom-section">
+    <div class="custom-section-left-content parallax p-0 m-0" data-plugin-parallax
+        data-plugin-options="{'speed': 1.5, 'fadeIn': true}"
+        data-image-src="assets/img/demos/architecture-2/generic/generic-3.jpg" style="min-height: 400px">
+    </div>
+    <div class="custom-section-middle-content bg-primary-100 p-5">
+        <div class="owl-carousel owl-theme nav-style-1 nav-svg-arrows-1 nav-light custom-hide-prev-nav custom-dots-style-1 custom-dots-style-1-light mb-0"
+            data-plugin-options="{'responsive': {'0': { 'items': 1}, '576': {'items': 1}, '768': {'items': 1, 'dots': true, 'nav': false}, '992': {'items': 1}, '1200': {'items': 1}}, 'loop': true, 'nav': true, 'dots': false, 'margin': 20, 'refresh': true}">
+            <div class="pt-4 pb-3">
+                <h2 class="custom-heading-style-1 text-4-5 mb-4">
+                    <span class="custom-heading-style-1-step">01</span>
+                    <span class="custom-heading-style-1-text">Sign Up & Create a Wish List</span>
+                </h2>
+                <p class="text-3-5 text-color-light opacity-4 pe-5 me-3 mb-0">
+                    Couples register and create a personalized wish list of desired wedding gifts.
+                </p>
+            </div>
+            <div class="pt-4 pb-3">
+                <h2 class="custom-heading-style-1 text-4-5 mb-4">
+                    <span class="custom-heading-style-1-step">02</span>
+                    <span class="custom-heading-style-1-text">Share Your Wish List</span>
+                </h2>
+                <p class="text-3-5 text-color-light opacity-4 pe-5 me-3 mb-0">
+                    Easily share the wish list with guests via email, social media, or QR codes.
+                </p>
+            </div>
+            <div class="pt-4 pb-3">
+                <h2 class="custom-heading-style-1 text-4-5 mb-4">
+                    <span class="custom-heading-style-1-step">03</span>
+                    <span class="custom-heading-style-1-text">Guests Purchase Gifts</span>
+                </h2>
+                <p class="text-3-5 text-color-light opacity-4 pe-5 me-3 mb-0">
+                    Guests buy items directly from the list or contribute to group gifts.
+                </p>
+            </div>
+            <div class="pt-4 pb-3">
+                <h2 class="custom-heading-style-1 text-4-5 mb-4">
+                    <span class="custom-heading-style-1-step">04</span>
+                    <span class="custom-heading-style-1-text">Gifts Delivered to You</span>
+                </h2>
+                <p class="text-3-5 text-color-light opacity-4 pe-5 me-3 mb-0">
+                    Gifts are delivered to your doorstep or digital contributions are sent to your account.
+                </p>
             </div>
         </div>
+    </div>
+
+    <div class="custom-section-right-content parallax p-0 m-0" data-plugin-parallax
+        data-plugin-options="{'speed': 3, 'parallaxDirection': 'bottom', 'fadeIn': true}"
+        data-image-src="assets/img/demos/architecture-2/generic/generic-4.jpg" style="min-height: 400px">
     </div>
 </div>
