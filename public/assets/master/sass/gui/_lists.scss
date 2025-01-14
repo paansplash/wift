@@ -327,8 +327,8 @@ ul {
 			&, a:first-child {
 				> [class*="fa-"]:first-child,
 				> .icons:first-child {
-					color: var(--primary);
-					border-color: var(--primary);
+					color: var(--primary-300);
+					border-color: var(--primary-300);
 				}
 			}
 		}
@@ -337,7 +337,7 @@ ul {
 				&, a:first-child {
 					> [class*="fa-"]:first-child,
 					> .icons:first-child {
-						background-color: var(--primary);
+						background-color: var(--primary-300);
 					}
 				}
 			}
@@ -346,14 +346,14 @@ ul {
 	&.list-ordened {
 		li {
 			&:before {
-				color: var(--primary);
-				border-color: var(--primary);
+				color: var(--primary-300);
+				border-color: var(--primary-300);
 			}
 		}
 		&.list-ordened-style-3 {
 			li {
 				&:before {
-					background-color: var(--primary);
+					background-color: var(--primary-300);
 				}
 			}
 		}

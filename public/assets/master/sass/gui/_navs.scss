@@ -441,9 +441,9 @@ html.boxed {
 
 .nav-pills > li.active > a,
 .nav-pills .nav-link.active {
-	background-color: var(--primary);
+	background-color: var(--primary-300);
 	&:hover, &:focus {
-		background-color: var(--primary);
+		background-color: var(--primary-300);
 	}
 }
 
@@ -453,7 +453,7 @@ html.boxed {
 			&:hover,
 			&:focus,
 			&.active {
-				border-bottom-color: var(--primary);
+				border-bottom-color: var(--primary-300);
 			}
 		}
 	}
@@ -486,7 +486,7 @@ html.boxed {
 
 /* Nav Link Colors */
 .nav-link {
-	color: var(--primary);
+	color: var(--primary-300);
 	&:hover {
 		color: var(--primary--100);
 	}
@@ -494,7 +494,7 @@ html.boxed {
 		color: var(--primary--100);
 	}
 	&:active {
-		color: var(--primary-100);
+		color: var(--primary-300);
 	}
 }
 
@@ -504,7 +504,7 @@ html.boxed {
     	> li.active {
     		> a {
 			    &:before {
-			    	background: var(--primary);
+			    	background: var(--primary-300);
 			    }
 		    }
 		}

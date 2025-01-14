@@ -125,11 +125,11 @@
 /* Page Header - Skin */
 section.page-header {
 	.page-header-title-border {
-		background-color: var(--primary) !important;
+		background-color: var(--primary-300) !important;
 	}
 
 	&.custom-product {
-		background-color: var(--primary-100);
+		background-color: var(--primary-300);
 		border-top-color: var(--primary-300);
 	}
 }

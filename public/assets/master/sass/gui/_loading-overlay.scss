@@ -495,29 +495,29 @@ html {
 .cssload-thecube {
 	.cssload-cube {
 		&:before {
-			background-color: var(--primary);
+			background-color: var(--primary-300);
 		}
 	}
 }
 
 /* CubeProgress - Skin */
 .cssload-cube-progress {
-	border-color: var(--primary);
+	border-color: var(--primary-300);
 }
 .cssload-cube-progress-inner {
-	background-color: var(--primary);
+	background-color: var(--primary-300);
 }
 
 /* Float Rings - Skin */
 .cssload-float-rings-inner {
 	&.cssload-one {
-		border-bottom-color: var(--primary);
+		border-bottom-color: var(--primary-300);
 	}
 	&.cssload-two {
-		border-right-color: var(--primary);
+		border-right-color: var(--primary-300);
 	}
 	&.cssload-three {
-		border-top-color: var(--primary);
+		border-top-color: var(--primary-300);
 	}
 }
 
@@ -525,23 +525,23 @@ html {
 .cssload-float-bars-loading, 
 .cssload-float-bars-loading:after, 
 .cssload-float-bars-loading:before {
-	background: var(--primary);
+	background: var(--primary-300);
 }
 
 /* Speeding Wheel - Skin */
 .cssload-speeding-wheel {
-	border-top-color: var(--primary);
-	border-bottom-color: var(--primary);
+	border-top-color: var(--primary-300);
+	border-bottom-color: var(--primary-300);
 }
 
 /* Zenith - Skin */
 .cssload-zenith {
-	box-shadow: 3px 3px 1px var(--primary);
+	box-shadow: 3px 3px 1px var(--primary-300);
 }
 
 /* Spinning Square Effect - Skin */
 .cssload-spinning-square-loading {
-	background: var(--primary);
+	background: var(--primary-300);
 	&:before {
 		background: var(--secondary);
 	}
@@ -552,5 +552,5 @@ html {
 
 /* Pulse Effect - Skin */
 .cssload-pulse-loader {
-	background: var(--primary);
+	background: var(--primary-300);
 }

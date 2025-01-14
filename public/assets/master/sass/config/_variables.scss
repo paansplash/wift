@@ -12,7 +12,7 @@ $body-line-height: 26;
 // ---------------------------------------------------------------
 
 // Color List
-$colors-list: (primary var(--primary)), (secondary var(--secondary)), (tertiary var(--tertiary)), (quaternary var(--quaternary)), (dark var(--dark)), (light var(--light));
+$colors-list: (primary var(--primary-300)), (secondary var(--secondary)), (tertiary var(--tertiary)), (quaternary var(--quaternary)), (dark var(--dark)), (light var(--light));
 
 // Grid Breakpoints
 $grid-breakpoints: (

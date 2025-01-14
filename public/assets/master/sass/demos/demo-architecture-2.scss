@@ -712,7 +712,7 @@ html {
 // Buttons
 .custom-btn-style-1 {
 	&:before {
-		border-color: var(--primary) !important;
+		border-color: var(--primary-300) !important;
 	}
 	&.btn-light {
 		&:before {
@@ -723,7 +723,7 @@ html {
 
 // Text Effect
 .custom-stroke-text-effect-1 {
-	-webkit-text-stroke-color: var(--primary);
+	-webkit-text-stroke-color: var(--primary-300);
 }
 
 /*
@@ -731,7 +731,7 @@ html {
 */
 .custom-card-style-1 {
 	&:hover {
-		background-color: var(--primary) !important;
+		background-color: var(--primary-300) !important;
 		h2, p {
 			color: var(--light) !important;
 		}
@@ -752,12 +752,12 @@ html {
 	.owl-dots {
 		.owl-dot {
 		    span {
-			    border-color: var(--primary) !important;
+			    border-color: var(--primary-300) !important;
 		    }
 		    &:hover,
 		    &.active {
 		    	span {
-			    	background: var(--primary) !important;
+			    	background: var(--primary-300) !important;
 		    	}
 		    }
 		}
@@ -771,8 +771,8 @@ html {
 	> li {
 		&.active {
 			> a {
-				color: var(--primary) !important;
-				border-bottom-color: var(--primary) !important;
+				color: var(--primary-300) !important;
+				border-bottom-color: var(--primary-300) !important;
 			}
 		}
 	}
@@ -783,6 +783,6 @@ html {
 */
 .custom-link-effect-1 {
 	&:after {
-		border-bottom-color: var(--primary);
+		border-bottom-color: var(--primary-300);
 	}
 }

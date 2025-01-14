@@ -592,7 +592,7 @@ html.sticky-header-active #header .header-body {
 
 /* Skin */
 .custom-btn-style-1:before {
-	border-color: var(--primary) !important;
+	border-color: var(--primary-300) !important;
 }
 
 .custom-btn-style-1.btn-light:before {
@@ -600,14 +600,14 @@ html.sticky-header-active #header .header-body {
 }
 
 .custom-stroke-text-effect-1 {
-	-webkit-text-stroke-color: var(--primary);
+	-webkit-text-stroke-color: var(--primary-300);
 }
 
 /*
 * Card
 */
 .custom-card-style-1:hover {
-	background-color: var(--primary) !important;
+	background-color: var(--primary-300) !important;
 }
 
 .custom-card-style-1:hover h2, .custom-card-style-1:hover p {
@@ -622,24 +622,24 @@ html.sticky-header-active #header .header-body {
 * Owl Carousel
 */
 .custom-dots-style-1 .owl-dots .owl-dot span {
-	border-color: var(--primary) !important;
+	border-color: var(--primary-300) !important;
 }
 
 .custom-dots-style-1 .owl-dots .owl-dot:hover span, .custom-dots-style-1 .owl-dots .owl-dot.active span {
-	background: var(--primary) !important;
+	background: var(--primary-300) !important;
 }
 
 /*
 * Sort Navigation
 */
 .custom-nav-filter > li.active > a {
-	color: var(--primary) !important;
-	border-bottom-color: var(--primary) !important;
+	color: var(--primary-300) !important;
+	border-bottom-color: var(--primary-300) !important;
 }
 
 /*
 * Link Effect
 */
 .custom-link-effect-1:after {
-	border-bottom-color: var(--primary);
+	border-bottom-color: var(--primary-300);
 }

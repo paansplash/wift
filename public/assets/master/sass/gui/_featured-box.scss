@@ -845,7 +845,7 @@
 
 /* Icons - Skin */
 .icon-featured {
-	background-color: var(--primary);
+	background-color: var(--primary-300);
 }
 
 /* Featured Box - - Skin */
@@ -921,8 +921,8 @@
 /* Featured Box Modern - Gradient - Skin */
 .featured-boxes-modern-style-primary {
 	.featured-box {
-	    background: var(--primary);
-		background: linear-gradient(135deg, var(--primary) 0%, var(--quaternary) 100%);
+	    background: var(--primary-300);
+		background: linear-gradient(135deg, var(--primary-300) 0%, var(--quaternary) 100%);
 	}
 }
 
@@ -965,7 +965,7 @@
 /* Feature Box - Skin */
 .feature-box {
 	.feature-box-icon {
-		background-color: var(--primary);
+		background-color: var(--primary-300);
 	}
 }
 
@@ -981,7 +981,7 @@
 	&.feature-box-style-2 {
 		.feature-box-icon {
 			[class*="fa-"], .icons {
-				color: var(--primary);
+				color: var(--primary-300);
 			}
 		}
 	}
@@ -1002,9 +1002,9 @@
 .feature-box {
 	&.feature-box-style-3 {
 		.feature-box-icon {
-			border-color: var(--primary);
+			border-color: var(--primary-300);
 			[class*="fa-"], .icons {
-				color: var(--primary);
+				color: var(--primary-300);
 			}
 		}
 	}
@@ -1027,7 +1027,7 @@
 	&.feature-box-style-4 {
 		.feature-box-icon {
 			[class*="fa-"], .icons {
-				color: var(--primary);
+				color: var(--primary-300);
 			}
 		}
 	}
@@ -1049,7 +1049,7 @@
 	&.feature-box-style-5 {
 		.feature-box-icon {
 			[class*="fa-"], .icons {
-				color: var(--primary);
+				color: var(--primary-300);
 			}
 		}
 	}

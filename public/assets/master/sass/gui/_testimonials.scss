@@ -484,11 +484,11 @@
 /* Testimonial - Skin */
 .testimonial {
 	blockquote {
-		background: var(--primary);
+		background: var(--primary-300);
 	}
 
 	.testimonial-arrow-down {
-		border-top-color: var(--primary);
+		border-top-color: var(--primary-300);
 	}
 }
 
@@ -510,7 +510,7 @@
 	.testimonial-quotes-#{$name} {
 		blockquote {
 			&:before, &:after {
-				color: var(--primary) !important;
+				color: var(--primary-300) !important;
 			}
 		}
 	}

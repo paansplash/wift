@@ -857,7 +857,7 @@
 .thumbnail .zoom,
 .img-thumbnail .zoom,
 .thumb-info-ribbon {
-	background-color: var(--primary);
+	background-color: var(--primary-300);
 }
 
 @each $name, $var in $colors-list {
@@ -885,6 +885,6 @@
 /* Thumb Info Floating Caption - Skin */
 .thumb-info-floating-caption-title {
 	.thumb-info-floating-caption-type {
-		background-color: var(--primary);
+		background-color: var(--primary-300);
 	}
 }

@@ -1565,10 +1565,10 @@ html[dir="rtl"] {
 #header {
 
 	.tip {
-		background: var(--primary);
+		background: var(--primary-300);
 		color: var(--primary-inverse);
 		&:before {
-			border-right-color: var(--primary);
+			border-right-color: var(--primary-300);
 			border-left-color: transparent;
 		}
 	}
@@ -1594,12 +1594,12 @@ html[dir="rtl"] {
 
 		.tip {
 			&:before {
-				border-left-color: var(--primary);
+				border-left-color: var(--primary-300);
 			}
 
 			&.skin {
 				&:before {
-					border-left-color: var(--primary);
+					border-left-color: var(--primary-300);
 				}
 			}
 		}
@@ -1624,7 +1624,7 @@ html[dir="rtl"] {
 #header {
 
 	.header-btn-collapse-nav {
-		background: var(--primary);
+		background: var(--primary-300);
 	}
 
 }
@@ -1639,32 +1639,32 @@ html[dir="rtl"] {
 				> ul {
 					> li {
 						> a {
-							color: var(--primary);
+							color: var(--primary-300);
 						}
 						&.open, &:hover {
 							> a {
-								background: var(--primary);
+								background: var(--primary-300);
 							}
 						}
 						&.dropdown {
 							.dropdown-menu {
-								border-top-color: var(--primary);
+								border-top-color: var(--primary-300);
 							}
 
 							&.open, &:hover {
 								> a {
 									&:before {
-										border-bottom-color: var(--primary);
+										border-bottom-color: var(--primary-300);
 									}
 								}
 							}
 						}
 						&.dropdown-mega-signin {
 							.dropdown-menu {
-								border-top-color: var(--primary);
+								border-top-color: var(--primary-300);
 								li {
 									a {
-										color: var(--primary);
+										color: var(--primary-300);
 									}
 								}
 							}
@@ -1675,7 +1675,7 @@ html[dir="rtl"] {
 					> li {
 						> a {
 							&.active {
-								background-color: var(--primary);
+								background-color: var(--primary-300);
 								color: var(--primary-inverse);
 							}
 						}
@@ -1694,7 +1694,7 @@ html[dir="rtl"] {
 							&:hover, 
 							&.open {
 								> a {
-									background-color: var(--primary);
+									background-color: var(--primary-300);
 								}
 							}
 						}
@@ -1708,7 +1708,7 @@ html[dir="rtl"] {
 						> li {
 							> a {
 								&.active {
-									background-color: var(--primary);
+									background-color: var(--primary-300);
 								}
 							}
 						}
@@ -1717,7 +1717,7 @@ html[dir="rtl"] {
 						> li {
 							> a {
 								&.active {
-									color: var(--primary);
+									color: var(--primary-300);
 								}
 							}
 						}
@@ -1732,7 +1732,7 @@ html[dir="rtl"] {
 						li {
 							&:hover {
 								> a {
-									color: var(--primary);
+									color: var(--primary-300);
 								}
 							}
 						}
@@ -1741,7 +1741,7 @@ html[dir="rtl"] {
 						> li {
 							> a {
 								&.active {
-									color: var(--primary);
+									color: var(--primary-300);
 								}
 							}
 						}
@@ -1756,7 +1756,7 @@ html[dir="rtl"] {
 								&.dropdown {
 									.dropdown-menu {
 										&::-webkit-scrollbar-thumb {
-											background: var(--primary) !important;
+											background: var(--primary-300) !important;
 										}
 									}
 								}
@@ -1773,9 +1773,9 @@ html[dir="rtl"] {
 						li {
 							&:hover {
 								> a {
-									color: var(--primary);
+									color: var(--primary-300);
 									&:before {
-										background: var(--primary);
+										background: var(--primary-300);
 									}
 								}
 							}
@@ -1785,9 +1785,9 @@ html[dir="rtl"] {
 						li {
 							> a {
 								&.active {
-									color: var(--primary);
+									color: var(--primary-300);
 									&:before {
-										background: var(--primary);
+										background: var(--primary-300);
 									}
 								}
 							}
@@ -1807,7 +1807,7 @@ html[dir="rtl"] {
 							&.open, &:hover {
 								> span {
 									> a {
-										color: var(--primary);
+										color: var(--primary-300);
 									}
 								}
 							}
@@ -1818,7 +1818,7 @@ html[dir="rtl"] {
 							> span {
 								> a {
 									&.active {
-										color: var(--primary);
+										color: var(--primary-300);
 									}
 								}
 							}
@@ -1837,7 +1837,7 @@ html[dir="rtl"] {
 					li.dropdown {
 						&.open > .dropdown-menu,
 						&:hover > .dropdown-menu {
-							border-left-color: var(--primary);
+							border-left-color: var(--primary-300);
 						}
 					}
 				}
@@ -1852,7 +1852,7 @@ html[dir="rtl"] {
 					li.dropdown {
 						&.open > .dropdown-menu,
 						&:hover > .dropdown-menu {
-							border-right-color: var(--primary);
+							border-right-color: var(--primary-300);
 						}
 					}
 				}
@@ -2060,7 +2060,7 @@ html[dir="rtl"] {
 							&, .wrapper-items-cloned {
 								&:hover {
 									> a {
-										color: var(--primary) !important;
+										color: var(--primary-300) !important;
 									}
 								}
 							}
@@ -2069,7 +2069,7 @@ html[dir="rtl"] {
 							> li {
 								&, .wrapper-items-cloned {
 									> a.active {
-										color: var(--primary) !important;
+										color: var(--primary-300) !important;
 									}
 								}
 							}
@@ -2095,14 +2095,14 @@ html[dir="rtl"] {
 					> ul {
 						> li {
 							> a {
-								color: var(--primary);
+								color: var(--primary-300);
 								&:active {
-									color: var(--primary);
+									color: var(--primary-300);
 								}
 								&.active {
-									background: var(--primary);
+									background: var(--primary-300);
 									&:focus, &:hover {
-										background: var(--primary);
+										background: var(--primary-300);
 									}
 								}
 							}
@@ -2118,9 +2118,9 @@ html[dir="rtl"] {
 						> li {
 							> a {
 								&.active {
-									background: var(--primary);
+									background: var(--primary-300);
 									&:focus, &:hover {
-										background: var(--primary);
+										background: var(--primary-300);
 									}
 								}
 							}
@@ -2145,7 +2145,7 @@ html[dir="rtl"] {
 									> li {
 										> a {
 											&.active {
-												color: var(--primary) !important;
+												color: var(--primary-300) !important;
 											}
 										}
 									}
@@ -2155,18 +2155,18 @@ html[dir="rtl"] {
 					}
 					nav {
 						&::-webkit-scrollbar-thumb {
-							background-color: var(--primary);
+							background-color: var(--primary-300);
 						}
 						> ul {
 							> li {
 								> a {
 									&.active {
-										color: var(--primary) !important;
+										color: var(--primary-300) !important;
 									}
 								}
 								&:hover {
 									> a {
-										color: var(--primary) !important;
+										color: var(--primary-300) !important;
 									}
 								}
 							}
@@ -2274,13 +2274,13 @@ html[dir="rtl"] {
 					> li {
 						&.open, &:hover {
 							> a {
-								color: var(--primary);
+								color: var(--primary-300);
 							}
 						}
 
 						> a {
 							&.active {
-								color: var(--primary);
+								color: var(--primary-300);
 							}	
 						}
 						
@@ -2297,7 +2297,7 @@ html[dir="rtl"] {
 	.header-nav-features {
 		.header-nav-features-search-reveal-big-search {
 			.form-control {
-				border-bottom-color: var(--primary);
+				border-bottom-color: var(--primary-300);
 			}
 		}
 	}

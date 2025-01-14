@@ -389,7 +389,7 @@
 
 	// Ribbon
 	.footer-ribbon {
-		background: var(--primary);
+		background: var(--primary-300);
 	}
 
 	.footer-ribbon:before {
@@ -407,9 +407,9 @@
 					&:not(:hover) {
 						> li {
 							> a.active {
-								color: var(--primary) !important;
+								color: var(--primary-300) !important;
 								&:before {
-									background: var(--primary) !important;
+									background: var(--primary-300) !important;
 								}
 							}
 						}
@@ -417,9 +417,9 @@
 					&:hover {
 						> li:hover {
 							> a {
-								color: var(--primary) !important;
+								color: var(--primary-300) !important;
 								&:before {
-									background: var(--primary) !important;
+									background: var(--primary-300) !important;
 								}
 							}
 						}

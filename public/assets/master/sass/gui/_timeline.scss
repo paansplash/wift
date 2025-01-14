@@ -227,11 +227,11 @@ section.timeline {
 /* Timeline - Skin */
 section.timeline .timeline-box.left:before,
 section.timeline .timeline-box.right:before {
-	background: var(--primary);
-	box-shadow: 0 0 0 3px #FFF, 0 0 0 6px var(--primary);
+	background: var(--primary-300);
+	box-shadow: 0 0 0 3px #FFF, 0 0 0 6px var(--primary-300);
 }
 
 /* History - Skin */
 ul.history li .featured-box .box-content {
-	border-top-color: var(--primary);
+	border-top-color: var(--primary-300);
 }

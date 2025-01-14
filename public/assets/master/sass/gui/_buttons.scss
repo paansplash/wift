@@ -738,12 +738,12 @@ html.sticky-header-active,
 
 /* Buttons - Skin */
 .btn-link {
-	color: var(--primary);
+	color: var(--primary-300);
 	&:hover {
 		color: var(--primary--100);
 	}
 	&:active {
-		color: var(--primary-100);
+		color: var(--primary-300);
 	}
 }
 
@@ -896,7 +896,7 @@ html.sticky-header-active,
 // Button Gradient (mix of primary and secondary color)
 .btn-gradient:not(.btn-outline) {
 
-	background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 80%) !important;
+	background: linear-gradient(135deg, var(--primary-300) 0%, var(--secondary) 80%) !important;
 	color: var(--primary-inverse);
 
 	&:hover,
@@ -912,12 +912,12 @@ html.sticky-header-active,
 
 	&.disabled,
 	&:disabled {
-		background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 80%) !important;
+		background: linear-gradient(135deg, var(--primary-300) 0%, var(--secondary) 80%) !important;
 	}
 
 	&:active,
 	&.active {
-		background: linear-gradient(135deg, var(--primary-200) 0%, var(--secondary-200) 80%) !important;
+		background: linear-gradient(135deg, var(--primary-300) 0%, var(--secondary-200) 80%) !important;
 		color: var(--primary-inverse) !important;
 	}
 
@@ -925,8 +925,8 @@ html.sticky-header-active,
 
 .btn-gradient.btn-outline {
 
-	border-image: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 80%);
-	color: var(--primary);
+	border-image: linear-gradient(135deg, var(--primary-300) 0%, var(--secondary) 80%);
+	color: var(--primary-300);
 
 	&:hover,
 	&.hover {
@@ -941,13 +941,13 @@ html.sticky-header-active,
 
 	&.disabled,
 	&:disabled {
-		border-image: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 80%);
+		border-image: linear-gradient(135deg, var(--primary-300) 0%, var(--secondary) 80%);
 	}
 
 	&:active,
 	&.active {
-		border-image: linear-gradient(135deg, var(--primary-200) 0%, var(--secondary-200) 80%);
-		color: var(--primary-200);
+		border-image: linear-gradient(135deg, var(--primary-300) 0%, var(--secondary-200) 80%);
+		color: var(--primary-300);
 	}
 
 }
@@ -955,7 +955,7 @@ html.sticky-header-active,
 // Button Gradient Primary (mix of primary and darken primary color)
 .btn-gradient-primary:not(.btn-outline) {
 
-	background: linear-gradient(135deg, var(--primary--200) 0%, var(--primary-100) 80%) !important;
+	background: linear-gradient(135deg, var(--primary--200) 0%, var(--primary-300) 80%) !important;
 	color: var(--primary-inverse);
 
 	&:hover,
@@ -971,7 +971,7 @@ html.sticky-header-active,
 
 	&.disabled,
 	&:disabled {
-		background: linear-gradient(135deg, var(--primary--200) 80%, var(--primary-100) 0%) !important;
+		background: linear-gradient(135deg, var(--primary--200) 80%, var(--primary-300) 0%) !important;
 	}
 
 	&:active,
@@ -984,8 +984,8 @@ html.sticky-header-active,
 
 .btn-gradient-primary.btn-outline {
 
-	border-image: linear-gradient(135deg, var(--primary) 0%, var(--primary--200) 80%);
-	color: var(--primary);
+	border-image: linear-gradient(135deg, var(--primary-300) 0%, var(--primary--200) 80%);
+	color: var(--primary-300);
 
 	&:hover,
 	&.hover {
@@ -1000,7 +1000,7 @@ html.sticky-header-active,
 
 	&.disabled,
 	&:disabled {
-		border-image: linear-gradient(135deg, var(--primary) 0%, var(--primary--200) 80%);
+		border-image: linear-gradient(135deg, var(--primary-300) 0%, var(--primary--200) 80%);
 	}
 
 	&:active,
@@ -1185,7 +1185,7 @@ html.sticky-header-active,
 	> li > span:hover,
 	> li > a:focus,
 	> li > span:focus, {
-		color: var(--primary);
+		color: var(--primary-300);
 	}
 	> .active > a,
 	> .active > span,
@@ -1194,8 +1194,8 @@ html.sticky-header-active,
 	> .active > a:focus,
 	> .active > span:focus,
 	.page-item.active .page-link {
-		background-color: var(--primary) !important;
-		border-color: var(--primary);
+		background-color: var(--primary-300) !important;
+		border-color: var(--primary-300);
 		color: var(--primary-inverse) !important;
 	}
 }
@@ -1207,7 +1207,7 @@ body.dark .pagination {
 	> li > span:hover,
 	> li > a:focus,
 	> li > span:focus {
-		color: var(--primary);
+		color: var(--primary-300);
 	}
 	> .active > a,
 	> .active > span,
@@ -1215,14 +1215,14 @@ body.dark .pagination {
 	> .active > span:hover,
 	> .active > a:focus,
 	> .active > span:focus {
-		background-color: var(--primary);
-		border-color: var(--primary);
+		background-color: var(--primary-300);
+		border-color: var(--primary-300);
 	}
 }
 
 .pagination > .active > a,
 body.dark .pagination > .active > a {
-	border-color: var(--primary) var(--primary) var(--primary-300);
+	border-color: var(--primary-300) var(--primary-300) var(--primary-300);
 }
 
 /* Read More */

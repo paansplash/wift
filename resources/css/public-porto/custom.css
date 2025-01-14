@@ -31,3 +31,19 @@
 #header .header-nav.header-nav-line nav>ul li>a:hover:before {
     background: #f586a3 !important;
 }
+
+.landing-carousel h1,
+.landing-carousel h2,
+.landing-carousel p {
+    color: #f586a3 !important;
+    text-shadow: 
+        1px 1px 0 black, /* Bottom-right */
+        -1px -1px 0 black, /* Top-left */
+        1px -1px 0 black, /* Top-right */
+        -1px 1px 0 black; /* Bottom-left */
+}
+
+.steps p,
+.steps h2{
+    color: #f586a3 !important;
+}

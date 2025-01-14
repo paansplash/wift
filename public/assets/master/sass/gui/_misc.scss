@@ -8,7 +8,7 @@ pre {
 
 /* Alternative Font - Skin */
 .alternative-font {
-	color: var(--primary);
+	color: var(--primary-300);
 }
 
 /* Blockquote - Skin */
@@ -21,10 +21,10 @@ pre {
 /* Drop Caps - Skin */
 p.drop-caps {
 	&:first-letter {
-		color: var(--primary);
+		color: var(--primary-300);
 	}
 	&.drop-caps-style-2:first-letter {
-		background-color: var(--primary);
+		background-color: var(--primary-300);
 	}
 }
 
@@ -593,7 +593,7 @@ Credits: Codyhouse (https://codyhouse.co/gem/360-degrees-product-viewer)
 /* 360º Image Viewer - Skin */
 .cd-product-viewer-handle { 
 	.handle {
-		background: var(--primary);
+		background: var(--primary-300);
 	}
 }
 
@@ -964,16 +964,16 @@ Credits: Codyhouse (https://codyhouse.co/gem/360-degrees-product-viewer)
 
 /* Cursor Effect - Skin */
 .cursor-inner {
-	background-color: var(--primary);
+	background-color: var(--primary-300);
 	&.cursor-inner-plus {
     	&:before {
-		    color: var(--primary);
+		    color: var(--primary-300);
     	}
     }
 }
 
 .cursor-outer {
-	border-color: var(--primary);
+	border-color: var(--primary-300);
 }
 
 /* Simple Copy To Clipboard */
@@ -1052,8 +1052,8 @@ Credits: Codyhouse (https://codyhouse.co/gem/360-degrees-product-viewer)
 	&.particle-repeating-lines {
 		background: repeating-linear-gradient(-55deg,
 			var(--light-rgba-0) 0.8px,
-			var(--primary) 1.6px,
-			var(--primary) 3px,
+			var(--primary-300) 1.6px,
+			var(--primary-300) 3px,
 			var(--light-rgba-0) 3.8px,
 			var(--light-rgba-0) 10px
 		);
@@ -1118,7 +1118,7 @@ Credits: Codyhouse (https://codyhouse.co/gem/360-degrees-product-viewer)
 
 /* Inverted - Skin */
 .inverted {
-	background-color: var(--primary);
+	background-color: var(--primary-300);
 }
 
 @each $name, $var in $colors-list {
@@ -1151,7 +1151,7 @@ Credits: Codyhouse (https://codyhouse.co/gem/360-degrees-product-viewer)
 /* Scrollable  - Skin */
 .scrollable.colored-slider {
 	.scrollable-slider {
-		background: var(--primary);
+		background: var(--primary-300);
 	}
 }
 

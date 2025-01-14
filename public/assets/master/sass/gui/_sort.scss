@@ -364,9 +364,9 @@ html.gecko {
 
 /* Sort Colors */
 .sort-source-wrapper .nav > li.active > a {
-	color: var(--primary);
+	color: var(--primary-300);
 	&:hover, &:focus {
-		color: var(--primary);
+		color: var(--primary-300);
 	}
 }
 
@@ -376,7 +376,7 @@ html.gecko {
 			&.active {
 				> a {
 					&:after {
-						border-top-color: var(--primary);
+						border-top-color: var(--primary-300);
 					}
 				}
 			}
@@ -389,8 +389,8 @@ html.gecko {
 		 > li {
 		 	&.active {
 		 		> a {
-		 			border-bottom-color: var(--primary) !important;
-		 			color: var(--primary) !important;
+		 			border-bottom-color: var(--primary-300) !important;
+		 			color: var(--primary-300) !important;
 				}
 		 	}
 		 }

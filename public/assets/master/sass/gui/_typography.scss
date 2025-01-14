@@ -60,7 +60,7 @@ p {
 
 /* Links */
 a {
-	color: var(--primary);
+	color: var(--primary-300);
 	&:hover {
 		color: var(--primary--100);
 	}
@@ -68,7 +68,7 @@ a {
 		color: var(--primary--100);
 	}
 	&:active {
-		color: var(--primary-100);
+		color: var(--primary-300);
 	}
 }
 

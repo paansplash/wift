@@ -294,12 +294,12 @@
 /* Process - Skin */
 .process {
 	.process-step-circle {
-		border-color: var(--primary);
+		border-color: var(--primary-300);
 	}
 	.process-step {
 		&:hover {
 			.process-step-circle {
-				background-color: var(--primary);
+				background-color: var(--primary-300);
 				.process-step-circle-content {
 					color: var(--primary-inverse) !important;
 				}
@@ -312,7 +312,7 @@
 		.process-step-circle {
 			.process-step-circle-content,
 			&:before, &:after {
-				background-color: var(--primary);
+				background-color: var(--primary-300);
 			}
 		}
 	}
@@ -320,6 +320,6 @@
 
 .process-connecting-line {
 	.connecting-line {
-		background: var(--primary);
+		background: var(--primary-300);
 	}
 }

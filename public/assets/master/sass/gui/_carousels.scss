@@ -1591,25 +1591,25 @@
 /* Carousel - Skin */
 .owl-carousel .owl-dots .owl-dot.active span,
 .owl-carousel .owl-dots .owl-dot:hover span {
-	background-color: var(--primary-100);
+	background-color: var(--primary-300);
 }
 
 .owl-carousel.show-nav-title .owl-nav button[class*="owl-"],
 .owl-carousel.show-nav-title .owl-nav button[class*="owl-"]:hover,
 .owl-carousel.show-nav-title .owl-nav button[class*="owl-"].hover {
-	color: var(--primary);
+	color: var(--primary-300);
 }
 
 .owl-carousel:not(.nav-arrows-1):not(.show-nav-title) .owl-nav button[class*="owl-"] {
 
-	background-color: var(--primary);
-	border-color: var(--primary) var(--primary) var(--primary-300);
+	background-color: var(--primary-300);
+	border-color: var(--primary-300) var(--primary-300) var(--primary-300);
 	color: var(--primary-inverse);
 
 	&:hover,
 	&.hover {
 		background-color: var(--primary--100);
-		border-color: var(--primary--300) var(--primary--300) var(--primary);
+		border-color: var(--primary--300) var(--primary--300) var(--primary-300);
 	}
 
 	&:active,
@@ -1635,7 +1635,7 @@
 		.owl-nav {
 			.owl-next,
 			.owl-prev {
-				color: var(--primary) !important;
+				color: var(--primary-300) !important;
 			}
 		}
 	}
@@ -1644,7 +1644,7 @@
 			.owl-next,
 			.owl-prev {
 				&:before, &:after {
-					border-color: var(--primary);
+					border-color: var(--primary-300);
 				}
 			}
 		}
@@ -1654,8 +1654,8 @@
 			.owl-prev, .owl-next {
 				svg {
 					polygon {
-						fill: var(--primary);
-						stroke: var(--primary);
+						fill: var(--primary-300);
+						stroke: var(--primary-300);
 					}
 				}
 			}
@@ -1664,7 +1664,7 @@
 	&.nav-arrows-1 {
 		.owl-nav {
 			.owl-prev, .owl-next {
-				color: var(--primary);
+				color: var(--primary-300);
 			}
 		}
 	}
@@ -1676,7 +1676,7 @@
 		.owl-item {
 			&.active {
 				> div {
-				    background: var(--primary);
+				    background: var(--primary-300);
 				}
 			}
 		}
@@ -1687,7 +1687,7 @@
 .owl-carousel.carousel-bottom-inside-shadow {
 	.owl-stage-outer {
 		&:after {
-			background-image: linear-gradient(360deg, var(--primary) 0%, transparent 100%);
+			background-image: linear-gradient(360deg, var(--primary-300) 0%, transparent 100%);
 		}
 	}
 }

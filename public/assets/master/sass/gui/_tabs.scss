@@ -605,7 +605,7 @@ html.dark body {
 		.nav-tabs {
 			.nav-link, .nav-link:hover,
 			.nav-link.active {
-				color: var(--primary);
+				color: var(--primary-300);
 			}
 
 			.nav-link:hover,
@@ -614,7 +614,7 @@ html.dark body {
 			&.nav-justified .nav-link.active,
 			&.nav-justified .nav-link:hover,
 			&.nav-justified .nav-link:focus {
-				border-top-color: var(--primary);
+				border-top-color: var(--primary-300);
 			}
 		}
 		&.tabs-bottom {
@@ -623,7 +623,7 @@ html.dark body {
 				.nav-link.active,
 				.nav-link.active:hover,
 				.nav-link.active:focus {
-					border-bottom-color: var(--primary);
+					border-bottom-color: var(--primary-300);
 				}
 			}
 		}
@@ -633,7 +633,7 @@ html.dark body {
 				.nav-link.active,
 				.nav-link.active:hover,
 				.nav-link.active:focus {
-					border-left-color: var(--primary);
+					border-left-color: var(--primary-300);
 				}
 			}
 		}
@@ -643,7 +643,7 @@ html.dark body {
 				.nav-link.active,
 				.nav-link.active:hover,
 				.nav-link.active:focus {
-					border-right-color: var(--primary);
+					border-right-color: var(--primary-300);
 				}
 			}
 		}
@@ -653,8 +653,8 @@ html.dark body {
 				> li .nav-link.active:focus,
 				> li .nav-link:hover,
 				> li .nav-link.active:hover {
-					border-top-color: var(--primary);
-					color: var(--primary);
+					border-top-color: var(--primary-300);
+					color: var(--primary-300);
 				}
 			}
 		}
@@ -768,7 +768,7 @@ html[dir="rtl"] {
 						&.active,
 						&.active:hover,
 						&.active:focus {
-							border-right-color: var(--primary);
+							border-right-color: var(--primary-300);
 							border-left-color: transparent;
 						}
 					}
@@ -784,7 +784,7 @@ html[dir="rtl"] {
 						&.active:hover,
 						&.active:focus {
 							border-right-color: transparent;
-							border-left-color: var(--primary);
+							border-left-color: var(--primary-300);
 						}
 					}
 				}

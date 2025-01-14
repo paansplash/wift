@@ -4,7 +4,7 @@
         data-image-src="assets/img/demos/architecture-2/generic/generic-3.jpg" style="min-height: 400px">
     </div>
     <div class="custom-section-middle-content bg-primary-100 p-5">
-        <div class="owl-carousel owl-theme nav-style-1 nav-svg-arrows-1 nav-light custom-hide-prev-nav custom-dots-style-1 custom-dots-style-1-light mb-0"
+        <div class="owl-carousel owl-theme nav-style-1 nav-svg-arrows-1 nav-light custom-hide-prev-nav custom-dots-style-1 custom-dots-style-1-light mb-0 steps"
             data-plugin-options="{'responsive': {'0': { 'items': 1}, '576': {'items': 1}, '768': {'items': 1, 'dots': true, 'nav': false}, '992': {'items': 1}, '1200': {'items': 1}}, 'loop': true, 'nav': true, 'dots': false, 'margin': 20, 'refresh': true}">
             <div class="pt-4 pb-3">
                 <h2 class="custom-heading-style-1 text-4-5 mb-4">
@@ -20,7 +20,7 @@
                     <span class="custom-heading-style-1-step">02</span>
                     <span class="custom-heading-style-1-text">Share Your Wish List</span>
                 </h2>
-                <p class="text-3-5 text-color-light opacity-4 pe-5 me-3 mb-0">
+                <p class="text-3-5 text-color-light opacity-4 pe-5 me-3 mb-0 ">
                     Easily share the wish list with guests via email, social media, or QR codes.
                 </p>
             </div>

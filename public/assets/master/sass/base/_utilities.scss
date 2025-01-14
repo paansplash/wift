@@ -195,9 +195,9 @@ html[xmlns] .clearfix {
 
 /* Gradient Font - Skin */
 .gradient-text-color {
-	color: var(--primary);
-	background: linear-gradient(to bottom right, var(--primary), var(--secondary));
-	background-image: linear-gradient(to right, var(--primary), var(--secondary));
+	color: var(--primary-300);
+	background: linear-gradient(to bottom right, var(--primary-300), var(--secondary));
+	background-image: linear-gradient(to right, var(--primary-300), var(--secondary));
 }
 
 /* Position */
@@ -970,24 +970,24 @@ html.dark {
 
 /* Background Gradient - Skin */
 .bg-gradient {
-	background-color: var(--primary) !important;
-	background-image: linear-gradient(to right, var(--primary) 0%, var(--secondary) 100%) !important;
+	background-color: var(--primary-300) !important;
+	background-image: linear-gradient(to right, var(--primary-300) 0%, var(--secondary) 100%) !important;
 }
 
 .bg-gradient-to-top {
-	background-color: var(--primary) !important;
-	background-image: linear-gradient(to top, var(--primary) 0%, var(--secondary) 100%) !important;
+	background-color: var(--primary-300) !important;
+	background-image: linear-gradient(to top, var(--primary-300) 0%, var(--secondary) 100%) !important;
 }
 
 .bg-gradient-to-bottom {
-	background-color: var(--primary) !important;
-	background-image: linear-gradient(to bottom, var(--primary) 0%, var(--secondary) 100%) !important;
+	background-color: var(--primary-300) !important;
+	background-image: linear-gradient(to bottom, var(--primary-300) 0%, var(--secondary) 100%) !important;
 }
 
 /* Color Transition - Skin */
 @keyframes colorTransition {
 	0% {
-		background-color: var(--primary);
+		background-color: var(--primary-300);
 	}
 	33% {
 		background-color: var(--secondary);

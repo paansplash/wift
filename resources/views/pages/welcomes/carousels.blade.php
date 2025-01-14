@@ -48,20 +48,19 @@
                 <div
                     class="container container-xl-custom custom-container-style-2 position-relative z-index-3 h-100 pt-5 mt-5 mt-sm-3">
                     <div class="row align-items-center h-100">
-                        <div class="col">
+                        <div class="col landing-carousel">
                             <div class="overflow-hidden mb-2 mb-sm-1 mb-md-0">
-                                <h1 class="text-color-light font-weight-black line-height-1 text-10 text-md-13 text-lg-15 ls-0 mb-0 appear-animation"
-                                    data-appear-animation="maskUp">Arch Design Studio</h1>
+                                <h1 class="text-color-light font-weight-black line-height-1 text-10 text-md-13 text-lg-15 ls-0 mb-0 appear-animation "
+                                    data-appear-animation="maskUp">Wish With Gift</h1>
                             </div>
                             <div class="overflow-hidden opacity-8 mb-1">
                                 <h2 class="text-color-light line-height-6 line-height-md-2 text-5 text-md-6 positive-ls-3 mb-0 appear-animation"
-                                    data-appear-animation="maskUp" data-appear-animation-delay="250">A
-                                    Very Personal Approach to Every Client</h2>
+                                    data-appear-animation="maskUp" data-appear-animation-delay="250">Show Love Beyond Distance</h2>
                             </div>
                             <div class="overflow-hidden opacity-6 mb-5">
                                 <p class="text-color-light text-3-5 mb-0 appear-animation"
                                     data-appear-animation="maskUp" data-appear-animation-delay="500">
-                                    Elegant Solutions to Complex Problems</p>
+                                    Thoughtful Gifts for Every Special Moment.</p>
                             </div>
                             <a href="#start" data-hash data-hash-offset="0" data-hash-offset-lg="140"
                                 class="btn btn-primary custom-btn-style-1 font-weight-bold text-3 px-5 py-3 appear-animation"
@@ -78,7 +77,7 @@
                 <div
                     class="container container-xl-custom custom-container-style-2 position-relative z-index-3 h-100 pt-5 mt-5 mt-sm-3">
                     <div class="row align-items-center justify-content-end h-100">
-                        <div class="col text-end">
+                        <div class="col text-end landing-carousel">
                             <div class="overflow-hidden mb-2 mb-sm-1 mb-md-0">
                                 <h1 class="text-color-light font-weight-black line-height-1 text-10 text-md-13 text-lg-15 ls-0 mb-0 appear-animation d-none"
                                     data-appear-animation="maskUp">Arch Design Studio</h1>
