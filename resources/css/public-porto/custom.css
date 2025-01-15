@@ -6,29 +6,29 @@
     color: #f586a3 !important;
 }
 
-#header .header-nav.header-nav-line nav>ul li>a {
+#header .header-nav.header-nav-line nav > ul li > a {
     color: #ffb9c4 !important;
 }
 
-#header .header-nav.header-nav-line nav>ul li>a:before {
+#header .header-nav.header-nav-line nav > ul li > a:before {
     background: #f586a3 !important;
 }
 
 /* Active state */
-#header .header-nav.header-nav-line nav>ul li>a.active {
+#header .header-nav.header-nav-line nav > ul li > a.active {
     color: #ffb9c4 !important;
 }
 
-#header .header-nav.header-nav-line nav>ul li>a.active:before {
+#header .header-nav.header-nav-line nav > ul li > a.active:before {
     background: #ffb9c4 !important;
 }
 
 /* Hover state */
-#header .header-nav.header-nav-line nav>ul li>a:hover {
+#header .header-nav.header-nav-line nav > ul li > a:hover {
     color: #f586a3 !important;
 }
 
-#header .header-nav.header-nav-line nav>ul li>a:hover:before {
+#header .header-nav.header-nav-line nav > ul li > a:hover:before {
     background: #f586a3 !important;
 }
 
@@ -36,14 +36,20 @@
 .landing-carousel h2,
 .landing-carousel p {
     color: #f586a3 !important;
-    text-shadow: 
-        1px 1px 0 black, /* Bottom-right */
-        -1px -1px 0 black, /* Top-left */
-        1px -1px 0 black, /* Top-right */
-        -1px 1px 0 black; /* Bottom-left */
+    text-shadow: 1px 1px 0 black, /* Bottom-right */ -1px -1px 0 black,
+        /* Top-left */ 1px -1px 0 black, /* Top-right */ -1px 1px 0 black; /* Bottom-left */
 }
 
 .steps p,
-.steps h2{
+.steps h2 {
     color: #f586a3 !important;
+}
+
+.owl-carousel.nav-light.nav-svg-arrows-1 .owl-nav .owl-next svg polygon,
+.owl-carousel.nav-light.nav-svg-arrows-1 .owl-nav .owl-prev svg polygon {
+    fill: #f586a3 !important;
+}
+
+.parallax-background{
+    height: 120% !important;
 }

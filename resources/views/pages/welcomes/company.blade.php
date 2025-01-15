@@ -29,7 +29,7 @@
                             <div class="card custom-card-style-1 border-radius-0">
                                 <div class="card-body text-center p-5 mb-4">
                                     <img width="75" height="75"
-                                        src="assets/img/demos/architecture-2/icons/user.svg"
+                                        src="{{ asset('assets/img/demos/architecture-2/icons/user.svg') }}"
                                         alt="" data-icon
                                         data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary mt-3 mb-4 pb-3'}" />
                                     <h2
@@ -46,7 +46,7 @@
                             <div class="card custom-card-style-1 border-radius-0">
                                 <div class="card-body text-center p-5 mb-4">
                                     <img width="75" height="75"
-                                        src="assets/img/demos/architecture-2/icons/gear.svg"
+                                        src="{{ asset('assets/img/demos/architecture-2/icons/gear.svg') }}"
                                         alt="" data-icon
                                         data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary mt-3 mb-4 pb-3'}" />
                                     <h2
@@ -63,7 +63,7 @@
                             <div class="card custom-card-style-1 border-radius-0">
                                 <div class="card-body text-center p-5 mb-4">
                                     <img width="75" height="75"
-                                        src="assets/img/demos/architecture-2/icons/cash.svg"
+                                        src="{{ asset('assets/img/demos/architecture-2/icons/cash.svg') }}"
                                         alt="" data-icon
                                         data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary mt-3 mb-4 pb-3'}" />
                                     <h2

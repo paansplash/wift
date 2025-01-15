@@ -18,16 +18,25 @@
 
                     @include('pages.welcomes.company')
 
-                    @include('pages.welcomes.objectives')
-                    
                     <div class="container-fluid">
-                        <div class="row pt-5">
-                            <div class="col pt-4">
+                        <div class="row">
+                            <div class="col">
+                                <hr>
                             </div>
                         </div>
                     </div>
-                    @include('pages.welcomes.steps')
 
+                    @include('pages.welcomes.objectives')
+
+                    <div class="container-fluid">
+                        <div class="row pt-5">
+                            <div class="col">
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+
+                    @include('pages.welcomes.steps')
 
                 </div>
 

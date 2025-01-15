@@ -17,7 +17,7 @@
         <div class="position-absolute z-index-0 left-0 appear-animation" data-appear-animation="fadeInRightShorter"
             data-appear-animation-delay="2000" style="top: 190px;">
             <h2
-                class="text-color-dark custom-stroke-text-effect-2 custom-big-font-size-1 font-weight-black opacity-1 mb-0">
+                class="text-color-dark custom-stroke-text-effect-2 custom-big-font-size-1 font-weight-black opacity-4 mb-0" style="color: #f586ac !important;">
                 WISH WITH GIFT</h2>
         </div>
         <div class="pt-lg-5 ps-lg-5 mt-lg-5">

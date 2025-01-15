@@ -6,14 +6,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>@yield('title', 'Default Title')</title>
+    <title>@yield('title', 'Wift')</title>
 
-    <meta name="keywords" content="@yield('meta_keywords', 'WebSite Template')" />
-    <meta name="description" content="@yield('meta_description', 'Porto - Multipurpose Website Template')">
-    <meta name="author" content="@yield('meta_author', 'okler.net')">
+    <meta name="keywords" content="@yield('meta_keywords', 'Wish With Gift')" />
+    <meta name="description" content="@yield('meta_description', 'Wift - Wish With Gift')">
+    <meta name="author" content="@yield('meta_author', 'paansplash')">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ asset('assets/img/favicon.ico') }}" type="image/x-icon" />
+    <link rel="shortcut icon" href="{{ asset('assets/images/logos/icon2.png') }}" type="image/x-icon" />
     <link rel="apple-touch-icon" href="{{ asset('assets/img/apple-touch-icon.png') }}">
 
     <!-- Mobile Metas -->

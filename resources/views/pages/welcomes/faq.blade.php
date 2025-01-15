@@ -14,7 +14,7 @@
             </h2>
             <h3 class="text-transform-none text-color-dark font-weight-black text-10 line-height-2 mb-4">
                 Frequent Questions</h3>
-            <img src="assets/img/demos/architecture-2/divider.jpg" class="img-fluid opacity-5 mb-4 mt-2"
+            <img src="{{ asset('assets/img/demos/architecture-2/divider.jpg') }}" class="img-fluid opacity-5 mb-4 mt-2"
                 alt="" />
             <p class="custom-font-tertiary text-5 line-height-4 mb-4 mt-2">Lorem ipsum dolor sit amet,
                 consectetur adipiscing elit. Sed imperdiet libero</p>
@@ -126,7 +126,7 @@
                 <div>
                     <div class="card border-radius-0">
                         <img class="card-img-top border-radius-0"
-                            src="assets/img/demos/architecture-2/authors/author-1.jpg" alt="" />
+                            src="{{ asset('assets/img/demos/architecture-2/authors/author-1.jpg') }}" alt="" />
                         <div class="card-body text-center">
                             <h4 class="card-title font-weight-extra-bold text-color-dark text-5 mb-1">
                                 John Doe</h4>
@@ -140,7 +140,7 @@
                 <div>
                     <div class="card border-radius-0">
                         <img class="card-img-top border-radius-0"
-                            src="assets/img/demos/architecture-2/authors/author-2.jpg" alt="" />
+                            src="{{ asset('assets/img/demos/architecture-2/authors/author-2.jpg') }}" alt="" />
                         <div class="card-body text-center">
                             <h4 class="card-title font-weight-extra-bold text-color-dark text-5 mb-1">
                                 Janice Doe</h4>
@@ -154,7 +154,7 @@
                 <div>
                     <div class="card border-radius-0">
                         <img class="card-img-top border-radius-0"
-                            src="assets/img/demos/architecture-2/authors/author-1.jpg" alt="" />
+                            src="{{ asset('assets/img/demos/architecture-2/authors/author-1.jpg') }}" alt="" />
                         <div class="card-body text-center">
                             <h4 class="card-title font-weight-extra-bold text-color-dark text-5 mb-1">
                                 John Doe</h4>
@@ -180,13 +180,13 @@
                 PROFESSIONALS</h2>
             <h3 class="text-transform-none text-color-dark font-weight-black text-10 line-height-2 mb-4">
                 Meet Our Team</h3>
-            <img src="assets/img/demos/architecture-2/divider.jpg" class="img-fluid opacity-5 mb-4 mt-2"
+            <img src="{{ asset('assets/img/demos/architecture-2/divider.jpg') }}" class="img-fluid opacity-5 mb-4 mt-2"
                 alt="" />
             <p class="custom-font-tertiary text-5 line-height-4 mb-4 mt-2">Lorem ipsum dolor sit amet,
                 consectetur adipiscing elit. Sed imperdiet libero</p>
             <p class="text-3-5 pb-3 mb-4">Vestibulum auctor felis eget orci semper vestibulum.
                 Pellentesque ultricies nibh gravida, accumsan libero luctus, molestie nunc.</p>
-            <a href="demo-architecture-2-contact.html"
+            <a href="{{ route('contact') }}"
                 class="btn btn-primary custom-btn-style-1 custom-btn-style-1-right font-weight-bold text-3 px-5 py-3">CONTACT
                 US</a>
         </div>

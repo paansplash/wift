@@ -10,7 +10,7 @@
             </div>
             <div class="col-xl-3 text-xl-end appear-animation" data-appear-animation="fadeInRightShorterPlus"
                 data-appear-animation-delay="500">
-                <a href="demo-architecture-2-contact.html"
+                <a href="{{ route('contact') }}"
                     class="btn btn-light custom-btn-style-1 font-weight-bold text-color-dark text-3 px-5 py-3">CONTACT
                     US</a>
             </div>

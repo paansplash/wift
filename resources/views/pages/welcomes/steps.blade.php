@@ -1,7 +1,15 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col pt-4">
+            <h2 class="text-color-default positive-ls-3 line-height-3 text-5 mb-2 text-center">HOW IT WORKS</h2>
+        </div>
+    </div>
+</div>
+
 <div class="custom-section">
     <div class="custom-section-left-content parallax p-0 m-0" data-plugin-parallax
         data-plugin-options="{'speed': 1.5, 'fadeIn': true}"
-        data-image-src="assets/img/demos/architecture-2/generic/generic-3.jpg" style="min-height: 400px">
+        data-image-src="{{ asset('assets/images/backgrounds/gift3.jpg') }}" style="min-height: 400px">
     </div>
     <div class="custom-section-middle-content bg-primary-100 p-5">
         <div class="owl-carousel owl-theme nav-style-1 nav-svg-arrows-1 nav-light custom-hide-prev-nav custom-dots-style-1 custom-dots-style-1-light mb-0 steps"
@@ -46,7 +54,8 @@
     </div>
 
     <div class="custom-section-right-content parallax p-0 m-0" data-plugin-parallax
-        data-plugin-options="{'speed': 3, 'parallaxDirection': 'bottom', 'fadeIn': true}"
-        data-image-src="assets/img/demos/architecture-2/generic/generic-4.jpg" style="min-height: 400px">
+        data-plugin-options="{'speed': 1.5, 'fadeIn': true}" data-image-src="{{ asset('assets/images/backgrounds/gift2.jpg') }}"
+
+        style="min-height: 400px">
     </div>
 </div>

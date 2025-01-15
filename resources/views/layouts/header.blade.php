@@ -5,10 +5,10 @@
         <div class="header-container container-fluid">
             <div class="header-row">
                 <div class="header-column align-items-start justify-content-center">
-                    <div class="header-logo z-index-2 col-lg-2 px-0">
+                    <div class="header-logo z-index-2 col-lg-2 px-3">
                         <a href="demo-architecture-2.html">
-                            <img alt="Porto" width="123" height="32"
-                                src="assets/images/logos/icon.png">
+                            <img alt="Porto" width="70" height="auto"
+                                src="assets/images/logos/icon2.png">
                         </a>
                     </div>
                 </div>
@@ -58,7 +58,7 @@
                         <i class="fas fa-bars"></i>
                     </button>
                 </div>
-                <div class="header-column align-items-end justify-content-center d-none d-lg-flex">
+                <div class="header-column align-items-end justify-content-center d-none d-lg-flex px-3">
                     <ul
                         class="header-social-icons social-icons social-icons-clean social-icons-icon-light social-icons-medium custom-social-icons-divider">
                         <li class="social-icons-facebook">
