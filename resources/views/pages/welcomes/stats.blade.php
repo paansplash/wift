@@ -1,4 +1,4 @@
-<div class="container container-xl-custom py-5 mt-5 mb-4">
+<div class="container container-xl-custom py-5 mb-4">
     <div class="row py-4">
         <div class="col-lg-5 col-xl-4 position-relative mb-4">
             <div class="position-absolute z-index-0 appear-animation"
