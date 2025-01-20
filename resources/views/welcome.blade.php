@@ -25,8 +25,8 @@
                             </div>
                         </div>
                     </div>
+                    @include('pages.welcomes.steps')
 
-                    @include('pages.welcomes.objectives')
 
                     <div class="container-fluid">
                         <div class="row pt-5">
@@ -35,8 +35,8 @@
                             </div>
                         </div>
                     </div>
+                    @include('pages.welcomes.objectives')
 
-                    @include('pages.welcomes.steps')
 
                 </div>
 

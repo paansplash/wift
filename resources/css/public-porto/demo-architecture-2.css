@@ -383,23 +383,35 @@ html.sticky-header-active #header .header-body {
 /*
 * Card
 */
+/* Default styles for the card */
 .custom-card-style-1 {
-    transition: ease background-color 300ms;
-    background-color: var(--primary-300) !important;
+    transition: background-color 300ms ease;
+    background-color: var(--light) !important;
 }
 
 .custom-card-style-1 p,
 .custom-card-style-1 h2 {
-    color: #f586a3 !important;
+    color: #000 !important;
 }
 
 .custom-card-style-1 .animated-icon svg path,
 .custom-card-style-1 .animated-icon svg rect {
-    fill: #f586a3 !important;
+    fill: #000 !important;
 }
 
+/* Hover effect */
 .custom-card-style-1:hover {
-    background-color: #fff;
+    background-color: var(--primary-300) !important;
+}
+
+.custom-card-style-1:hover h2,
+.custom-card-style-1:hover p {
+    color: #f586ac !important;
+}
+
+.custom-card-style-1:hover .animated-icon svg path,
+.custom-card-style-1:hover .animated-icon svg rect {
+    fill: #f586ac !important;
 }
 
 .custom-card-style-1:hover p {
@@ -651,19 +663,7 @@ html.sticky-header-active #header .header-body {
 /*
 * Card
 */
-.custom-card-style-1:hover {
-    background-color: #fff !important;
-}
 
-.custom-card-style-1:hover h2,
-.custom-card-style-1:hover p {
-    color: var(--primary-300) !important;
-}
-
-.custom-card-style-1:hover .animated-icon svg path,
-.custom-card-style-1:hover .animated-icon svg rect {
-    fill: var(--primary-300) !important;
-}
 
 /*
 * Owl Carousel
