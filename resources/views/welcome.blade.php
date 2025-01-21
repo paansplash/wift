@@ -48,10 +48,10 @@
                     </div>
                 </div>
 
-                {{-- @include('pages.welcomes.collaborators') --}}
+                @include('pages.welcomes.collaborators')
 
 
-                @include('pages.welcomes.stats')
+                {{-- @include('pages.welcomes.stats') --}}
 
             </section>
 
@@ -61,7 +61,7 @@
 
             {{-- @include('pages.welcomes.contact-us') --}}
 
-            {{-- @include('pages.welcomes.faq') --}}
+            @include('pages.welcomes.faq')
 
             {{-- @include('pages.welcomes.teams') --}}
 

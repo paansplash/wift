@@ -118,7 +118,7 @@
 
     <hr class="my-0">
 
-    <div class="row py-5 my-5">
+    {{-- <div class="row py-5 my-5">
         <div class="col-lg-6 col-xl-7 mx-auto mb-5 mb-lg-0 appear-animation"
             data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="500">
             <div class="owl-carousel owl-theme nav-style-1 nav-outside nav-font-size-lg custom-nav-grey mb-0"
@@ -190,5 +190,5 @@
                 class="btn btn-primary custom-btn-style-1 custom-btn-style-1-right font-weight-bold text-3 px-5 py-3">CONTACT
                 US</a>
         </div>
-    </div>
+    </div> --}}
 </div>
