@@ -65,13 +65,13 @@
         </div>
     </div>
 
-    @include('layouts.header')
+    @include('layouts.user.header')
 
     <div class="body">
         @yield('content')
     </div>
 
-    @include('layouts.footer')
+    @include('layouts.user.footer')
 
     <!-- Scripts -->
     <script src="{{ asset('assets/vendor/plugins/js/plugins.min.js') }}"></script>

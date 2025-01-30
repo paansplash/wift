@@ -21,8 +21,8 @@
                                 <ul class="nav nav-pills" id="mainNav">
                                     <li><a href="{{ route('welcome') }}" class="nav-link {{ Request::routeIs('welcome') ? 'active' : '' }}">Home</a></li>
                                     <li><a href="{{ route('about-us') }}" class="nav-link {{ Request::routeIs('about-us') ? 'active' : '' }}">About</a></li>
-                                    <li><a href="{{ route('projects') }}" class="nav-link {{ Request::routeIs('projects') ? 'active' : '' }}">Projects</a></li>
-                                    <li class="dropdown">
+                                    {{-- <li><a href="{{ route('projects') }}" class="nav-link {{ Request::routeIs('projects') ? 'active' : '' }}">Projects</a></li> --}}
+                                    {{-- <li class="dropdown">
                                         <a href="{{ route('services') }}" 
                                            class="nav-link dropdown-toggle {{ Request::routeIs('services') || Request::routeIs('services-detail') ? 'active' : '' }}">
                                            Services
@@ -34,9 +34,9 @@
                                             <li><a href="{{ route('services-detail') }}" class="dropdown-item {{ Request::routeIs('services-detail') ? 'active' : '' }}">Exterior Design</a></li>
                                             <li><a href="{{ route('services-detail') }}" class="dropdown-item {{ Request::routeIs('services-detail') ? 'active' : '' }}">Construction Drawings</a></li>
                                         </ul>
-                                    </li>
-                                    <li><a href="{{ route('blog') }}" class="nav-link {{ Request::routeIs('blog') ? 'active' : '' }}">Blog</a></li>
-                                    <li><a href="{{ route('contact') }}" class="nav-link {{ Request::routeIs('contact') ? 'active' : '' }}">Contact</a></li>
+                                    </li> --}}
+                                    <li><a href="{{ route('contact') }}" class="nav-link {{ Request::routeIs('contact') ? 'active' : '' }}">Contact Us</a></li>
+                                    <li><a href="{{ route('login') }}" class="nav-link {{ Request::routeIs('login') ? 'active' : '' }}">Login</a></li>
                                 </ul>
                             </nav>
                             

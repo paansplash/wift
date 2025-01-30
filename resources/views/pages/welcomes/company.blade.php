@@ -17,7 +17,7 @@
                                         data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary mt-3 mb-4 pb-3'}" />
                                     <h2
                                         class="text-color-dark font-weight-bold line-height-1 text-6-5 mb-3">
-                                        Effortless Gift Management</h2>
+                                        Gift Management</h2>
                                     <p class="mb-0">Track purchased gifts, get delivery notifications, and support both physical and digital items with ease.</p>
                                 </div>
                             </div>

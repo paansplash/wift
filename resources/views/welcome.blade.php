@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.user.app')
 
 @section('content')
     <div role="main" class="main">
@@ -67,12 +67,6 @@
 
             {{-- @include('pages.welcomes.news') --}}
         </div>
-
-        <div class="position-relative" style="margin-top: 50px;">
-            <img src="assets/img/demos/architecture-2/backgrounds/arch-plan-3.jpg"
-                class="img-fluid position-absolute bottom-0 left-0" alt="" />
-        </div>
-
     </div>
 
 

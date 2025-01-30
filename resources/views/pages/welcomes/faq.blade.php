@@ -3,12 +3,11 @@
         <div class="col-lg-5 col-xl-4 position-relative mb-5 mb-lg-0 appear-animation"
             data-appear-animation="fadeInRightShorterPlus" data-appear-animation-delay="250"
             data-plugin-options="{'accY': -400}">
-            <div class="position-absolute z-index-0 appear-animation"
-                data-appear-animation="fadeInRightShorter" data-appear-animation-delay="500"
-                style="top: 102px; left: -246px;">
+            <div class="position-absolute z-index-0 appear-animation" data-appear-animation="fadeInRightShorter"
+                data-appear-animation-delay="500" style="top: 102px; left: -246px;">
                 <h2
                     class="text-color-dark custom-stroke-text-effect-1 custom-big-font-size-3 font-weight-black opacity-1 mb-0">
-                    SOLUTIONS</h2>
+                    WISH WIFT WIFT</h2>
             </div>
             <h2 class="text-color-default positive-ls-3 line-height-3 text-4 mb-2">COMMON QUESTIONS
             </h2>
@@ -16,10 +15,10 @@
                 Frequent Questions</h3>
             <img src="{{ asset('assets/img/demos/architecture-2/divider.jpg') }}" class="img-fluid opacity-5 mb-4 mt-2"
                 alt="" />
-            <p class="custom-font-tertiary text-5 line-height-4 mb-4 mt-2">Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit. Sed imperdiet libero</p>
-            <p class="text-3-5 pb-2 mb-4">Vestibulum auctor felis eget orci semper vestibulum.
-                Pellentesque ultricies nibh gravida, accumsan libero luctus, molestie nunc.</p>
+            <p class="custom-font-tertiary text-5 line-height-4 mb-4 mt-2">Have any questions? Feel free to ask—we're
+                happy to assist you!</p>
+            <p class="text-3-5 pb-2 mb-4">Whether it's about our services, products, or anything else, we're here to
+                provide the answers you need.</p>
             <a href="demo-architecture-2-contact.html"
                 class="btn btn-primary custom-btn-style-1 font-weight-bold text-3 px-5 py-3">CONTACT
                 US</a>
@@ -30,88 +29,86 @@
                 <div class="card card-default">
                     <div class="card-header">
                         <h4 class="card-title m-0">
-                            <a class="accordion-toggle text-color-dark font-weight-bold"
-                                data-bs-toggle="collapse" href="#collapseFAQOne">
-                                What does an architect actually do?
+                            <a class="accordion-toggle text-color-dark font-weight-bold" data-bs-toggle="collapse"
+                                href="#collapseFAQOne">
+                                What wift is all about?
                             </a>
                         </h4>
                     </div>
                     <div id="collapseFAQOne" class="collapse show" data-bs-parent="#FAQAccordion">
-                        <div class="card-body ps-4 w-md-75pct">
-                            <p class="mb-0">Cras a elit sit amet leo accumsan volutpat. Suspendisse
-                                hendrerit vehicula leo, vel efficitur felis ultrices non. Integer
-                                aliquet ullamcorper dolor, quis sollicitudin.</p>
+                        <div class="card-body ps-4">
+                            <p class="mb-0">Wift is a platform where you can create and share wishlists with others.
+                                It helps you let people know what you truly want, making it easier for them to gift you
+                                something meaningful.</p>
                         </div>
                     </div>
                 </div>
                 <div class="card card-default">
                     <div class="card-header">
                         <h4 class="card-title m-0">
-                            <a class="accordion-toggle text-color-dark font-weight-bold"
-                                data-bs-toggle="collapse" href="#collapseFAQTwo">
-                                Why do I need an architect?
+                            <a class="accordion-toggle text-color-dark font-weight-bold" data-bs-toggle="collapse"
+                                href="#collapseFAQTwo">
+                                Who need to use wift?
                             </a>
                         </h4>
                     </div>
                     <div id="collapseFAQTwo" class="collapse" data-bs-parent="#FAQAccordion">
                         <div class="card-body ps-4">
-                            <p class="mb-0">Cras a elit sit amet leo accumsan volutpat. Suspendisse
-                                hendrerit vehicula leo, vel efficitur felis ultrices non. Integer
-                                aliquet ullamcorper dolor, quis sollicitudin.</p>
+                            <p class="mb-0">Wift is perfect for anyone who wants a smarter way to give and receive
+                                gifts.</p>
                         </div>
                     </div>
                 </div>
                 <div class="card card-default">
                     <div class="card-header">
                         <h4 class="card-title m-0">
-                            <a class="accordion-toggle text-color-dark font-weight-bold"
-                                data-bs-toggle="collapse" href="#collapseFAQFour">
-                                What's the largest project you've ever worked on?
+                            <a class="accordion-toggle text-color-dark font-weight-bold" data-bs-toggle="collapse"
+                                href="#collapseFAQThree">
+                                What makes Wift different from other wishlist platforms?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseFAQThree" class="collapse" data-bs-parent="#FAQAccordion">
+                        <div class="card-body ps-4">
+                            <p class="mb-0">Wift isn’t just a wishlist—it’s a way to share your wishes effortlessly.
+                                It helps avoid duplicate gifts, allows loved ones to contribute to your dreams, and
+                                makes gift-giving more meaningful. Plus, it’s easy to use and share with anyone!</p>
+                        </div>
+                    </div>
+                </div><div class="card card-default">
+                    <div class="card-header">
+                        <h4 class="card-title m-0">
+                            <a class="accordion-toggle text-color-dark font-weight-bold" data-bs-toggle="collapse"
+                                href="#collapseFAQFour">
+                                Why do I need to use wift?
                             </a>
                         </h4>
                     </div>
                     <div id="collapseFAQFour" class="collapse" data-bs-parent="#FAQAccordion">
                         <div class="card-body ps-4">
-                            <p class="mb-0">Cras a elit sit amet leo accumsan volutpat. Suspendisse
-                                hendrerit vehicula leo, vel efficitur felis ultrices non. Integer
-                                aliquet ullamcorper dolor, quis sollicitudin.</p>
+                            <p class="mb-0">Wift lets you express your wishes without saying them outright, making
+                                gifting more thoughtful and effortless.</p>
                         </div>
                     </div>
                 </div>
                 <div class="card card-default">
                     <div class="card-header">
                         <h4 class="card-title m-0">
-                            <a class="accordion-toggle text-color-dark font-weight-bold"
-                                data-bs-toggle="collapse" href="#collapseFAQFive">
-                                What is the structure of your architecture practice?
+                            <a class="accordion-toggle text-color-dark font-weight-bold" data-bs-toggle="collapse"
+                                href="#collapseFAQFive">
+                                How do I use wift?
                             </a>
                         </h4>
                     </div>
                     <div id="collapseFAQFive" class="collapse" data-bs-parent="#FAQAccordion">
                         <div class="card-body ps-4">
-                            <p class="mb-0">Cras a elit sit amet leo accumsan volutpat. Suspendisse
-                                hendrerit vehicula leo, vel efficitur felis ultrices non. Integer
-                                aliquet ullamcorper dolor, quis sollicitudin.</p>
+                            <p class="mb-0">Getting started with Wift is easy! Simply sign up, create your wishlist,
+                                and fill it with your most desired gifts. Share it with friends and family, and let them
+                                make your wishes come true—no duplicates, no guessing, just perfect surprises!</p>
                         </div>
                     </div>
                 </div>
-                <div class="card card-default">
-                    <div class="card-header">
-                        <h4 class="card-title m-0">
-                            <a class="accordion-toggle text-color-dark font-weight-bold"
-                                data-bs-toggle="collapse" href="#collapseFAQTSix">
-                                Can you work with clients long distance?
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="collapseFAQTSix" class="collapse" data-bs-parent="#FAQAccordion">
-                        <div class="card-body ps-4">
-                            <p class="mb-0">Cras a elit sit amet leo accumsan volutpat. Suspendisse
-                                hendrerit vehicula leo, vel efficitur felis ultrices non. Integer
-                                aliquet ullamcorper dolor, quis sollicitudin.</p>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>

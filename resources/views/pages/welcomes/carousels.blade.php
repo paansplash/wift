@@ -62,7 +62,7 @@
                                     data-appear-animation="maskUp" data-appear-animation-delay="500">
                                     Thoughtful Gifts for Every Special Moment.</p>
                             </div>
-                            <a href="#start" data-hash data-hash-offset="0" data-hash-offset-lg="140"
+                            <a href="/login" data-hash data-hash-offset="0" data-hash-offset-lg="140"
                                 class="btn btn-primary custom-btn-style-1 font-weight-bold text-3 px-5 py-3 appear-animation"
                                 data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="750">GET
                                 STARTED</a>
