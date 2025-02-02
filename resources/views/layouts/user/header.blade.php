@@ -7,8 +7,7 @@
                 <div class="header-column align-items-start justify-content-center">
                     <div class="header-logo z-index-2 col-lg-2 px-3">
                         <a href="demo-architecture-2.html">
-                            <img alt="Porto" width="70" height="auto"
-                                src="assets/images/logos/icon2.png">
+                            <img alt="Porto" width="70" height="auto" src="assets/images/logos/icon2.png">
                         </a>
                     </div>
                 </div>
@@ -17,10 +16,14 @@
                         class="header-nav header-nav-line header-nav-bottom-line header-nav-bottom-line-effect-1 header-nav-dropdowns-dark header-nav-light-text justify-content-end">
                         <div
                             class="header-nav-main header-nav-main-arrows header-nav-main-mobile-dark header-nav-main-dropdown-no-borders header-nav-main-effect-3 header-nav-main-sub-effect-1">
-                            <nav class="collapse"> 
+                            <nav class="collapse">
                                 <ul class="nav nav-pills" id="mainNav">
-                                    <li><a href="{{ route('welcome') }}" class="nav-link {{ Request::routeIs('welcome') ? 'active' : '' }}">Home</a></li>
-                                    <li><a href="{{ route('about-us') }}" class="nav-link {{ Request::routeIs('about-us') ? 'active' : '' }}">About</a></li>
+                                    <li><a href="{{ route('welcome') }}"
+                                            class="nav-link {{ Request::routeIs('welcome') ? 'active' : '' }}">Home</a>
+                                    </li>
+                                    <li><a href="{{ route('about-us') }}"
+                                            class="nav-link {{ Request::routeIs('about-us') ? 'active' : '' }}">About</a>
+                                    </li>
                                     {{-- <li><a href="{{ route('projects') }}" class="nav-link {{ Request::routeIs('projects') ? 'active' : '' }}">Projects</a></li> --}}
                                     {{-- <li class="dropdown">
                                         <a href="{{ route('services') }}" 
@@ -35,11 +38,17 @@
                                             <li><a href="{{ route('services-detail') }}" class="dropdown-item {{ Request::routeIs('services-detail') ? 'active' : '' }}">Construction Drawings</a></li>
                                         </ul>
                                     </li> --}}
-                                    <li><a href="{{ route('contact') }}" class="nav-link {{ Request::routeIs('contact') ? 'active' : '' }}">Contact Us</a></li>
-                                    <li><a href="{{ route('login') }}" class="nav-link {{ Request::routeIs('login') ? 'active' : '' }}">Login</a></li>
+                                    <li><a href="{{ route('contact') }}"
+                                            class="nav-link {{ Request::routeIs('contact') ? 'active' : '' }}">Contact
+                                            Us</a></li>
+                                    @guest
+                                        <li><a href="{{ route('login') }}"
+                                                class="nav-link {{ Request::routeIs('login') ? 'active' : '' }}">Login</a>
+                                        </li>
+                                    @endguest
                                 </ul>
                             </nav>
-                            
+
                         </div>
                     </div>
                     {{-- <div class="header-nav-features ps-0 ms-3">

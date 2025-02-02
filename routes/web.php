@@ -8,19 +8,19 @@ Route::get('/', function () {
 })->name('welcome'); // Name the route "welcome"
 
 Route::get('/about-us', function () {
-    return view('pages.admin.about-us');
+    return view('about-us');
 })->name('about-us'); // Name the route "about-us"
 
 Route::get('/projects', function () {
-    return view('pages.admin.projects');
+    return view('projects');
 })->name('projects'); // Name the route "projects"
 
 Route::get('/services', function () {
-    return view('pages.admin.services');
+    return view('services');
 })->name('services'); // Name the route "services"
 
 Route::get('/services-detail', function () {
-    return view('pages.admin.services-detail');
+    return view('services-detail');
 })->name('services-detail'); // Name the route "services-detail"
 
 Route::get('/login', function () {
@@ -28,15 +28,15 @@ Route::get('/login', function () {
 })->name('login');
 
 Route::get('/contact', function () {
-    return view('pages.admin.contact');
+    return view('contact');
 })->name('contact'); // Name the route "contact"
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
 Route::middleware(['role:Super Admin,Admin'])->group(function () {
 
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('admin.home');
     Route::resource('users', App\Http\Controllers\UserController::class);
     Route::resource('roles', App\Http\Controllers\RoleController::class);
     Route::resource('permissions', App\Http\Controllers\PermissionController::class);
@@ -50,10 +50,12 @@ Route::middleware(['role:Super Admin,Admin'])->group(function () {
     Route::resource('orderItems', App\Http\Controllers\OrderItemController::class);
     Route::resource('deliveries', App\Http\Controllers\DeliveryController::class);
     Route::resource('statuses', App\Http\Controllers\StatusController::class);
-
 });
 
 
-Route::middleware(['role:user'])->group(function () {
-    Route::resource('wishers', App\Http\Controllers\WisherController::class);
+Route::middleware(['role:User'])->group(function () {
+    Route::resource('home', App\Http\Controllers\User\HomeController::class)->names('user.home');
+    Route::resource('wishers', App\Http\Controllers\User\WisherController::class);
+    Route::resource('wishlists', App\Http\Controllers\User\WishlistController::class);
+    Route::resource('wishlistItems', App\Http\Controllers\User\WishlistItemController::class);
 });

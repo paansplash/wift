@@ -2,7 +2,6 @@
 
 @section('content')
     <div role="main" class="main">
-
         <section
             class="custom-page-header-1 page-header page-header-modern page-header-lg bg-primary-100 border-0 z-index-1 my-0">
             <div class="custom-page-header-1-wrapper overflow-hidden">
