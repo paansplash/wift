@@ -6479,8 +6479,8 @@ window.theme.fn = {
 		targetClass: '.section',
 		dotsNav: true,
 		changeHeaderLogo: true,
-		headerLogoDark: 'img/logo-default-slim.png',
-		headerLogoLight: 'img/logo-default-slim-dark.png'
+		headerLogoDark: 'assets/img/logo-default-slim.png',
+		headerLogoLight: 'assets/img/logo-default-slim-dark.png'
 	};
 
 	PluginSectionScroll.prototype = {

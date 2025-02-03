@@ -14,7 +14,7 @@
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('assets/images/logos/icon2.png') }}" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="{{ asset('assets/img/apple-touch-icon.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('assets/images/logos/icon2.png') }}">
 
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
@@ -26,23 +26,17 @@
 
     <!-- Vendor CSS -->
     {{-- <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css"> --}}
-    <link rel="stylesheet" href="vendor/fontawesome-free/css/all.min.css">
-    <link rel="stylesheet" href="vendor/animate/animate.compat.css">
-    <link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/vendor/fontawesome-free/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/vendor/animate/animate.compat.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/vendor/simple-line-icons/css/simple-line-icons.min.css') }}">
     {{-- <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.min.css"> --}}
     {{-- <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.theme.default.min.css"> --}}
     {{-- <link rel="stylesheet" href="vendor/magnific-popup/magnific-popup.min.css"> --}}
-    <link rel="stylesheet" href="vendor/bootstrap-star-rating/css/star-rating.min.css">
-    <link rel="stylesheet" href="vendor/bootstrap-star-rating/themes/krajee-fas/theme.min.css">
-
-    <!-- Theme CSS -->
-    <link rel="stylesheet" href="css/theme.css">
-    <link rel="stylesheet" href="css/theme-elements.css">
-    <link rel="stylesheet" href="css/theme-blog.css">
-    <link rel="stylesheet" href="css/theme-shop.css">
+    {{-- <link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap-star-rating/css/star-rating.min.css') }}"> --}}
+    {{-- <link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap-star-rating/themes/krajee-fas/theme.min.css') }}"> --}}
 
     <!-- Skin CSS -->
-    <link id="skinCSS" rel="stylesheet" href="css/skins/default.css">
+    {{-- <link id="skinCSS" rel="stylesheet" href="{{ asset('assets/css/skins/default.css') }}"> --}}
 
     <!-- Theme Custom CSS -->
     {{-- <link rel="stylesheet" href="css/custom.css"> --}}
