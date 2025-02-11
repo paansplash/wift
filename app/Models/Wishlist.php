@@ -9,7 +9,7 @@ class Wishlist extends Model
     public $table = 'wishlists';
 
     public $fillable = [
-        'user_id',
+        'wisher_id',
         'title',
         'description'
     ];
@@ -20,7 +20,7 @@ class Wishlist extends Model
     ];
 
     public static array $rules = [
-        'user_id' => 'required',
+        'wisher_id' => 'required',
         'title' => 'required|string|max:255',
         'description' => 'nullable|string|max:65535',
         'deleted_at' => 'nullable',
@@ -28,9 +28,9 @@ class Wishlist extends Model
         'updated_at' => 'nullable'
     ];
 
-    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function wisher(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(\App\Models\User::class, 'user_id');
+        return $this->belongsTo(\App\Models\Wisher::class, 'wisher_id');
     }
 
     public function orders(): \Illuminate\Database\Eloquent\Relations\HasMany

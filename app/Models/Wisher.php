@@ -46,5 +46,10 @@ class Wisher extends Model
         'deleted_at' => 'nullable'
     ];
 
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(\App\Models\User::class, 'user_id');
+    }
+
     
 }

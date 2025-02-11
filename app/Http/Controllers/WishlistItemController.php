@@ -6,6 +6,9 @@ use App\Http\Requests\CreateWishlistItemRequest;
 use App\Http\Requests\UpdateWishlistItemRequest;
 use App\Http\Controllers\AppBaseController;
 use App\Repositories\WishlistItemRepository;
+use App\Repositories\WishlistRepository;
+use App\Repositories\InventoryRepository;
+use App\Repositories\StatusRepository;
 use Illuminate\Http\Request;
 use Laracasts\Flash\Flash;
 
@@ -13,10 +16,16 @@ class WishlistItemController extends AppBaseController
 {
     /** @var WishlistItemRepository $wishlistItemRepository*/
     private $wishlistItemRepository;
+    private $wishlistRepository;
+    private $inventoryRepository;
+    private $statusRepository;
 
-    public function __construct(WishlistItemRepository $wishlistItemRepo)
+    public function __construct(WishlistItemRepository $wishlistItemRepo, WishlistRepository $wishlistRepo, InventoryRepository $inventoryRepo, StatusRepository $statusRepo)
     {
         $this->wishlistItemRepository = $wishlistItemRepo;
+        $this->wishlistRepository = $wishlistRepo;
+        $this->inventoryRepository = $inventoryRepo;
+        $this->statusRepository = $statusRepo;
     }
 
     /**
@@ -35,7 +44,11 @@ class WishlistItemController extends AppBaseController
      */
     public function create()
     {
-        return view('pages.admin.wishlist_items.create');
+        $wishlists = $this->wishlistRepository->getWishlists();
+        $inventories = $this->inventoryRepository->getInventories();
+        $statuses = $this->statusRepository->getActivityStatuses();
+
+        return view('pages.admin.wishlist_items.create', compact('wishlists', 'inventories', 'statuses'));
     }
 
     /**

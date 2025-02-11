@@ -3,7 +3,7 @@
         <table class="table" id="wishlists-table">
             <thead>
             <tr>
-                <th>User</th>
+                <th>Wisher</th>
                 <th>Title</th>
                 <th>Description</th>
                 <th colspan="3">Action</th>
@@ -12,7 +12,7 @@
             <tbody>
             @foreach($wishlists as $wishlist)
                 <tr>
-                    <td>{{ $wishlist->user_id }}</td>
+                    <td>{{ $wishlist->wisher->name }}</td>
                     <td>{{ $wishlist->title }}</td>
                     <td>{{ $wishlist->description }}</td>
                     <td  style="width: 120px">

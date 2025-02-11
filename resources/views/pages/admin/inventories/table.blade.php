@@ -16,7 +16,7 @@
                     <td>{{ $inventory->name }}</td>
                     <td>{{ $inventory->price }}</td>
                     <td>{{ $inventory->quantity }}</td>
-                    <td>{{ $inventory->user_id }}</td>
+                    <td>{{ $inventory->user->name }}</td>
                     <td  style="width: 120px">
                         {!! Form::open(['route' => ['inventories.destroy', $inventory->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>

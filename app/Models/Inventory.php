@@ -12,7 +12,8 @@ class Inventory extends Model
         'name',
         'price',
         'quantity',
-        'user_id'
+        'user_id',
+        'subcategory_id',
     ];
 
     protected $casts = [
@@ -27,7 +28,8 @@ class Inventory extends Model
         'deleted_at' => 'nullable',
         'created_at' => 'nullable',
         'updated_at' => 'nullable',
-        'user_id' => 'required'
+        'user_id' => 'nullable',
+        'subcategory_id' => 'required',
     ];
 
     public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -43,5 +45,10 @@ class Inventory extends Model
     public function wishlistItems(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(\App\Models\WishlistItem::class, 'inventory_id');
+    }
+
+    public function subcategory(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(\App\Models\Subcategory::class, 'subcategory_id');
     }
 }

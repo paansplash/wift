@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateWishlistRequest;
 use App\Http\Requests\UpdateWishlistRequest;
 use App\Http\Controllers\AppBaseController;
+use App\Repositories\wisherRepository;
 use App\Repositories\WishlistRepository;
 use Illuminate\Http\Request;
 use Laracasts\Flash\Flash;
@@ -13,10 +14,12 @@ class WishlistController extends AppBaseController
 {
     /** @var WishlistRepository $wishlistRepository*/
     private $wishlistRepository;
+    private $wisherRepository;
 
-    public function __construct(WishlistRepository $wishlistRepo)
+    public function __construct(WishlistRepository $wishlistRepo, wisherRepository $wisherRepo)
     {
         $this->wishlistRepository = $wishlistRepo;
+        $this->wisherRepository = $wisherRepo;
     }
 
     /**
@@ -35,7 +38,9 @@ class WishlistController extends AppBaseController
      */
     public function create()
     {
-        return view('pages.admin.wishlists.create');
+        $wishers = $this->wisherRepository->getWishers();
+
+        return view('pages.admin.wishlists.create', compact('wishers'));
     }
 
     /**
@@ -74,6 +79,7 @@ class WishlistController extends AppBaseController
     public function edit($id)
     {
         $wishlist = $this->wishlistRepository->find($id);
+        $wishers = $this->wisherRepository->getWishers();
 
         if (empty($wishlist)) {
             Flash::error('Wishlist not found');
@@ -81,7 +87,7 @@ class WishlistController extends AppBaseController
             return redirect(route('wishlists.index'));
         }
 
-        return view('pages.admin.wishlists.edit')->with('wishlist', $wishlist);
+        return view('pages.admin.wishlists.edit', compact('wishlist', 'wishers'));
     }
 
     /**

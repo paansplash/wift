@@ -30,12 +30,17 @@ class CreateForeignKeys extends Migration {
 						->onUpdate('no action');
 		});
 		Schema::table('inventories', function(Blueprint $table) {
+			$table->foreign('subcategory_id')->references('id')->on('subcategories')
+						->onDelete('cascade')
+						->onUpdate('no action');
+		});
+		Schema::table('inventories', function(Blueprint $table) {
 			$table->foreign('user_id')->references('id')->on('users')
 						->onDelete('cascade')
 						->onUpdate('no action');
 		});
 		Schema::table('wishlists', function(Blueprint $table) {
-			$table->foreign('user_id')->references('id')->on('users')
+			$table->foreign('wisher_id')->references('id')->on('wishers')
 						->onDelete('cascade')
 						->onUpdate('no action');
 		});
@@ -99,6 +104,11 @@ class CreateForeignKeys extends Migration {
 						->onDelete('cascade')
 						->onUpdate('no action');
 		});
+		Schema::table('wishers', function(Blueprint $table) {
+			$table->foreign('user_id')->references('id')->on('users')
+						->onDelete('cascade')
+						->onUpdate('no action');
+		});
 	}
 
 	public function down()
@@ -116,10 +126,13 @@ class CreateForeignKeys extends Migration {
 			$table->dropForeign('subcategories_status_id_foreign');
 		});
 		Schema::table('inventories', function(Blueprint $table) {
+			$table->dropForeign('inventories_subcategory_id_foreign');
+		});
+		Schema::table('inventories', function(Blueprint $table) {
 			$table->dropForeign('inventories_user_id_foreign');
 		});
 		Schema::table('wishlists', function(Blueprint $table) {
-			$table->dropForeign('wishlists_user_id_foreign');
+			$table->dropForeign('wishlists_wisher_id_foreign');
 		});
 		Schema::table('wishlist_items', function(Blueprint $table) {
 			$table->dropForeign('wishlist_items_wishlist_id_foreign');
@@ -156,6 +169,9 @@ class CreateForeignKeys extends Migration {
 		});
 		Schema::table('role_permissions', function(Blueprint $table) {
 			$table->dropForeign('role_permissions_permission_id_foreign');
+		});
+		Schema::table('wishers', function(Blueprint $table) {
+			$table->dropForeign('wishers_user_id_foreign');
 		});
 	}
 }

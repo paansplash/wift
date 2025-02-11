@@ -31,7 +31,7 @@
                                     class="img-circle elevation-2" alt="User Image">
                                 <p>
                                     {{ Auth::user()->name ?? 'Null' }}
-                                    {{-- <small>Member since {{ Auth::user()->created_at->format('M. Y') ?? 'Null' }}</small> --}}
+                                    <small>Member since {{ Auth::user()->created_at->format('M. Y') ?? 'Null' }}</small>
                                 </p>
                             </li>
                             <!-- Menu Footer-->
@@ -67,7 +67,7 @@
                 reserved.
             </footer>
 
-            <script src="{{ asset('assets/vendor/plugins/js/plugins.min.js') }}"></script>
+            {{-- <script src="{{ asset('assets/vendor/plugins/js/plugins.min.js') }}"></script> --}}
 
         </div>
     </body>

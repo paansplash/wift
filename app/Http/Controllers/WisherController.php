@@ -5,18 +5,21 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateWisherRequest;
 use App\Http\Requests\UpdateWisherRequest;
 use App\Http\Controllers\AppBaseController;
+use App\Repositories\UserRepository;
 use App\Repositories\WisherRepository;
 use Illuminate\Http\Request;
-use Flash;
+use Laracasts\Flash\Flash;
 
 class WisherController extends AppBaseController
 {
     /** @var WisherRepository $wisherRepository*/
     private $wisherRepository;
+    private $userRepository;
 
-    public function __construct(WisherRepository $wisherRepo)
+    public function __construct(WisherRepository $wisherRepo, UserRepository $userRepo)
     {
         $this->wisherRepository = $wisherRepo;
+        $this->userRepository = $userRepo;
     }
 
     /**
@@ -35,7 +38,9 @@ class WisherController extends AppBaseController
      */
     public function create()
     {
-        return view('pages.admin.wishers.create');
+        $users = $this->userRepository->getUsers();
+        
+        return view('pages.admin.wishers.create', compact('users'));
     }
 
     /**
@@ -74,6 +79,7 @@ class WisherController extends AppBaseController
     public function edit($id)
     {
         $wisher = $this->wisherRepository->find($id);
+        $users = $this->userRepository->getUsers();
 
         if (empty($wisher)) {
             Flash::error('Wisher not found');
@@ -81,7 +87,7 @@ class WisherController extends AppBaseController
             return redirect(route('wishers.index'));
         }
 
-        return view('pages.admin.wishers.edit')->with('wisher', $wisher);
+        return view('pages.admin.wishers.edit', compact('wisher','users'));
     }
 
     /**

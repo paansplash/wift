@@ -22,4 +22,9 @@ class WishlistRepository extends BaseRepository
     {
         return Wishlist::class;
     }
+
+    public function getWishlists()
+    {
+        return Wishlist::all();
+    }
 }

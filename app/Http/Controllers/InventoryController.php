@@ -6,6 +6,8 @@ use App\Http\Requests\CreateInventoryRequest;
 use App\Http\Requests\UpdateInventoryRequest;
 use App\Http\Controllers\AppBaseController;
 use App\Repositories\InventoryRepository;
+use App\Repositories\SubcategoryRepository;
+use App\Repositories\UserRepository;
 use Illuminate\Http\Request;
 use Laracasts\Flash\Flash;
 
@@ -13,10 +15,14 @@ class InventoryController extends AppBaseController
 {
     /** @var InventoryRepository $inventoryRepository*/
     private $inventoryRepository;
+    private $subcategoryRepository;
+    private $userRepository;
 
-    public function __construct(InventoryRepository $inventoryRepo)
+    public function __construct(InventoryRepository $inventoryRepo, SubcategoryRepository $subcategoryRepo, UserRepository $userRepo)
     {
         $this->inventoryRepository = $inventoryRepo;
+        $this->subcategoryRepository = $subcategoryRepo;
+        $this->userRepository = $userRepo;
     }
 
     /**
@@ -35,7 +41,10 @@ class InventoryController extends AppBaseController
      */
     public function create()
     {
-        return view('pages.admin.inventories.create');
+        $subcategories = $this->subcategoryRepository->getSubcategories();
+        $users = $this->userRepository->getUsers();
+
+        return view('pages.admin.inventories.create', compact('subcategories', 'users'));
     }
 
     /**

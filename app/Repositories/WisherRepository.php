@@ -28,4 +28,9 @@ class WisherRepository extends BaseRepository
     {
         return Wisher::class;
     }
+
+    public function getWishers()
+    {
+        return Wisher::all();
+    }
 }

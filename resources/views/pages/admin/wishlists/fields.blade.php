@@ -1,13 +1,21 @@
-<!-- User Id Field -->
+<!-- wisher Id Field -->
 <div class="form-group col-sm-6">
-    <label class="ms-0" for="user_id">User</label>
-    <input type="number" id="user_id" name="user_id" value="{{ old('user_id', $wishlist->user_id ?? '') }}" class="form-control" required>
+    <label class="ms-0" for="wisher_id">Wisher</label>
+    <select class="form-control" id="wisher_id" name="wisher_id">
+        <option value=''>- Choose a wisher -</option>
+        @foreach ($wishers as $wisher)
+            <option {{ $wishlist->wisher_id ?? old('wisher_id') == $wisher->id ? 'selected' : '' }}
+                value="{{ $wisher->id }}">
+                {{ $wisher->name }}</option>
+        @endforeach
+    </select>
 </div>
 
 <!-- Title Field -->
 <div class="form-group col-sm-6">
     <label class="ms-0" for="title">Title</label>
-    <input type="text" id="title" name="title" value="{{ old('title', $wishlist->title ?? '') }}" class="form-control" required maxlength="255">
+    <input type="text" id="title" name="title" value="{{ old('title', $wishlist->title ?? '') }}"
+        class="form-control" required maxlength="255">
 </div>
 
 <!-- Description Field -->

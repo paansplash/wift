@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class SubcategoriesTableSeeder extends Seeder
 {
@@ -16,9 +17,9 @@ class SubcategoriesTableSeeder extends Seeder
     {
         
 
-        \DB::table('subcategories')->delete();
+        DB::table('subcategories')->delete();
         
-        \DB::table('subcategories')->insert(array (
+        DB::table('subcategories')->insert(array (
             0 => 
             array (
                 'id' => 1,

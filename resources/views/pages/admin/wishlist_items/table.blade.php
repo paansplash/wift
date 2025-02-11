@@ -12,9 +12,9 @@
             <tbody>
             @foreach($wishlistItems as $wishlistItem)
                 <tr>
-                    <td>{{ $wishlistItem->wishlist_id }}</td>
-                    <td>{{ $wishlistItem->inventory_id }}</td>
-                    <td>{{ $wishlistItem->status_id }}</td>
+                    <td>{{ $wishlistItem->wishlist->wisher->name }}</td>
+                    <td>{{ $wishlistItem->inventory->name }}</td>
+                    <td>{{ $wishlistItem->status->name }}</td>
                     <td  style="width: 120px">
                         {!! Form::open(['route' => ['wishlistItems.destroy', $wishlistItem->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>

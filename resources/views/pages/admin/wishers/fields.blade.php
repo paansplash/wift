@@ -1,7 +1,13 @@
 <!-- User Id Field -->
 <div class="form-group col-sm-6">
     <label class="ms-0" for="user_id">User</label>
-    <input type="number" id="user_id" name="user_id" value="{{ old('user_id', $wisher->user_id ?? '') }}" class="form-control" required>
+    <select class="form-control" id="user_id" name="user_id">
+        <option value=''>- Choose a user -</option>
+        @foreach ($users as $user)
+            <option {{ $wisher->user_id ?? old('user_id') == $user->id ? 'selected' : '' }} value="{{ $user->id }}">
+                {{ $user->name }}</option>
+        @endforeach
+    </select>
 </div>
 
 <!-- Name Field -->

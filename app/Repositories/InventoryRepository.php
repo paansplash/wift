@@ -23,4 +23,9 @@ class InventoryRepository extends BaseRepository
     {
         return Inventory::class;
     }
+
+    public function getInventories()
+    {
+        return Inventory::all();
+    }
 }

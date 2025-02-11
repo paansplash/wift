@@ -44,6 +44,7 @@ Route::middleware(['role:Super Admin,Admin'])->group(function () {
     Route::resource('categories', App\Http\Controllers\CategoryController::class);
     Route::resource('subcategories', App\Http\Controllers\SubcategoryController::class);
     Route::resource('inventories', App\Http\Controllers\InventoryController::class);
+    Route::resource('wishers', App\Http\Controllers\WisherController::class);
     Route::resource('wishlists', App\Http\Controllers\WishlistController::class);
     Route::resource('wishlistItems', App\Http\Controllers\WishlistItemController::class);
     Route::resource('orders', App\Http\Controllers\OrderController::class);
@@ -53,9 +54,9 @@ Route::middleware(['role:Super Admin,Admin'])->group(function () {
 });
 
 
-Route::middleware(['role:User,Super Admin,Admin'])->group(function () {
-    Route::resource('welcome', App\Http\Controllers\User\HomeController::class);
-    Route::resource('wishers', App\Http\Controllers\User\WisherController::class);
-    Route::resource('wishlists', App\Http\Controllers\User\WishlistController::class);
-    Route::resource('wishlistItems', App\Http\Controllers\User\WishlistItemController::class);
-});
+// Route::middleware(['role:User'])->group(function () {
+//     Route::resource('welcome', App\Http\Controllers\User\HomeController::class);
+//     Route::resource('wishers', App\Http\Controllers\User\WisherController::class);
+//     Route::resource('wishlists', App\Http\Controllers\User\WishlistController::class);
+//     Route::resource('wishlistItems', App\Http\Controllers\User\WishlistItemController::class);
+// });
