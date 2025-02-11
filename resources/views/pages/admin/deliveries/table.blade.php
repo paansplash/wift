@@ -3,9 +3,9 @@
         <table class="table" id="deliveries-table">
             <thead>
             <tr>
-                <th>Order Id</th>
-                <th>Status Id</th>
-                <th>User Id</th>
+                <th>Order</th>
+                <th>Status</th>
+                <th>User</th>
                 <th colspan="3">Action</th>
             </tr>
             </thead>

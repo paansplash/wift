@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateSubcategoryRequest;
 use App\Http\Requests\UpdateSubcategoryRequest;
 use App\Http\Controllers\AppBaseController;
+use App\Repositories\CategoryRepository;
+use App\Repositories\StatusRepository;
 use App\Repositories\SubcategoryRepository;
 use Illuminate\Http\Request;
 use Laracasts\Flash\Flash;
@@ -13,10 +15,14 @@ class SubcategoryController extends AppBaseController
 {
     /** @var SubcategoryRepository $subcategoryRepository*/
     private $subcategoryRepository;
+    private $categoryRepository;
+    private $statusRepository;
 
-    public function __construct(SubcategoryRepository $subcategoryRepo)
+    public function __construct(SubcategoryRepository $subcategoryRepo, CategoryRepository $categoryRepo, StatusRepository $statusRepo)
     {
         $this->subcategoryRepository = $subcategoryRepo;
+        $this->categoryRepository = $categoryRepo;
+        $this->statusRepository = $statusRepo;
     }
 
     /**
@@ -35,7 +41,10 @@ class SubcategoryController extends AppBaseController
      */
     public function create()
     {
-        return view('pages.admin.subcategories.create');
+        $categories = $this->categoryRepository->getCategories();
+        $statuses = $this->statusRepository->getActivityStatuses();
+
+        return view('pages.admin.subcategories.create', compact('categories', 'statuses'));
     }
 
     /**
@@ -74,6 +83,8 @@ class SubcategoryController extends AppBaseController
     public function edit($id)
     {
         $subcategory = $this->subcategoryRepository->find($id);
+        $categories = $this->categoryRepository->getCategories();
+        $statuses = $this->statusRepository->getActivityStatuses();
 
         if (empty($subcategory)) {
             Flash::error('Subcategory not found');
@@ -81,7 +92,7 @@ class SubcategoryController extends AppBaseController
             return redirect(route('subcategories.index'));
         }
 
-        return view('pages.admin.subcategories.edit')->with('subcategory', $subcategory);
+        return view('pages.admin.subcategories.edit', compact('subcategory', 'categories', 'statuses'));
     }
 
     /**

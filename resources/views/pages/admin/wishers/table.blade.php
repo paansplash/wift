@@ -3,7 +3,7 @@
         <table class="table" id="wishers-table">
             <thead>
             <tr>
-                <th>User Id</th>
+                <th>User</th>
                 <th>Name</th>
                 <th>Phone No</th>
                 <th>Addr1</th>

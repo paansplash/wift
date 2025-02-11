@@ -32,7 +32,7 @@ class Subcategory extends Model
 
     public function category(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(\App\Models\User::class, 'category_id');
+        return $this->belongsTo(\App\Models\Category::class, 'category_id');
     }
 
     public function status(): \Illuminate\Database\Eloquent\Relations\BelongsTo

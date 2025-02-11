@@ -32,4 +32,9 @@ class Category extends Model
     {
         return $this->belongsTo(\App\Models\Status::class, 'status_id');
     }
+
+    public function subcategories(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(\App\Models\Subcategory::class, 'category_id');
+    }
 }

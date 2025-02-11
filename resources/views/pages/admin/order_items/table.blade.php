@@ -3,8 +3,8 @@
         <table class="table" id="order-items-table">
             <thead>
             <tr>
-                <th>Order Id</th>
-                <th>Inventory Id</th>
+                <th>Order</th>
+                <th>Inventory</th>
                 <th>Price</th>
                 <th>Quantity</th>
                 <th colspan="3">Action</th>

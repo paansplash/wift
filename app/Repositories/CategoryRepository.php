@@ -22,4 +22,9 @@ class CategoryRepository extends BaseRepository
     {
         return Category::class;
     }
+
+    public function getCategories()
+    {
+        return Category::all();
+    }
 }

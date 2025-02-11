@@ -5,7 +5,7 @@
             <tr>
                 <th>Name</th>
                 <th>Description</th>
-                <th>Status Id</th>
+                <th>Status</th>
                 <th colspan="3">Action</th>
             </tr>
             </thead>
@@ -14,7 +14,7 @@
                 <tr>
                     <td>{{ $category->name }}</td>
                     <td>{{ $category->description }}</td>
-                    <td>{{ $category->status_id }}</td>
+                    <td>{{ $category->status->name }}</td>
                     <td  style="width: 120px">
                         {!! Form::open(['route' => ['categories.destroy', $category->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>

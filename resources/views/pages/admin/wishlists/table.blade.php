@@ -3,7 +3,7 @@
         <table class="table" id="wishlists-table">
             <thead>
             <tr>
-                <th>User Id</th>
+                <th>User</th>
                 <th>Title</th>
                 <th>Description</th>
                 <th colspan="3">Action</th>

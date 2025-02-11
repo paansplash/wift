@@ -3,9 +3,9 @@
         <table class="table" id="orders-table">
             <thead>
             <tr>
-                <th>Wishlist Id</th>
+                <th>Wishlist</th>
                 <th>Amount</th>
-                <th>Status Id</th>
+                <th>Status</th>
                 <th>Name</th>
                 <th>Note</th>
                 <th colspan="3">Action</th>

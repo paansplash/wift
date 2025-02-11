@@ -6,6 +6,7 @@ use App\Http\Requests\CreateCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
 use App\Http\Controllers\AppBaseController;
 use App\Repositories\CategoryRepository;
+use App\Repositories\StatusRepository;
 use Illuminate\Http\Request;
 use Laracasts\Flash\Flash;
 
@@ -13,10 +14,12 @@ class CategoryController extends AppBaseController
 {
     /** @var CategoryRepository $categoryRepository*/
     private $categoryRepository;
+    private $statusRepository;
 
-    public function __construct(CategoryRepository $categoryRepo)
+    public function __construct(CategoryRepository $categoryRepo, StatusRepository $statusRepo)
     {
         $this->categoryRepository = $categoryRepo;
+        $this->statusRepository = $statusRepo;
     }
 
     /**
@@ -35,7 +38,9 @@ class CategoryController extends AppBaseController
      */
     public function create()
     {
-        return view('pages.admin.categories.create');
+        $statuses = $this->statusRepository->getActivityStatuses();
+
+        return view('pages.admin.categories.create', compact('statuses'));
     }
 
     /**
@@ -74,6 +79,7 @@ class CategoryController extends AppBaseController
     public function edit($id)
     {
         $category = $this->categoryRepository->find($id);
+        $statuses = $this->statusRepository->getActivityStatuses();
 
         if (empty($category)) {
             Flash::error('Category not found');
@@ -81,7 +87,7 @@ class CategoryController extends AppBaseController
             return redirect(route('categories.index'));
         }
 
-        return view('pages.admin.categories.edit')->with('category', $category);
+        return view('pages.admin.categories.edit', compact('category', 'statuses'));
     }
 
     /**

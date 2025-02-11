@@ -24,7 +24,7 @@
 
 <!-- Role Id Field -->
 <div class="col-sm-12">
-    {!! Form::label('role_id', 'Role Id:') !!}
+    {!! Form::label('role_id', 'Role:') !!}
     <p>{{ $user->role->name }}</p>
 </div>
 

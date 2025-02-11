@@ -12,7 +12,7 @@
 
 <!-- Status Id Field -->
 <div class="col-sm-12">
-    {!! Form::label('status_id', 'Status Id:') !!}
+    {!! Form::label('status_id', 'Status:') !!}
     <p>{{ $category->status_id }}</p>
 </div>
 

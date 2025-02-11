@@ -36,7 +36,7 @@ Auth::routes();
 
 Route::middleware(['role:Super Admin,Admin'])->group(function () {
 
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('admin.home');
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::resource('users', App\Http\Controllers\UserController::class);
     Route::resource('roles', App\Http\Controllers\RoleController::class);
     Route::resource('permissions', App\Http\Controllers\PermissionController::class);
@@ -53,8 +53,8 @@ Route::middleware(['role:Super Admin,Admin'])->group(function () {
 });
 
 
-Route::middleware(['role:User'])->group(function () {
-    Route::resource('home', App\Http\Controllers\User\HomeController::class)->names('user.home');
+Route::middleware(['role:User,Super Admin,Admin'])->group(function () {
+    Route::resource('welcome', App\Http\Controllers\User\HomeController::class);
     Route::resource('wishers', App\Http\Controllers\User\WisherController::class);
     Route::resource('wishlists', App\Http\Controllers\User\WishlistController::class);
     Route::resource('wishlistItems', App\Http\Controllers\User\WishlistItemController::class);

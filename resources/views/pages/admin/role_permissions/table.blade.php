@@ -3,8 +3,8 @@
         <table class="table" id="role-permissions-table">
             <thead>
             <tr>
-                <th>Role Id</th>
-                <th>Permission Id</th>
+                <th>Role</th>
+                <th>Permission</th>
                 <th colspan="3">Action</th>
             </tr>
             </thead>

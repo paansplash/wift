@@ -3,9 +3,9 @@
         <table class="table" id="wishlist-items-table">
             <thead>
             <tr>
-                <th>Wishlist Id</th>
-                <th>Inventory Id</th>
-                <th>Status Id</th>
+                <th>Wishlist</th>
+                <th>Inventory</th>
+                <th>Status</th>
                 <th colspan="3">Action</th>
             </tr>
             </thead>

@@ -6,7 +6,7 @@
                 <th>Name</th>
                 <th>Price</th>
                 <th>Quantity</th>
-                <th>User Id</th>
+                <th>User</th>
                 <th colspan="3">Action</th>
             </tr>
             </thead>

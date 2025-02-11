@@ -6,7 +6,7 @@
 
 <!-- Category Id Field -->
 <div class="col-sm-12">
-    {!! Form::label('category_id', 'Category Id:') !!}
+    {!! Form::label('category_id', 'Category:') !!}
     <p>{{ $subcategory->category_id }}</p>
 </div>
 
@@ -18,7 +18,7 @@
 
 <!-- Status Id Field -->
 <div class="col-sm-12">
-    {!! Form::label('status_id', 'Status Id:') !!}
+    {!! Form::label('status_id', 'Status:') !!}
     <p>{{ $subcategory->status_id }}</p>
 </div>
 

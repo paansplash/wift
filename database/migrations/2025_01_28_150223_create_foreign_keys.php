@@ -20,7 +20,7 @@ class CreateForeignKeys extends Migration {
 						->onUpdate('no action');
 		});
 		Schema::table('subcategories', function(Blueprint $table) {
-			$table->foreign('category_id')->references('id')->on('users')
+			$table->foreign('category_id')->references('id')->on('categories')
 						->onDelete('cascade')
 						->onUpdate('no action');
 		});

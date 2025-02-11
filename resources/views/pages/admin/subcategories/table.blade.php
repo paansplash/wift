@@ -4,9 +4,9 @@
             <thead>
             <tr>
                 <th>Name</th>
-                <th>Category Id</th>
+                <th>Category</th>
                 <th>Description</th>
-                <th>Status Id</th>
+                <th>Status</th>
                 <th colspan="3">Action</th>
             </tr>
             </thead>
@@ -14,9 +14,9 @@
             @foreach($subcategories as $subcategory)
                 <tr>
                     <td>{{ $subcategory->name }}</td>
-                    <td>{{ $subcategory->category_id }}</td>
+                    <td>{{ $subcategory->category->name }}</td>
                     <td>{{ $subcategory->description }}</td>
-                    <td>{{ $subcategory->status_id }}</td>
+                    <td>{{ $subcategory->status->name }}</td>
                     <td  style="width: 120px">
                         {!! Form::open(['route' => ['subcategories.destroy', $subcategory->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>

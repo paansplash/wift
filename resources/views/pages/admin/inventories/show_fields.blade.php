@@ -18,7 +18,7 @@
 
 <!-- User Id Field -->
 <div class="col-sm-12">
-    {!! Form::label('user_id', 'User Id:') !!}
+    {!! Form::label('user_id', 'User:') !!}
     <p>{{ $inventory->user_id }}</p>
 </div>
 

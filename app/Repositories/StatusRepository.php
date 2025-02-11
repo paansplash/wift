@@ -20,4 +20,9 @@ class StatusRepository extends BaseRepository
     {
         return Status::class;
     }
+
+    public function getActivityStatuses()
+    {
+        return Status::whereIn('id', [1, 2])->get();
+    }
 }

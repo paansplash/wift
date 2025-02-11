@@ -38,7 +38,9 @@ class UserController extends AppBaseController
      */
     public function create()
     {
-        return view('pages.admin.users.create');
+        $roles = $this->roleRepository->getRoles();
+
+        return view('pages.admin.users.create', compact('roles'));
     }
 
     /**

@@ -7,7 +7,7 @@
                 <th>Password</th>
                 <th>Email</th>
                 <th>Email Verified At</th>
-                <th>Role Id</th>
+                <th>Role</th>
                 <th colspan="3">Action</th>
             </tr>
             </thead>
