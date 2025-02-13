@@ -12,8 +12,18 @@
         "jquery": "^3.7.1",
         "laravel-vite-plugin": "^1.2.0",
         "popper.js": "^1.16.1",
-        "sass": "^1.83.4",
+        "sass": "^1.32.0",
         "sass-loader": "^8.0.2",
         "vite": "^5.4.14"
+    },
+    "dependencies": {
+        "desandro-matches-selector": "^2.0.2",
+        "ev-emitter": "^2.1.2",
+        "fizzy-ui-utils": "^3.0.0",
+        "get-size": "^3.0.0",
+        "isotope-layout": "^3.0.6",
+        "masonry-layout": "^4.2.2",
+        "outlayer": "^2.1.1",
+        "packery": "^2.1.2"
     }
 }

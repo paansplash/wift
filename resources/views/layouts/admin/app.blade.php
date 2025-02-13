@@ -67,7 +67,7 @@
                 reserved.
             </footer>
 
-            {{-- <script src="{{ asset('assets/vendor/plugins/js/plugins.min.js') }}"></script> --}}
+            <!-- {{-- <script src="{{ asset('assets/vendor/plugins/js/plugins.min.js') }}"></script> --}} -->
 
         </div>
     </body>
