@@ -3,7 +3,7 @@
         <table class="table" id="deliveries-table">
             <thead>
             <tr>
-                <th>Order</th>
+                <th>Order Item</th>
                 <th>Status</th>
                 <th>User</th>
                 <th colspan="3">Action</th>
@@ -12,7 +12,7 @@
             <tbody>
             @foreach($deliveries as $delivery)
                 <tr>
-                    <td>{{ $delivery->order_id }}</td>
+                    <td>{{ $delivery->order_item_id }}</td>
                     <td>{{ $delivery->status_id }}</td>
                     <td>{{ $delivery->user_id }}</td>
                     <td  style="width: 120px">

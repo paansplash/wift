@@ -6,6 +6,7 @@ use App\Http\Requests\CreateInventoryRequest;
 use App\Http\Requests\UpdateInventoryRequest;
 use App\Http\Controllers\AppBaseController;
 use App\Repositories\InventoryRepository;
+use App\Repositories\StatusRepository;
 use App\Repositories\SubcategoryRepository;
 use App\Repositories\UserRepository;
 use Illuminate\Http\Request;
@@ -17,12 +18,15 @@ class InventoryController extends AppBaseController
     private $inventoryRepository;
     private $subcategoryRepository;
     private $userRepository;
+    private $statusRepository;
 
-    public function __construct(InventoryRepository $inventoryRepo, SubcategoryRepository $subcategoryRepo, UserRepository $userRepo)
+    public function __construct(InventoryRepository $inventoryRepo, SubcategoryRepository $subcategoryRepo, 
+    UserRepository $userRepo, StatusRepository $statusRepo)
     {
         $this->inventoryRepository = $inventoryRepo;
         $this->subcategoryRepository = $subcategoryRepo;
         $this->userRepository = $userRepo;
+        $this->statusRepository = $statusRepo;
     }
 
     /**
@@ -43,8 +47,9 @@ class InventoryController extends AppBaseController
     {
         $subcategories = $this->subcategoryRepository->getSubcategories();
         $users = $this->userRepository->getUsers();
+        $statuses = $this->statusRepository->getActivityStatuses();
 
-        return view('pages.admin.inventories.create', compact('subcategories', 'users'));
+        return view('pages.admin.inventories.create', compact('subcategories', 'users', 'statuses'));
     }
 
     /**
@@ -83,6 +88,7 @@ class InventoryController extends AppBaseController
     public function edit($id)
     {
         $inventory = $this->inventoryRepository->find($id);
+        $statuses = $this->statusRepository->getActivityStatuses();
 
         if (empty($inventory)) {
             Flash::error('Inventory not found');
@@ -90,7 +96,7 @@ class InventoryController extends AppBaseController
             return redirect(route('inventories.index'));
         }
 
-        return view('pages.admin.inventories.edit')->with('inventory', $inventory);
+        return view('pages.admin.inventories.edit', compact('inventory', 'statuses'));
     }
 
     /**

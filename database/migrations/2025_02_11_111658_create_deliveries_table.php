@@ -10,7 +10,7 @@ class CreateDeliveriesTable extends Migration {
 	{
 		Schema::create('deliveries', function(Blueprint $table) {
 			$table->bigIncrements('id');
-			$table->bigInteger('order_id')->unsigned();
+			$table->bigInteger('order_item_id')->unsigned();
 			$table->bigInteger('status_id')->unsigned();
 			$table->bigInteger('user_id')->unsigned();
 			$table->timestamps();

@@ -6,6 +6,7 @@ use App\Http\Requests\CreateOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
 use App\Http\Controllers\AppBaseController;
 use App\Repositories\OrderRepository;
+use App\Repositories\StatusRepository;
 use Illuminate\Http\Request;
 use Laracasts\Flash\Flash;
 
@@ -13,10 +14,12 @@ class OrderController extends AppBaseController
 {
     /** @var OrderRepository $orderRepository*/
     private $orderRepository;
+    private $statusRepository;
 
-    public function __construct(OrderRepository $orderRepo)
+    public function __construct(OrderRepository $orderRepo, StatusRepository $statusRepo)
     {
         $this->orderRepository = $orderRepo;
+        $this->statusRepository = $statusRepo;
     }
 
     /**
@@ -35,7 +38,9 @@ class OrderController extends AppBaseController
      */
     public function create()
     {
-        return view('pages.admin.orders.create');
+        $statuses = $this->statusRepository->getActivityStatuses();
+
+        return view('pages.admin.orders.create', compact('statuses'));
     }
 
     /**
@@ -74,6 +79,7 @@ class OrderController extends AppBaseController
     public function edit($id)
     {
         $order = $this->orderRepository->find($id);
+        $statuses = $this->statusRepository->getActivityStatuses();
 
         if (empty($order)) {
             Flash::error('Order not found');
@@ -81,7 +87,7 @@ class OrderController extends AppBaseController
             return redirect(route('orders.index'));
         }
 
-        return view('pages.admin.orders.edit')->with('order', $order);
+        return view('pages.admin.orders.edit', compact('order', 'statuses'));
     }
 
     /**

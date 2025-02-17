@@ -11,7 +11,8 @@
     <select class="form-control" id="subcategory_id" name="subcategory_id">
         <option value=''>- Choose a Subcategory -</option>
         @foreach ($subcategories as $subcategory)
-            <option {{ $inventory->subcategory_id ?? old('subcategory_id') == $subcategory->id ? 'selected' : '' }} value="{{ $subcategory->id }}">
+            <option {{ $inventory->subcategory_id ?? old('subcategory_id') == $subcategory->id ? 'selected' : '' }}
+                value="{{ $subcategory->id }}">
                 {{ $subcategory->name }}</option>
         @endforeach
     </select>
@@ -37,8 +38,23 @@
     <select class="form-control" id="user_id" name="user_id">
         <option value=''>- Choose a User -</option>
         @foreach ($users as $user)
-            <option {{ $inventory->user_id ?? old('user_id') == $user->id ? 'selected' : '' }} value="{{ $user->id }}">
+            <option {{ $inventory->user_id ?? old('user_id') == $user->id ? 'selected' : '' }}
+                value="{{ $user->id }}">
                 {{ $user->name }}</option>
         @endforeach
     </select>
 </div>
+
+<!-- Status Field -->
+<div class="form-group col-sm-6">
+    <label class="ms-0" for="status_id">Status</label>
+    <select class="form-control" id="status_id" name="status_id" required>
+        <option value="">- Choose a Status -</option>
+        @foreach ($statuses as $status)
+            <option value="{{ $status->id }}"
+                {{ ($inventory->status_id ?? old('status_id')) == $status->id ? 'selected' : '' }}>
+                {{ $status->name }}
+            </option>
+        @endforeach
+    </select>
+</div>F

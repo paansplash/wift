@@ -16,6 +16,7 @@ class CreateInventoriesTable extends Migration {
 			$table->integer('quantity')->nullable();
 			$table->string('attachment')->nullable();
 			$table->bigInteger('user_id')->unsigned()->nullable();
+			$table->bigInteger('status_id')->unsigned();
 			$table->softDeletes();
 			$table->timestamps();
 		});

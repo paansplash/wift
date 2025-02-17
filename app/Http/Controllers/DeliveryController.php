@@ -6,6 +6,7 @@ use App\Http\Requests\CreateDeliveryRequest;
 use App\Http\Requests\UpdateDeliveryRequest;
 use App\Http\Controllers\AppBaseController;
 use App\Repositories\DeliveryRepository;
+use App\Repositories\StatusRepository;
 use Illuminate\Http\Request;
 use Laracasts\Flash\Flash;
 
@@ -13,10 +14,12 @@ class DeliveryController extends AppBaseController
 {
     /** @var DeliveryRepository $deliveryRepository*/
     private $deliveryRepository;
+    private $statusRepository;
 
-    public function __construct(DeliveryRepository $deliveryRepo)
+    public function __construct(DeliveryRepository $deliveryRepo, StatusRepository $statusRepo)
     {
         $this->deliveryRepository = $deliveryRepo;
+        $this->statusRepository = $statusRepo;
     }
 
     /**
@@ -35,7 +38,9 @@ class DeliveryController extends AppBaseController
      */
     public function create()
     {
-        return view('pages.admin.deliveries.create');
+        $statuses = $this->statusRepository->getDeliveryStatuses();
+
+        return view('pages.admin.deliveries.create', compact('statuses'));
     }
 
     /**
@@ -74,6 +79,7 @@ class DeliveryController extends AppBaseController
     public function edit($id)
     {
         $delivery = $this->deliveryRepository->find($id);
+        $statuses = $this->statusRepository->getDeliveryStatuses();
 
         if (empty($delivery)) {
             Flash::error('Delivery not found');
@@ -81,7 +87,7 @@ class DeliveryController extends AppBaseController
             return redirect(route('deliveries.index'));
         }
 
-        return view('pages.admin.deliveries.edit')->with('delivery', $delivery);
+        return view('pages.admin.deliveries.edit', compact('delivery', 'statuses'));
     }
 
     /**

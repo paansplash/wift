@@ -21,7 +21,9 @@
         "ev-emitter": "^2.1.2",
         "fizzy-ui-utils": "^3.0.0",
         "get-size": "^3.0.0",
+        "ionicons": "^7.4.0",
         "isotope-layout": "^3.0.6",
+        "jquery-steps": "^1.1.0",
         "masonry-layout": "^4.2.2",
         "outlayer": "^2.1.1",
         "packery": "^2.1.2"

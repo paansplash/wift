@@ -2,6 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\DeliveryRepository;
+use App\Repositories\InventoryRepository;
+use App\Repositories\UserRepository;
+use App\Repositories\WisherRepository;
+
 class HomeController extends Controller
 {
     /**
@@ -9,9 +14,21 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
+
+    private $wisherRepository;
+    private $userRepository;
+    private $inventoryRepository;
+    private $deliveryRepository;
+
+    public function __construct(WisherRepository $wisherRepo, UserRepository $userRepo, 
+    InventoryRepository $inventoryRepo, DeliveryRepository $deliveryRepo)
     {
         $this->middleware('auth');
+
+        $this->wisherRepository = $wisherRepo;
+        $this->userRepository = $userRepo;
+        $this->inventoryRepository = $inventoryRepo;
+        $this->deliveryRepository = $deliveryRepo;
     }
 
     /**
@@ -21,6 +38,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('pages.admin.home');
+        $totalWishers = $this->wisherRepository->count();
+        $totalRegisteredUsers = $this->userRepository->count();
+        $totalInventories = $this->inventoryRepository->count();
+        $totalDelivered = $this->deliveryRepository->count();
+
+        return view('pages.admin.home', compact('totalWishers', 'totalRegisteredUsers', 'totalInventories', 'totalDelivered'));
     }
 }

@@ -8,7 +8,7 @@ use App\Repositories\BaseRepository;
 class DeliveryRepository extends BaseRepository
 {
     protected $fieldSearchable = [
-        'order_id',
+        'order_item_id',
         'status_id',
         'user_id'
     ];
@@ -21,5 +21,12 @@ class DeliveryRepository extends BaseRepository
     public function model(): string
     {
         return Delivery::class;
+    }
+
+    public function count()
+    {
+        return Delivery::where('status_id', '=', 4)->count();
+        
+
     }
 }

@@ -33,4 +33,9 @@ class WisherRepository extends BaseRepository
     {
         return Wisher::all();
     }
+
+    public function count()
+    {
+        return Wisher::count();
+    }
 }

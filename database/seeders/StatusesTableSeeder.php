@@ -36,6 +36,22 @@ class StatusesTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'deleted_at' => NULL,
             ),
+            2 => 
+            array (
+                'id' => 3,
+                'name' => 'Shipped',
+                'created_at' => '2025-02-14 14:57:31',
+                'updated_at' => '2025-02-14 14:57:31',
+                'deleted_at' => NULL,
+            ),
+            3 => 
+            array (
+                'id' => 4,
+                'name' => 'Delivered',
+                'created_at' => '2025-02-14 14:57:38',
+                'updated_at' => '2025-02-14 14:57:38',
+                'deleted_at' => NULL,
+            ),
         ));
         
         

@@ -9,7 +9,7 @@ class Delivery extends Model
     public $table = 'deliveries';
 
     public $fillable = [
-        'order_id',
+        'order_item_id',
         'status_id',
         'user_id'
     ];
@@ -19,7 +19,7 @@ class Delivery extends Model
     ];
 
     public static array $rules = [
-        'order_id' => 'required',
+        'order_item_id' => 'required',
         'status_id' => 'required',
         'user_id' => 'required',
         'created_at' => 'nullable',
@@ -27,9 +27,9 @@ class Delivery extends Model
         'deleted_at' => 'nullable'
     ];
 
-    public function order(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function orderItem(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(\App\Models\Order::class, 'order_id');
+        return $this->belongsTo(\App\Models\OrderItem::class, 'order_item_id');
     }
 
     public function status(): \Illuminate\Database\Eloquent\Relations\BelongsTo

@@ -11,7 +11,8 @@ class InventoryRepository extends BaseRepository
         'name',
         'price',
         'quantity',
-        'user_id'
+        'user_id',
+        'status_id'
     ];
 
     public function getFieldsSearchable(): array
@@ -27,5 +28,10 @@ class InventoryRepository extends BaseRepository
     public function getInventories()
     {
         return Inventory::all();
+    }
+
+    public function count()
+    {
+        return Inventory::count();
     }
 }

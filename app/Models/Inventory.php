@@ -14,6 +14,7 @@ class Inventory extends Model
         'quantity',
         'user_id',
         'subcategory_id',
+        'status_id',
     ];
 
     protected $casts = [
@@ -30,6 +31,7 @@ class Inventory extends Model
         'updated_at' => 'nullable',
         'user_id' => 'nullable',
         'subcategory_id' => 'required',
+        'status_id' => 'required',
     ];
 
     public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -50,5 +52,10 @@ class Inventory extends Model
     public function subcategory(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(\App\Models\Subcategory::class, 'subcategory_id');
+    }
+
+    public function status(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(\App\Models\Status::class, 'status_id');
     }
 }

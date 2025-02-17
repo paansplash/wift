@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 Route::get('/', function () {
     return view('welcome');
@@ -60,3 +61,12 @@ Route::middleware(['role:Super Admin,Admin'])->group(function () {
 //     Route::resource('wishlists', App\Http\Controllers\User\WishlistController::class);
 //     Route::resource('wishlistItems', App\Http\Controllers\User\WishlistItemController::class);
 // });
+
+Route::post('/submit-wizard', function (Request $request) {
+    // Process the data (store in DB, etc.)
+    return response()->json(['success' => 'Form submitted!']);
+});
+
+Route::get('/wizard-form', function () {
+    return view('pages.wizard.form');
+})->name('wizard'); // Name the route "welcome"

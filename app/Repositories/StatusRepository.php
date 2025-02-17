@@ -25,4 +25,9 @@ class StatusRepository extends BaseRepository
     {
         return Status::whereIn('id', [1, 2])->get();
     }
+
+    public function getDeliveryStatuses()
+    {
+        return Status::whereIn('id', [3, 4])->get();
+    }
 }

@@ -29,4 +29,9 @@ class UserRepository extends BaseRepository
     {
         return User::all();
     }
+
+    public function count()
+    {
+        return User::where('role_id', '=', 4)->count();
+    }
 }

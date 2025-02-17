@@ -1,6 +1,6 @@
 <!-- Order Id Field -->
 <div class="col-sm-12">
-    {!! Form::label('order_id', 'Order:') !!}
+    {!! Form::label('order_item_id', 'Order Item:') !!}
     <p>{{ $delivery->order_id }}</p>
 </div>
 
