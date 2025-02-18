@@ -38,7 +38,7 @@ class WisherController extends AppBaseController
      */
     public function create()
     {
-        $users = $this->userRepository->getUsers();
+        $users = $this->userRepository->getAllUsers();
         
         return view('pages.admin.wishers.create', compact('users'));
     }
@@ -79,7 +79,7 @@ class WisherController extends AppBaseController
     public function edit($id)
     {
         $wisher = $this->wisherRepository->find($id);
-        $users = $this->userRepository->getUsers();
+        $users = $this->userRepository->getAllUsers();
 
         if (empty($wisher)) {
             Flash::error('Wisher not found');

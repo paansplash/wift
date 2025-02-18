@@ -46,7 +46,7 @@ class InventoryController extends AppBaseController
     public function create()
     {
         $subcategories = $this->subcategoryRepository->getSubcategories();
-        $users = $this->userRepository->getUsers();
+        $users = $this->userRepository->getAllUsers();
         $statuses = $this->statusRepository->getActivityStatuses();
 
         return view('pages.admin.inventories.create', compact('subcategories', 'users', 'statuses'));

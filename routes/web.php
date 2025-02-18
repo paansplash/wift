@@ -67,6 +67,4 @@ Route::post('/submit-wizard', function (Request $request) {
     return response()->json(['success' => 'Form submitted!']);
 });
 
-Route::get('/wizard-form', function () {
-    return view('pages.wizard.form');
-})->name('wizard'); // Name the route "welcome"
+Route::resource('wizard-form', App\Http\Controllers\WizardController::class);

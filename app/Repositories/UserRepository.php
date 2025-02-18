@@ -25,9 +25,14 @@ class UserRepository extends BaseRepository
         return User::class;
     }
 
-    public function getUsers()
+    public function getAllUsers()
     {
         return User::all();
+    }
+
+    public function getUsers()
+    {
+        return User::where('role_id', '=', 4)->get();
     }
 
     public function count()

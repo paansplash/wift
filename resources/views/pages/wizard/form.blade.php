@@ -51,42 +51,36 @@
 
         <div class="card">
 
-            <form id="regForm" action="">
+            <form id="regForm" action="{{ route('wizard-form.store') }}" method="POST">
+
                 <div class="card-body">
-
-                    <h1>Register:</h1>
-
                     {{-- Add Wisher --}}
                     <div class="tab">
-                        <div class="form-group col-sm-6">
-                            <label class="ms-0" for="name">Name</label>
-                            <input type="text" id="name" name="name" value="{{ old('name', $wisher->name ?? '') }}"
-                                class="form-control" required maxlength="255">
+                        <div class="row">
+                            @include('pages.admin.wishers.fields')
                         </div>
                     </div>
 
                     {{-- Wishlish --}}
-                    <div class="tab">Contact Info:
-                        <p><input placeholder="E-mail..." oninput="this.className = ''"></p>
-                        <p><input placeholder="Phone..." oninput="this.className = ''"></p>
+                    <div class="tab">
+                        <div class="row">
+                            @include('pages.admin.wishlists.fields')
+                        </div>
                     </div>
 
                     {{-- Wishlist Item --}}
-                    <div class="tab">Birthday:
-                        <p><input placeholder="dd" oninput="this.className = ''"></p>
-                        <p><input placeholder="mm" oninput="this.className = ''"></p>
-                        <p><input placeholder="yyyy" oninput="this.className = ''"></p>
-                    </div>
-
-                    <div class="tab">Login Info:
-                        <p><input placeholder="Username..." oninput="this.className = ''"></p>
-                        <p><input placeholder="Password..." oninput="this.className = ''"></p>
+                    <div class="tab">
+                        <div class="row">
+                            @include('pages.admin.wishlist_items.fields')
+                        </div>
                     </div>
 
                     <div style="overflow:auto;">
                         <div style="float:right;">
-                            <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-                            <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                            <button type="button" class="btn btn-primary" id="prevBtn"
+                                onclick="nextPrev(-1)">Previous</button>
+                            <button type="button" class="btn btn-primary" id="nextBtn"
+                                onclick="nextPrev(1)">Next</button>
                         </div>
                     </div>
 
