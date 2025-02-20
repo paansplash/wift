@@ -55,16 +55,12 @@ Route::middleware(['role:Super Admin,Admin'])->group(function () {
 });
 
 
-// Route::middleware(['role:User'])->group(function () {
-//     Route::resource('welcome', App\Http\Controllers\User\HomeController::class);
+Route::middleware(['role:User'])->group(function () {
+    Route::resource('welcome', App\Http\Controllers\User\HomeController::class);
 //     Route::resource('wishers', App\Http\Controllers\User\WisherController::class);
 //     Route::resource('wishlists', App\Http\Controllers\User\WishlistController::class);
 //     Route::resource('wishlistItems', App\Http\Controllers\User\WishlistItemController::class);
-// });
-
-Route::post('/submit-wizard', function (Request $request) {
-    // Process the data (store in DB, etc.)
-    return response()->json(['success' => 'Form submitted!']);
 });
 
-Route::resource('wizard-form', App\Http\Controllers\WizardController::class);
+
+

@@ -54,16 +54,25 @@ class WishlistItemController extends AppBaseController
     /**
      * Store a newly created WishlistItem in storage.
      */
-    public function store(CreateWishlistItemRequest $request)
+    public function store(Request $request)
     {
-        $input = $request->all();
+        $wishlistItems = json_decode($request->input('wishlist_items'), true);
 
-        $wishlistItem = $this->wishlistItemRepository->create($input);
+        if (!$wishlistItems || count($wishlistItems) === 0) {
+            return redirect()->back()->withErrors(['error' => 'Please add at least one wishlist item.']);
+        }
 
-        Flash::success('Wishlist Item saved successfully.');
+        foreach ($wishlistItems as $item) {
+            $this->wishlistItemRepository->create([
+                'wishlist_id' => $item['wishlist_id'],
+                'inventory_id' => $item['inventory_id'],
+                'status_id' => $item['status_id']
+            ]);
+        }
 
-        return redirect(route('wishlistItems.index'));
+        return redirect(route('wishlistItems.index'))->with('success', 'Wishlist items saved successfully.');
     }
+
 
     /**
      * Display the specified WishlistItem.

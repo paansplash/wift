@@ -1,5 +1,5 @@
 <x-laravel-ui-adminlte::adminlte-layout>
-    
+
     @stack('css')
 
     <body class="hold-transition sidebar-mini layout-fixed">
@@ -74,6 +74,5 @@
         </div>
     </body>
 
-    @stack('js')
 
 </x-laravel-ui-adminlte::adminlte-layout>

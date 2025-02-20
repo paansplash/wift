@@ -46,7 +46,7 @@
                         <div class="icon">
                             <i class="fas fa-heart"></i>
                         </div>
-                        <a href="{{ route('wizard-form.index') }}" class="small-box-footer">Add new <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="{{ route('wishers.create') }}" class="small-box-footer">Add new <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 

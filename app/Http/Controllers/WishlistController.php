@@ -54,7 +54,7 @@ class WishlistController extends AppBaseController
 
         Flash::success('Wishlist saved successfully.');
 
-        return redirect(route('wishlists.index'));
+        return redirect(route('wishlistItems.create'));
     }
 
     /**

@@ -54,7 +54,7 @@ class WisherController extends AppBaseController
 
         Flash::success('Wisher saved successfully.');
 
-        return redirect(route('wishers.index'));
+        return redirect(route('wishlists.create'));
     }
 
     /**
