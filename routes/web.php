@@ -35,32 +35,29 @@ Route::get('/contact', function () {
 
 Auth::routes();
 
-Route::middleware(['role:Super Admin,Admin'])->group(function () {
+Route::middleware(['role:Super Admin,Admin'])->prefix('admin')->group(function () {
 
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    Route::resource('users', App\Http\Controllers\UserController::class);
-    Route::resource('roles', App\Http\Controllers\RoleController::class);
-    Route::resource('permissions', App\Http\Controllers\PermissionController::class);
-    Route::resource('rolePermissions', App\Http\Controllers\RolePermissionController::class);
-    Route::resource('categories', App\Http\Controllers\CategoryController::class);
-    Route::resource('subcategories', App\Http\Controllers\SubcategoryController::class);
-    Route::resource('inventories', App\Http\Controllers\InventoryController::class);
-    Route::resource('wishers', App\Http\Controllers\WisherController::class);
-    Route::resource('wishlists', App\Http\Controllers\WishlistController::class);
-    Route::resource('wishlistItems', App\Http\Controllers\WishlistItemController::class);
-    Route::resource('orders', App\Http\Controllers\OrderController::class);
-    Route::resource('orderItems', App\Http\Controllers\OrderItemController::class);
-    Route::resource('deliveries', App\Http\Controllers\DeliveryController::class);
-    Route::resource('statuses', App\Http\Controllers\StatusController::class);
+    Route::resource('home', App\Http\Controllers\HomeController::class)->names('admin.home');
+    Route::resource('users', App\Http\Controllers\UserController::class)->names('admin.users');
+    Route::resource('roles', App\Http\Controllers\RoleController::class)->names('admin.roles');
+    Route::resource('permissions', App\Http\Controllers\PermissionController::class)->names('admin.permissions');
+    Route::resource('rolePermissions', App\Http\Controllers\RolePermissionController::class)->names('admin.rolePermissions');
+    Route::resource('categories', App\Http\Controllers\CategoryController::class)->names('admin.categories');
+    Route::resource('subcategories', App\Http\Controllers\SubcategoryController::class)->names('admin.subcategories');
+    Route::resource('inventories', App\Http\Controllers\InventoryController::class)->names('admin.inventories');
+    Route::resource('wishers', App\Http\Controllers\WisherController::class)->names('admin.wishers');
+    Route::resource('wishlists', App\Http\Controllers\WishlistController::class)->names('admin.wishlists');
+    Route::resource('wishlistItems', App\Http\Controllers\WishlistItemController::class)->names('admin.wishlistItems');
+    Route::resource('orders', App\Http\Controllers\OrderController::class)->names('admin.orders');
+    Route::resource('orderItems', App\Http\Controllers\OrderItemController::class)->names('admin.orderItems');
+    Route::resource('deliveries', App\Http\Controllers\DeliveryController::class)->names('admin.deliveries');
+    Route::resource('statuses', App\Http\Controllers\StatusController::class)->names('admin.statuses');
 });
 
 
-Route::middleware(['role:User'])->group(function () {
-    Route::resource('welcome', App\Http\Controllers\User\HomeController::class);
-//     Route::resource('wishers', App\Http\Controllers\User\WisherController::class);
-//     Route::resource('wishlists', App\Http\Controllers\User\WishlistController::class);
-//     Route::resource('wishlistItems', App\Http\Controllers\User\WishlistItemController::class);
+Route::middleware(['role:User'])->prefix('user')->group(function () {
+    Route::resource('home', App\Http\Controllers\User\HomeController::class)->names('user.home');
+    Route::resource('wishers', App\Http\Controllers\User\WisherController::class)->names('user.wishers');
+    Route::resource('wishlists', App\Http\Controllers\User\WishlistController::class)->names('user.wishlists');
+    Route::resource('wishlistItems', App\Http\Controllers\User\WishlistItemController::class)->names('user.wishlistItems');
 });
-
-
-

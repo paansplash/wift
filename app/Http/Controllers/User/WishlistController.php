@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Requests\CreateWishlistRequest;
 use App\Http\Requests\UpdateWishlistRequest;
 use App\Http\Controllers\AppBaseController;
+use App\Repositories\WisherRepository;
 use App\Repositories\WishlistRepository;
 use Illuminate\Http\Request;
 use Laracasts\Flash\Flash;
@@ -13,10 +14,14 @@ class WishlistController extends AppBaseController
 {
     /** @var WishlistRepository $wishlistRepository*/
     private $wishlistRepository;
+    private $wisherRepository;
 
-    public function __construct(WishlistRepository $wishlistRepo)
+    public function __construct(WishlistRepository $wishlistRepo, WisherRepository $wisherRepo)
     {
+        $this->middleware('auth'); // Ensure the user is authenticated
+        
         $this->wishlistRepository = $wishlistRepo;
+        $this->wisherRepository = $wisherRepo;
     }
 
     /**
@@ -24,18 +29,10 @@ class WishlistController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $wishlists = $this->wishlistRepository->paginate(10);
+        $wishers = $this->wisherRepository->getWisherByUser();
+        dd($wishers);
 
-        return view('pages.admin.wishlists.index')
-            ->with('wishlists', $wishlists);
-    }
-
-    /**
-     * Show the form for creating a new Wishlist.
-     */
-    public function create()
-    {
-        return view('pages.admin.wishlists.create');
+        return view('pages.user.wishlists', compact('wishers'));
     }
 
     /**
@@ -49,7 +46,7 @@ class WishlistController extends AppBaseController
 
         Flash::success('Wishlist saved successfully.');
 
-        return redirect(route('wishlists.index'));
+        return redirect(route('wishlistItems.index'));
     }
 
     /**

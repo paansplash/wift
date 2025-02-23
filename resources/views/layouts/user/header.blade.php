@@ -7,7 +7,7 @@
                 <div class="header-column align-items-start justify-content-center">
                     <div class="header-logo z-index-2 col-lg-2 px-3">
                         <a href="demo-architecture-2.html">
-                            <img alt="Porto" width="70" height="auto" src="assets/images/logos/icon2.png">
+                            <img alt="Porto" width="70" height="auto" src={{ asset('assets/images/logos/icon2.png') }}>
                         </a>
                     </div>
                 </div>
@@ -18,29 +18,18 @@
                             class="header-nav-main header-nav-main-arrows header-nav-main-mobile-dark header-nav-main-dropdown-no-borders header-nav-main-effect-3 header-nav-main-sub-effect-1">
                             <nav class="collapse">
                                 <ul class="nav nav-pills" id="mainNav">
-                                    <li><a href="{{ route('welcome') }}"
-                                            class="nav-link {{ Request::routeIs('welcome') ? 'active' : '' }}">Home</a>
+                                    <li><a href="{{ route('user.home.index') }}"
+                                            class="nav-link {{ Request::routeIs('home') ? 'active' : '' }}">Home</a>
                                     </li>
                                     <li><a href="{{ route('about-us') }}"
                                             class="nav-link {{ Request::routeIs('about-us') ? 'active' : '' }}">About</a>
                                     </li>
-                                    {{-- <li><a href="{{ route('projects') }}" class="nav-link {{ Request::routeIs('projects') ? 'active' : '' }}">Projects</a></li> --}}
-                                    {{-- <li class="dropdown">
-                                        <a href="{{ route('services') }}" 
-                                           class="nav-link dropdown-toggle {{ Request::routeIs('services') || Request::routeIs('services-detail') ? 'active' : '' }}">
-                                           Services
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="{{ route('services') }}" class="dropdown-item {{ Request::routeIs('services') ? 'active' : '' }}">View All</a></li>
-                                            <li><a href="{{ route('services-detail') }}" class="dropdown-item {{ Request::routeIs('services-detail') ? 'active' : '' }}">Design & Planning</a></li>
-                                            <li><a href="{{ route('services-detail') }}" class="dropdown-item {{ Request::routeIs('services-detail') ? 'active' : '' }}">Interior Design</a></li>
-                                            <li><a href="{{ route('services-detail') }}" class="dropdown-item {{ Request::routeIs('services-detail') ? 'active' : '' }}">Exterior Design</a></li>
-                                            <li><a href="{{ route('services-detail') }}" class="dropdown-item {{ Request::routeIs('services-detail') ? 'active' : '' }}">Construction Drawings</a></li>
-                                        </ul>
-                                    </li> --}}
                                     <li><a href="{{ route('contact') }}"
-                                            class="nav-link {{ Request::routeIs('contact') ? 'active' : '' }}">Contact
-                                            Us</a></li>
+                                            class="nav-link {{ Request::routeIs('contact') ? 'active' : '' }}">Contact Us</a>
+                                    </li>
+                                    <li><a href="{{ route('user.wishers.index') }}"
+                                        class="nav-link {{ Request::routeIs('contact') ? 'active' : '' }}">Get-Started</a>
+                                    </li>
                                     @guest
                                         <li><a href="{{ route('login') }}"
                                                 class="nav-link {{ Request::routeIs('login') ? 'active' : '' }}">Login</a>

@@ -16,6 +16,8 @@ class WishlistItemController extends AppBaseController
 
     public function __construct(WishlistItemRepository $wishlistItemRepo)
     {
+        $this->middleware('auth'); // Ensure the user is authenticated
+
         $this->wishlistItemRepository = $wishlistItemRepo;
     }
 

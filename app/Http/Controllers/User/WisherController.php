@@ -16,6 +16,8 @@ class WisherController extends AppBaseController
 
     public function __construct(WisherRepository $wisherRepo)
     {
+        $this->middleware('auth'); // Ensure the user is authenticated
+
         $this->wisherRepository = $wisherRepo;
     }
 
@@ -24,18 +26,7 @@ class WisherController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $wishers = $this->wisherRepository->paginate(10);
-
-        return view('pages.admin.wishers.index')
-            ->with('wishers', $wishers);
-    }
-
-    /**
-     * Show the form for creating a new Wisher.
-     */
-    public function create()
-    {
-        return view('pages.admin.wishers.create');
+        return view('pages.user.wishers');
     }
 
     /**
@@ -49,7 +40,8 @@ class WisherController extends AppBaseController
 
         Flash::success('Wisher saved successfully.');
 
-        return redirect(route('wishers.index'));
+        return view('pages.user.wishlists');
+
     }
 
     /**

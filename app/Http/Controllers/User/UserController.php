@@ -18,6 +18,8 @@ class UserController extends AppBaseController
 
     public function __construct(UserRepository $userRepo, RoleRepository $roleRepo)
     {
+        $this->middleware('auth');
+
         $this->userRepository = $userRepo;
         $this->roleRepository = $roleRepo;
     }

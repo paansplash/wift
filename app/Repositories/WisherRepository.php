@@ -38,4 +38,9 @@ class WisherRepository extends BaseRepository
     {
         return Wisher::count();
     }
+
+    public function getWisherByUser()
+    {
+        return Wisher::where('user_id', auth()->id())->latest()->first();
+    }
 }

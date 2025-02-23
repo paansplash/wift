@@ -25,32 +25,10 @@
         rel="stylesheet" type="text/css">
 
     <!-- Vendor CSS -->
-    {{-- <link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}"> --}}
     <link rel="stylesheet" href="{{ asset('assets/vendor/fontawesome-free/css/all.min.css') }}">
-    {{-- <link rel="stylesheet" href="{{ asset('assets/vendor/animate/animate.compat.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('assets/vendor/animate/animate.compat.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/vendor/simple-line-icons/css/simple-line-icons.min.css') }}">
-    {{-- <link rel="stylesheet" href="{{ asset('assets/vendor/owl.carousel/assets/owl.carousel.min.css') }}"> --}}
-    {{-- <link rel="stylesheet" href="{{ asset('assets/vendor/owl.carousel/assets/owl.theme.default.min.css') }}"> --}}
-    {{-- <link rel="stylesheet" href="{{ asset('assets/vendor/magnific-popup/magnific-popup.css') }}"> --}}
 
-    <!-- Theme CSS -->
-    {{-- <link rel="stylesheet" href="{{ asset('assets/css/theme.css') }}"> --}}
-    {{-- <link rel="stylesheet" href="{{ asset('assets/css/theme-elements.css') }}"> --}}
-    {{-- <link rel="stylesheet" href="{{ asset('assets/css/theme-blog.css') }}"> --}}
-    {{-- <link rel="stylesheet" href="{{ asset('assets/css/theme-shop.css') }}"> --}}
-
-    <!-- Demo CSS -->
-    {{-- <link rel="stylesheet" href="{{ asset('assets/css/demos/demo-architecture-2.css') }}"> --}}
-    
-    <!-- Skin CSS -->
-    {{-- <link id="skinCSS" rel="stylesheet" href="{{ asset('assets/css/skins/skin-architecture-2.css') }}"> --}}
-
-    <!-- Theme Custom CSS -->
-    {{-- <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}"> --}}
-    
-    <style>
-        
-    </style>
     @vite(['resources/css/public-porto.css', 'resources/css/app.css'])
 
     @stack('css')
