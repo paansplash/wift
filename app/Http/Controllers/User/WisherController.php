@@ -93,7 +93,7 @@ class WisherController extends AppBaseController
 
         Flash::success('Wisher updated successfully.');
 
-        return redirect(route('wishers.index'));
+        return redirect(route('user.wishlists.index'));
     }
 
     /**

@@ -22,12 +22,12 @@ class RedirectIfAuthenticated
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
                 $user = Auth::guard($guard)->user();
-                
+
                 // Ensure role relationship exists before accessing it
                 $roleName = $user->role ? strtolower($user->role->name) : '';
 
                 if (in_array($roleName, ['Super Admin', 'Admin'])) {
-                    return redirect()->route('admin.home');
+                    return redirect()->route('admin.home.index');
                 } elseif ($roleName === 'User') {
                     return redirect()->route('user.home.index');
                 } else {

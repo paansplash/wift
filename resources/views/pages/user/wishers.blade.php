@@ -12,7 +12,7 @@
                             <div class="col-md-12 align-self-center p-static text-center">
                                 <div class="overflow-hidden mb-2">
                                     <h1 class="font-weight-black text-12 mb-0 appear-animation"
-                                        data-appear-animation="maskUp" data-appear-animation-delay="1200">Create Your Wishlist</h1>
+                                        data-appear-animation="maskUp" data-appear-animation-delay="1200">Tell me about you</h1>
                                 </div>
                             </div>
                             <div class="col-md-12 align-self-center">

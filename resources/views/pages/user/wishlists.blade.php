@@ -21,7 +21,7 @@
                                         data-appear-animation="maskUp" data-appear-animation-delay="1450">
                                         <li class="text-transform-none"><a href="demo-architecture-2.html"
                                                 class="text-decoration-none">User</a></li>
-                                        <li class="text-transform-none active">Wisher</li>
+                                        <li class="text-transform-none active">Wishlist</li>
                                     </ul>
                                 </div>
                             </div>

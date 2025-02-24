@@ -7,7 +7,8 @@
                 <div class="header-column align-items-start justify-content-center">
                     <div class="header-logo z-index-2 col-lg-2 px-3">
                         <a href="demo-architecture-2.html">
-                            <img alt="Porto" width="70" height="auto" src={{ asset('assets/images/logos/icon2.png') }}>
+                            <img alt="Porto" width="70" height="auto"
+                                src={{ asset('assets/images/logos/icon2.png') }}>
                         </a>
                     </div>
                 </div>
@@ -25,11 +26,14 @@
                                             class="nav-link {{ Request::routeIs('about-us') ? 'active' : '' }}">About</a>
                                     </li>
                                     <li><a href="{{ route('contact') }}"
-                                            class="nav-link {{ Request::routeIs('contact') ? 'active' : '' }}">Contact Us</a>
+                                            class="nav-link {{ Request::routeIs('contact') ? 'active' : '' }}">Contact
+                                            Us</a>
                                     </li>
-                                    <li><a href="{{ route('user.wishers.index') }}"
-                                        class="nav-link {{ Request::routeIs('contact') ? 'active' : '' }}">Get-Started</a>
-                                    </li>
+                                    @auth
+                                        <li><a href="{{ route('user.wishers.index') }}"
+                                                class="nav-link {{ Request::routeIs('contact') ? 'active' : '' }}">Get-Started</a>
+                                        </li>
+                                    @endauth
                                     @guest
                                         <li><a href="{{ route('login') }}"
                                                 class="nav-link {{ Request::routeIs('login') ? 'active' : '' }}">Login</a>

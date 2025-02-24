@@ -30,7 +30,6 @@ class WishlistController extends AppBaseController
     public function index(Request $request)
     {
         $wishers = $this->wisherRepository->getWisherByUser();
-        dd($wishers);
 
         return view('pages.user.wishlists', compact('wishers'));
     }

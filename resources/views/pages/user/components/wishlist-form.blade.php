@@ -3,17 +3,18 @@
         <h3 class="text-transform-none text-color-dark font-weight-black text-7 line-height-2 mb-0 pt-3 appear-animation"
             data-appear-animation="maskUp" data-appear-animation-delay="2600">Fill in your details.</h3>
     </div>
-    <form action="{{ route('wishlists.store') }}" method="POST">
+    <form class="custom-form-style-1 appear-animation" action="{{ route('user.wishlists.store') }}" method="POST"
+    data-appear-animation="fadeInUpShorter" data-appear-animation-delay="2800">
         @csrf
 
-        <div class="contact-form-success alert alert-success d-none mt-4">
+        {{-- <div class="contact-form-success alert alert-success d-none mt-4">
             <strong>Success!</strong> Your message has been sent to us.
         </div>
 
         <div class="contact-form-error alert alert-danger d-none mt-4">
             <strong>Error!</strong> There was an error sending your message.
             <span class="mail-error-message text-1 d-block"></span>
-        </div>
+        </div> --}}
 
         <div class="row">
             <!-- Wisher ID Field -->
@@ -39,8 +40,8 @@
 
         <!-- Submit & Cancel Buttons -->
         <div class="card-footer">
-            <button type="submit" class="btn btn-primary">Save</button>
-            <a href="{{ route('user.wishers.index') }}" class="btn btn-default">Cancel</a>
+            <button type="submit" class="btn btn-primary custom-btn-style-1 font-weight-bold text-3 px-5 py-3 m-3">Save</button>
+            <a href="{{ route('user.wishers.index') }}" class="btn btn-default custom-btn-style-1 font-weight-bold text-3 px-5 py-3">Cancel</a>
         </div>
     </form>
 </div>
