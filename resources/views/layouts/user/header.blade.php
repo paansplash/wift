@@ -20,18 +20,26 @@
                             <nav class="collapse">
                                 <ul class="nav nav-pills" id="mainNav">
                                     <li><a href="{{ route('user.home.index') }}"
-                                            class="nav-link {{ Request::routeIs('home') ? 'active' : '' }}">Home</a>
+                                            class="nav-link {{ Request::routeIs('user.home.index') ? 'active' : '' }}">Home</a>
                                     </li>
                                     <li><a href="{{ route('about-us') }}"
                                             class="nav-link {{ Request::routeIs('about-us') ? 'active' : '' }}">About</a>
                                     </li>
                                     <li><a href="{{ route('contact') }}"
-                                            class="nav-link {{ Request::routeIs('contact') ? 'active' : '' }}">Contact
-                                            Us</a>
+                                            class="nav-link {{ Request::routeIs('contact') ? 'active' : '' }}">Contact Us</a>
                                     </li>
                                     @auth
                                         <li><a href="{{ route('user.wishers.index') }}"
-                                                class="nav-link {{ Request::routeIs('contact') ? 'active' : '' }}">Get-Started</a>
+                                                class="nav-link {{ Request::routeIs('user.wishers.index') ? 'active' : '' }}">Get Started</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="nav-link text-danger"
+                                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                                Logout
+                                            </a>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                @csrf
+                                            </form>
                                         </li>
                                     @endauth
                                     @guest
@@ -41,6 +49,7 @@
                                     @endguest
                                 </ul>
                             </nav>
+                            
 
                         </div>
                     </div>

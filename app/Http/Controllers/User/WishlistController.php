@@ -29,9 +29,9 @@ class WishlistController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $wishers = $this->wisherRepository->getWisherByUser();
+        $wisher = $this->wisherRepository->getWisherByUser();
 
-        return view('pages.user.wishlists', compact('wishers'));
+        return view('pages.user.wishlists', compact('wisher'));
     }
 
     /**
@@ -45,7 +45,7 @@ class WishlistController extends AppBaseController
 
         Flash::success('Wishlist saved successfully.');
 
-        return redirect(route('wishlistItems.index'));
+        return redirect(route('user.wishlistItems.index'));
     }
 
     /**

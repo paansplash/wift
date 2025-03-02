@@ -95,7 +95,7 @@
                             </div>
                         </div>
                     </div>
-                    @include('pages.user.components.wisher-form')
+                    {{-- @include('pages.user.components.wisher-form') --}}
                 </div>
             </div>
         </div>

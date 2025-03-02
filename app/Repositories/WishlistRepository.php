@@ -27,4 +27,11 @@ class WishlistRepository extends BaseRepository
     {
         return Wishlist::all();
     }
+
+    public function getLatestWishlist()
+    {
+        return Wishlist::whereHas('wisher', function ($query) {
+            $query->where('user_id', auth()->id());
+        })->latest()->first();
+    }
 }
