@@ -11,7 +11,7 @@ Order Details
                 </div>
                 <div class="col-sm-6">
                     <a class="btn btn-default float-right"
-                       href="{{ route('orders.index') }}">
+                       href="{{ route('admin.orders.index') }}">
                                                     Back
                                             </a>
                 </div>

@@ -1,5 +1,5 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4 bg-black">
-    <a href="{{ route('home') }}" class="brand-link">
+    <a href="{{ route('admin.home.index') }}" class="brand-link">
         <img src="{{ asset('assets/images/logos/icon2.png') }}"
              alt="Logo"
              class="brand-image img-circle elevation-3">

@@ -18,11 +18,11 @@
                     <td  style="width: 120px">
                         {!! Form::open(['route' => ['wishlistItems.destroy', $wishlistItem->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>
-                            <a href="{{ route('wishlistItems.show', [$wishlistItem->id]) }}"
+                            <a href="{{ route('admin.wishlistItems.show', [$wishlistItem->id]) }}"
                                class='btn btn-default btn-xs'>
                                 <i class="far fa-eye"></i>
                             </a>
-                            <a href="{{ route('wishlistItems.edit', [$wishlistItem->id]) }}"
+                            <a href="{{ route('admin.wishlistItems.edit', [$wishlistItem->id]) }}"
                                class='btn btn-default btn-xs'>
                                 <i class="far fa-edit"></i>
                             </a>

@@ -47,7 +47,7 @@
         <!-- Submit & Cancel Buttons -->
         <div class="card-footer">
             <button type="submit" class="btn btn-primary custom-btn-style-1 font-weight-bold text-3 px-5 py-3 m-3">Save</button>
-            <a href="{{ route('user.wishlists.index') }}" class="btn btn-default custom-btn-style-1 font-weight-bold text-3 px-5 py-3">Cancel</a>
+            <a href="{{ route('admin.user.wishlists.index') }}" class="btn btn-default custom-btn-style-1 font-weight-bold text-3 px-5 py-3">Cancel</a>
         </div>
     </form>
 </div>

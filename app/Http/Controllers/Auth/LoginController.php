@@ -12,14 +12,19 @@ class LoginController extends Controller
 
     protected function redirectTo()
     {
-        if (Auth::check() && Auth::user()->role === 'User') {
-            return '/user/home';
-        } elseif (Auth::check() && (Auth::user()->role === 'Admin' || Auth::user()->role === 'Super Admin')) {
-            return '/admin/home';
+        if (Auth::check()) {
+            $roleId = Auth::user()->role_id; // Ensure you're checking role_id
+
+            if ($roleId == 4) { // Example: Assuming 'User' role has ID 2
+                return '/user/home';
+            } elseif ($roleId == 1 || $roleId == 2) { // Example: Assuming 'Admin' has ID 1, 'Super Admin' has ID 3
+                return '/admin/home';
+            }
         }
 
         return '/'; // Default fallback
     }
+
 
     public function __construct()
     {

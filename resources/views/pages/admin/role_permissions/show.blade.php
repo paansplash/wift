@@ -11,7 +11,7 @@ Role Permission Details
                 </div>
                 <div class="col-sm-6">
                     <a class="btn btn-default float-right"
-                       href="{{ route('rolePermissions.index') }}">
+                       href="{{ route('admin.rolePermissions.index') }}">
                                                     Back
                                             </a>
                 </div>

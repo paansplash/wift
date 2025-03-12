@@ -20,11 +20,11 @@
                     <td  style="width: 120px">
                         {!! Form::open(['route' => ['subcategories.destroy', $subcategory->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>
-                            <a href="{{ route('subcategories.show', [$subcategory->id]) }}"
+                            <a href="{{ route('admin.subcategories.show', [$subcategory->id]) }}"
                                class='btn btn-default btn-xs'>
                                 <i class="far fa-eye"></i>
                             </a>
-                            <a href="{{ route('subcategories.edit', [$subcategory->id]) }}"
+                            <a href="{{ route('admin.subcategories.edit', [$subcategory->id]) }}"
                                class='btn btn-default btn-xs'>
                                 <i class="far fa-edit"></i>
                             </a>

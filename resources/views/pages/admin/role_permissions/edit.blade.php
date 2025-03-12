@@ -29,7 +29,7 @@
 
             <div class="card-footer">
                 {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-                <a href="{{ route('rolePermissions.index') }}" class="btn btn-default"> Cancel </a>
+                <a href="{{ route('admin.rolePermissions.index') }}" class="btn btn-default"> Cancel </a>
             </div>
 
             {!! Form::close() !!}

@@ -11,7 +11,7 @@ Subcategory Details
                 </div>
                 <div class="col-sm-6">
                     <a class="btn btn-default float-right"
-                       href="{{ route('subcategories.index') }}">
+                       href="{{ route('admin.subcategories.index') }}">
                                                     Back
                                             </a>
                 </div>

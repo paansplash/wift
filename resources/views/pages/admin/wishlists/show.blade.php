@@ -11,7 +11,7 @@ Wishlist Details
                 </div>
                 <div class="col-sm-6">
                     <a class="btn btn-default float-right"
-                       href="{{ route('wishlists.index') }}">
+                       href="{{ route('admin.wishlists.index') }}">
                                                     Back
                                             </a>
                 </div>

@@ -16,11 +16,11 @@
                     <td  style="width: 120px">
                         {!! Form::open(['route' => ['permissions.destroy', $permission->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>
-                            <a href="{{ route('permissions.show', [$permission->id]) }}"
+                            <a href="{{ route('admin.permissions.show', [$permission->id]) }}"
                                class='btn btn-default btn-xs'>
                                 <i class="far fa-eye"></i>
                             </a>
-                            <a href="{{ route('permissions.edit', [$permission->id]) }}"
+                            <a href="{{ route('admin.permissions.edit', [$permission->id]) }}"
                                class='btn btn-default btn-xs'>
                                 <i class="far fa-edit"></i>
                             </a>

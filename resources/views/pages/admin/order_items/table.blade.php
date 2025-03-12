@@ -20,11 +20,11 @@
                     <td  style="width: 120px">
                         {!! Form::open(['route' => ['orderItems.destroy', $orderItem->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>
-                            <a href="{{ route('orderItems.show', [$orderItem->id]) }}"
+                            <a href="{{ route('admin.orderItems.show', [$orderItem->id]) }}"
                                class='btn btn-default btn-xs'>
                                 <i class="far fa-eye"></i>
                             </a>
-                            <a href="{{ route('orderItems.edit', [$orderItem->id]) }}"
+                            <a href="{{ route('admin.orderItems.edit', [$orderItem->id]) }}"
                                class='btn btn-default btn-xs'>
                                 <i class="far fa-edit"></i>
                             </a>

@@ -34,9 +34,11 @@
                         <div class="icon">
                             <i class="fas fa-user"></i>
                         </div>
-                        <a href="{{ route('users.index') }}" class="small-box-footer">See all <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="{{ route('admin.users.index') }}" class="small-box-footer">See all <i
+                                class="fas fa-arrow-circle-right"></i></a>
                     </div>
-                </div><div class="col-lg-3 col-6">
+                </div>
+                <div class="col-lg-3 col-6">
                     <div class="small-box bg-info">
                         <div class="inner">
                             <h3>{{ $totalWishers }}</h3>
@@ -46,10 +48,11 @@
                         <div class="icon">
                             <i class="fas fa-heart"></i>
                         </div>
-                        <a href="{{ route('wishers.create') }}" class="small-box-footer">Add new <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="{{ route('admin.wishers.create') }}" class="small-box-footer">Add new <i
+                                class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-3 col-6">
                     <div class="small-box bg-warning">
                         <div class="inner">
