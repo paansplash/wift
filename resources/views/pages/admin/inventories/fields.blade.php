@@ -1,53 +1,67 @@
 <!-- Name Field -->
 <div class="form-group col-sm-6">
-    <label class="ms-0" for="name">Name</label>
+    <label for="name" class="font-weight-bold">
+        <i class="fas fa-tag mr-1"></i> Name
+    </label>
     <input type="text" id="name" name="name" value="{{ old('name', $inventory->name ?? '') }}"
-        class="form-control" required maxlength="255">
+        class="form-control" required maxlength="255" placeholder="Enter name">
 </div>
 
 <!-- Subcategory Id Field -->
 <div class="form-group col-sm-6">
-    <label class="ms-0" for="subcategory_id">Subcategory</label>
+    <label for="subcategory_id" class="font-weight-bold">
+        <i class="fas fa-list mr-1"></i> Subcategory
+    </label>
     <select class="form-control" id="subcategory_id" name="subcategory_id">
         <option value=''>- Choose a Subcategory -</option>
         @foreach ($subcategories as $subcategory)
-            <option {{ $inventory->subcategory_id ?? old('subcategory_id') == $subcategory->id ? 'selected' : '' }}
+            <option {{ ($inventory->subcategory_id ?? old('subcategory_id')) == $subcategory->id ? 'selected' : '' }}
                 value="{{ $subcategory->id }}">
-                {{ $subcategory->name }}</option>
+                {{ $subcategory->name }}
+            </option>
         @endforeach
     </select>
 </div>
 
 <!-- Price Field -->
 <div class="form-group col-sm-6">
-    <label class="ms-0" for="price">Price</label>
+    <label for="price" class="font-weight-bold">
+        <i class="fas fa-dollar-sign mr-1"></i> Price
+    </label>
     <input type="number" id="price" name="price" value="{{ old('price', $inventory->price ?? '') }}"
-        class="form-control" required step="0.01">
+        class="form-control" required step="0.01" placeholder="Enter price">
 </div>
 
 <!-- Quantity Field -->
 <div class="form-group col-sm-6">
-    <label class="ms-0" for="quantity">Quantity</label>
+    <label for="quantity" class="font-weight-bold">
+        <i class="fas fa-boxes mr-1"></i> Quantity
+    </label>
     <input type="number" id="quantity" name="quantity" value="{{ old('quantity', $inventory->quantity ?? '') }}"
-        class="form-control">
+        class="form-control" placeholder="Enter quantity">
 </div>
 
 <!-- User Id Field -->
 <div class="form-group col-sm-6">
-    <label class="ms-0" for="user_id">User</label>
+    <label for="user_id" class="font-weight-bold">
+        <i class="fas fa-user mr-1"></i> User
+    </label>
     <select class="form-control" id="user_id" name="user_id">
         <option value=''>- Choose a User -</option>
         @foreach ($users as $user)
-            <option {{ $inventory->user_id ?? old('user_id') == $user->id ? 'selected' : '' }}
+            <option {{ ($inventory->user_id ?? old('user_id')) == $user->id ? 'selected' : '' }}
                 value="{{ $user->id }}">
-                {{ $user->name }}</option>
+                {{ $user->name }}
+            </option>
         @endforeach
     </select>
 </div>
 
 <!-- Status Field -->
 <div class="form-group col-sm-6">
-    <label class="ms-0" for="status_id">Status</label>
+    <label for="status_id" class="font-weight-bold">
+        <i class="fas fa-toggle-on mr-1"></i> Status
+    </label>
     <select class="form-control" id="status_id" name="status_id" required>
         <option value="">- Choose a Status -</option>
         @foreach ($statuses as $status)
@@ -57,4 +71,20 @@
             </option>
         @endforeach
     </select>
+</div>
+
+<!-- Image Upload Field -->
+<div class="form-group col-sm-6">
+    <label for="image" class="font-weight-bold">
+        <i class="fas fa-image mr-1"></i> Image
+    </label>
+    <div class="custom-file">
+        <input type="file" name="image" class="custom-file-input" id="image" accept="image/*">
+        <label class="custom-file-label" for="image">Choose a file</label>
+    </div>
+    @if (isset($inventory->image))
+        <div class="mt-2">
+            <img src="{{ asset('storage/' . $inventory->image) }}" alt="Inventory Image" class="img-thumbnail" width="150">
+        </div>
+    @endif
 </div>

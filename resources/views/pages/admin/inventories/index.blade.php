@@ -8,8 +8,7 @@
                     <h1>Inventories</h1>
                 </div>
                 <div class="col-sm-6">
-                    <a class="btn btn-primary float-right"
-                       href="{{ route('admin.inventories.create') }}">
+                    <a class="btn btn-primary float-right" href="{{ route('admin.inventories.create') }}">
                         Add New
                     </a>
                 </div>
@@ -27,5 +26,4 @@
             @include('pages.admin.inventories.table')
         </div>
     </div>
-
 @endsection

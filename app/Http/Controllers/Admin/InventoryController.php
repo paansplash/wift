@@ -89,6 +89,8 @@ class InventoryController extends AppBaseController
     {
         $inventory = $this->inventoryRepository->find($id);
         $statuses = $this->statusRepository->getActivityStatuses();
+        $subcategories = $this->subcategoryRepository->getSubcategories();
+        $users = $this->userRepository->getAllUsers();
 
         if (empty($inventory)) {
             Flash::error('Inventory not found');
@@ -96,28 +98,36 @@ class InventoryController extends AppBaseController
             return redirect(route('inventories.index'));
         }
 
-        return view('pages.admin.inventories.edit', compact('inventory', 'statuses'));
+        return view('pages.admin.inventories.edit', compact('inventory', 'statuses', 'subcategories', 'users'));
     }
 
     /**
      * Update the specified Inventory in storage.
      */
     public function update($id, UpdateInventoryRequest $request)
-    {
-        $inventory = $this->inventoryRepository->find($id);
+{
+    $inventory = $this->inventoryRepository->find($id);
 
-        if (empty($inventory)) {
-            Flash::error('Inventory not found');
-
-            return redirect(route('inventories.index'));
-        }
-
-        $inventory = $this->inventoryRepository->update($request->all(), $id);
-
-        Flash::success('Inventory updated successfully.');
-
+    if (empty($inventory)) {
+        Flash::error('Inventory not found');
         return redirect(route('inventories.index'));
     }
+
+    $data = $request->all();
+
+    // Handle file upload
+    if ($request->hasFile('image')) {
+        $imagePath = $request->file('image')->store('inventories', 'public'); // Stores in storage/app/public/inventories
+        $data['image'] = $imagePath;
+    }
+
+    $inventory = $this->inventoryRepository->update($data, $id);
+
+    Flash::success('Inventory updated successfully.');
+
+    return redirect(route('inventories.index'));
+}
+
 
     /**
      * Remove the specified Inventory from storage.

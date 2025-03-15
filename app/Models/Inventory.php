@@ -33,7 +33,7 @@ class Inventory extends Model
         'user_id' => 'nullable',
         'subcategory_id' => 'required',
         'status_id' => 'required',
-        'image' => 'nullable|mimes:jpeg,jpg,png,gif',
+        'image' => 'nullable|image|mimes:jpeg,jpg,png,gif',
     ];
 
     public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
