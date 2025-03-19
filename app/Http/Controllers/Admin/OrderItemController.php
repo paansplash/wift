@@ -49,7 +49,7 @@ class OrderItemController extends AppBaseController
 
         Flash::success('Order Item saved successfully.');
 
-        return redirect(route('orderItems.index'));
+        return redirect(route('admin.orderItems.index'));
     }
 
     /**
@@ -62,7 +62,7 @@ class OrderItemController extends AppBaseController
         if (empty($orderItem)) {
             Flash::error('Order Item not found');
 
-            return redirect(route('orderItems.index'));
+            return redirect(route('admin.orderItems.index'));
         }
 
         return view('pages.admin.order_items.show')->with('orderItem', $orderItem);
@@ -78,7 +78,7 @@ class OrderItemController extends AppBaseController
         if (empty($orderItem)) {
             Flash::error('Order Item not found');
 
-            return redirect(route('orderItems.index'));
+            return redirect(route('admin.orderItems.index'));
         }
 
         return view('pages.admin.order_items.edit')->with('orderItem', $orderItem);
@@ -94,14 +94,14 @@ class OrderItemController extends AppBaseController
         if (empty($orderItem)) {
             Flash::error('Order Item not found');
 
-            return redirect(route('orderItems.index'));
+            return redirect(route('admin.orderItems.index'));
         }
 
         $orderItem = $this->orderItemRepository->update($request->all(), $id);
 
         Flash::success('Order Item updated successfully.');
 
-        return redirect(route('orderItems.index'));
+        return redirect(route('admin.orderItems.index'));
     }
 
     /**
@@ -116,13 +116,13 @@ class OrderItemController extends AppBaseController
         if (empty($orderItem)) {
             Flash::error('Order Item not found');
 
-            return redirect(route('orderItems.index'));
+            return redirect(route('admin.orderItems.index'));
         }
 
         $this->orderItemRepository->delete($id);
 
         Flash::success('Order Item deleted successfully.');
 
-        return redirect(route('orderItems.index'));
+        return redirect(route('admin.orderItems.index'));
     }
 }

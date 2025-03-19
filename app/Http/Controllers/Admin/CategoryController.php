@@ -54,7 +54,7 @@ class CategoryController extends AppBaseController
 
         Flash::success('Category saved successfully.');
 
-        return redirect(route('categories.index'));
+        return redirect(route('admin.categories.index'));
     }
 
     /**
@@ -67,7 +67,7 @@ class CategoryController extends AppBaseController
         if (empty($category)) {
             Flash::error('Category not found');
 
-            return redirect(route('categories.index'));
+            return redirect(route('admin.categories.index'));
         }
 
         return view('pages.admin.categories.show')->with('category', $category);
@@ -84,7 +84,7 @@ class CategoryController extends AppBaseController
         if (empty($category)) {
             Flash::error('Category not found');
 
-            return redirect(route('categories.index'));
+            return redirect(route('admin.categories.index'));
         }
 
         return view('pages.admin.categories.edit', compact('category', 'statuses'));
@@ -100,14 +100,14 @@ class CategoryController extends AppBaseController
         if (empty($category)) {
             Flash::error('Category not found');
 
-            return redirect(route('categories.index'));
+            return redirect(route('admin.categories.index'));
         }
 
         $category = $this->categoryRepository->update($request->all(), $id);
 
         Flash::success('Category updated successfully.');
 
-        return redirect(route('categories.index'));
+        return redirect(route('admin.categories.index'));
     }
 
     /**
@@ -122,13 +122,13 @@ class CategoryController extends AppBaseController
         if (empty($category)) {
             Flash::error('Category not found');
 
-            return redirect(route('categories.index'));
+            return redirect(route('admin.categories.index'));
         }
 
         $this->categoryRepository->delete($id);
 
         Flash::success('Category deleted successfully.');
 
-        return redirect(route('categories.index'));
+        return redirect(route('admin.categories.index'));
     }
 }

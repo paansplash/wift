@@ -54,7 +54,7 @@ class WishlistController extends AppBaseController
 
         Flash::success('Wishlist saved successfully.');
 
-        return redirect(route('wishlistItems.create'));
+        return redirect(route('admin.wishlistItems.create'));
     }
 
     /**
@@ -67,7 +67,7 @@ class WishlistController extends AppBaseController
         if (empty($wishlist)) {
             Flash::error('Wishlist not found');
 
-            return redirect(route('wishlists.index'));
+            return redirect(route('admin.wishlists.index'));
         }
 
         return view('pages.admin.wishlists.show')->with('wishlist', $wishlist);
@@ -84,7 +84,7 @@ class WishlistController extends AppBaseController
         if (empty($wishlist)) {
             Flash::error('Wishlist not found');
 
-            return redirect(route('wishlists.index'));
+            return redirect(route('admin.wishlists.index'));
         }
 
         return view('pages.admin.wishlists.edit', compact('wishlist', 'wishers'));
@@ -100,14 +100,14 @@ class WishlistController extends AppBaseController
         if (empty($wishlist)) {
             Flash::error('Wishlist not found');
 
-            return redirect(route('wishlists.index'));
+            return redirect(route('admin.wishlists.index'));
         }
 
         $wishlist = $this->wishlistRepository->update($request->all(), $id);
 
         Flash::success('Wishlist updated successfully.');
 
-        return redirect(route('wishlists.index'));
+        return redirect(route('admin.wishlists.index'));
     }
 
     /**
@@ -122,13 +122,13 @@ class WishlistController extends AppBaseController
         if (empty($wishlist)) {
             Flash::error('Wishlist not found');
 
-            return redirect(route('wishlists.index'));
+            return redirect(route('admin.wishlists.index'));
         }
 
         $this->wishlistRepository->delete($id);
 
         Flash::success('Wishlist deleted successfully.');
 
-        return redirect(route('wishlists.index'));
+        return redirect(route('admin.wishlists.index'));
     }
 }

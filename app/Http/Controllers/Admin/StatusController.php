@@ -49,7 +49,7 @@ class StatusController extends AppBaseController
 
         Flash::success('Status saved successfully.');
 
-        return redirect(route('statuses.index'));
+        return redirect(route('admin.statuses.index'));
     }
 
     /**
@@ -62,7 +62,7 @@ class StatusController extends AppBaseController
         if (empty($status)) {
             Flash::error('Status not found');
 
-            return redirect(route('statuses.index'));
+            return redirect(route('admin.statuses.index'));
         }
 
         return view('pages.admin.statuses.show')->with('status', $status);
@@ -78,7 +78,7 @@ class StatusController extends AppBaseController
         if (empty($status)) {
             Flash::error('Status not found');
 
-            return redirect(route('statuses.index'));
+            return redirect(route('admin.statuses.index'));
         }
 
         return view('pages.admin.statuses.edit')->with('status', $status);
@@ -94,14 +94,14 @@ class StatusController extends AppBaseController
         if (empty($status)) {
             Flash::error('Status not found');
 
-            return redirect(route('statuses.index'));
+            return redirect(route('admin.statuses.index'));
         }
 
         $status = $this->statusRepository->update($request->all(), $id);
 
         Flash::success('Status updated successfully.');
 
-        return redirect(route('statuses.index'));
+        return redirect(route('admin.statuses.index'));
     }
 
     /**
@@ -116,13 +116,13 @@ class StatusController extends AppBaseController
         if (empty($status)) {
             Flash::error('Status not found');
 
-            return redirect(route('statuses.index'));
+            return redirect(route('admin.statuses.index'));
         }
 
         $this->statusRepository->delete($id);
 
         Flash::success('Status deleted successfully.');
 
-        return redirect(route('statuses.index'));
+        return redirect(route('admin.statuses.index'));
     }
 }

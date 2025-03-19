@@ -49,7 +49,7 @@ class RolePermissionController extends AppBaseController
 
         Flash::success('Role Permission saved successfully.');
 
-        return redirect(route('rolePermissions.index'));
+        return redirect(route('admin.rolePermissions.index'));
     }
 
     /**
@@ -62,7 +62,7 @@ class RolePermissionController extends AppBaseController
         if (empty($rolePermission)) {
             Flash::error('Role Permission not found');
 
-            return redirect(route('rolePermissions.index'));
+            return redirect(route('admin.rolePermissions.index'));
         }
 
         return view('pages.admin.role_permissions.show')->with('rolePermission', $rolePermission);
@@ -78,7 +78,7 @@ class RolePermissionController extends AppBaseController
         if (empty($rolePermission)) {
             Flash::error('Role Permission not found');
 
-            return redirect(route('rolePermissions.index'));
+            return redirect(route('admin.rolePermissions.index'));
         }
 
         return view('pages.admin.role_permissions.edit')->with('rolePermission', $rolePermission);
@@ -94,14 +94,14 @@ class RolePermissionController extends AppBaseController
         if (empty($rolePermission)) {
             Flash::error('Role Permission not found');
 
-            return redirect(route('rolePermissions.index'));
+            return redirect(route('admin.rolePermissions.index'));
         }
 
         $rolePermission = $this->rolePermissionRepository->update($request->all(), $id);
 
         Flash::success('Role Permission updated successfully.');
 
-        return redirect(route('rolePermissions.index'));
+        return redirect(route('admin.rolePermissions.index'));
     }
 
     /**
@@ -116,13 +116,13 @@ class RolePermissionController extends AppBaseController
         if (empty($rolePermission)) {
             Flash::error('Role Permission not found');
 
-            return redirect(route('rolePermissions.index'));
+            return redirect(route('admin.rolePermissions.index'));
         }
 
         $this->rolePermissionRepository->delete($id);
 
         Flash::success('Role Permission deleted successfully.');
 
-        return redirect(route('rolePermissions.index'));
+        return redirect(route('admin.rolePermissions.index'));
     }
 }

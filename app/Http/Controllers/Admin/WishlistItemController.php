@@ -70,7 +70,7 @@ class WishlistItemController extends AppBaseController
             ]);
         }
 
-        return redirect(route('wishlistItems.index'))->with('success', 'Wishlist items saved successfully.');
+        return redirect(route('admin.wishlistItems.index'))->with('success', 'Wishlist items saved successfully.');
     }
 
 
@@ -84,7 +84,7 @@ class WishlistItemController extends AppBaseController
         if (empty($wishlistItem)) {
             Flash::error('Wishlist Item not found');
 
-            return redirect(route('wishlistItems.index'));
+            return redirect(route('admin.wishlistItems.index'));
         }
 
         return view('pages.admin.wishlist_items.show')->with('wishlistItem', $wishlistItem);
@@ -100,7 +100,7 @@ class WishlistItemController extends AppBaseController
         if (empty($wishlistItem)) {
             Flash::error('Wishlist Item not found');
 
-            return redirect(route('wishlistItems.index'));
+            return redirect(route('admin.wishlistItems.index'));
         }
 
         return view('pages.admin.wishlist_items.edit')->with('wishlistItem', $wishlistItem);
@@ -116,14 +116,14 @@ class WishlistItemController extends AppBaseController
         if (empty($wishlistItem)) {
             Flash::error('Wishlist Item not found');
 
-            return redirect(route('wishlistItems.index'));
+            return redirect(route('admin.wishlistItems.index'));
         }
 
         $wishlistItem = $this->wishlistItemRepository->update($request->all(), $id);
 
         Flash::success('Wishlist Item updated successfully.');
 
-        return redirect(route('wishlistItems.index'));
+        return redirect(route('admin.wishlistItems.index'));
     }
 
     /**
@@ -138,13 +138,13 @@ class WishlistItemController extends AppBaseController
         if (empty($wishlistItem)) {
             Flash::error('Wishlist Item not found');
 
-            return redirect(route('wishlistItems.index'));
+            return redirect(route('admin.wishlistItems.index'));
         }
 
         $this->wishlistItemRepository->delete($id);
 
         Flash::success('Wishlist Item deleted successfully.');
 
-        return redirect(route('wishlistItems.index'));
+        return redirect(route('admin.wishlistItems.index'));
     }
 }

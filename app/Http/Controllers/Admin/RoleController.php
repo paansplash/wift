@@ -49,7 +49,7 @@ class RoleController extends AppBaseController
 
         Flash::success('Role saved successfully.');
 
-        return redirect(route('roles.index'));
+        return redirect(route('admin.roles.index'));
     }
 
     /**
@@ -62,7 +62,7 @@ class RoleController extends AppBaseController
         if (empty($role)) {
             Flash::error('Role not found');
 
-            return redirect(route('roles.index'));
+            return redirect(route('admin.roles.index'));
         }
 
         return view('pages.admin.roles.show')->with('role', $role);
@@ -78,7 +78,7 @@ class RoleController extends AppBaseController
         if (empty($role)) {
             Flash::error('Role not found');
 
-            return redirect(route('roles.index'));
+            return redirect(route('admin.roles.index'));
         }
 
         return view('pages.admin.roles.edit')->with('role', $role);
@@ -94,14 +94,14 @@ class RoleController extends AppBaseController
         if (empty($role)) {
             Flash::error('Role not found');
 
-            return redirect(route('roles.index'));
+            return redirect(route('admin.roles.index'));
         }
 
         $role = $this->roleRepository->update($request->all(), $id);
 
         Flash::success('Role updated successfully.');
 
-        return redirect(route('roles.index'));
+        return redirect(route('admin.roles.index'));
     }
 
     /**
@@ -116,13 +116,13 @@ class RoleController extends AppBaseController
         if (empty($role)) {
             Flash::error('Role not found');
 
-            return redirect(route('roles.index'));
+            return redirect(route('admin.roles.index'));
         }
 
         $this->roleRepository->delete($id);
 
         Flash::success('Role deleted successfully.');
 
-        return redirect(route('roles.index'));
+        return redirect(route('admin.roles.index'));
     }
 }

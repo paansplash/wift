@@ -54,7 +54,7 @@ class WisherController extends AppBaseController
 
         Flash::success('Wisher saved successfully.');
 
-        return redirect(route('wishlists.create'));
+        return redirect(route('admin.wishlists.create'));
     }
 
     /**
@@ -67,7 +67,7 @@ class WisherController extends AppBaseController
         if (empty($wisher)) {
             Flash::error('Wisher not found');
 
-            return redirect(route('wishers.index'));
+            return redirect(route('admin.wishers.index'));
         }
 
         return view('pages.admin.wishers.show')->with('wisher', $wisher);
@@ -84,7 +84,7 @@ class WisherController extends AppBaseController
         if (empty($wisher)) {
             Flash::error('Wisher not found');
 
-            return redirect(route('wishers.index'));
+            return redirect(route('admin.wishers.index'));
         }
 
         return view('pages.admin.wishers.edit', compact('wisher','users'));
@@ -100,14 +100,14 @@ class WisherController extends AppBaseController
         if (empty($wisher)) {
             Flash::error('Wisher not found');
 
-            return redirect(route('wishers.index'));
+            return redirect(route('admin.wishers.index'));
         }
 
         $wisher = $this->wisherRepository->update($request->all(), $id);
 
         Flash::success('Wisher updated successfully.');
 
-        return redirect(route('wishers.index'));
+        return redirect(route('admin.wishers.index'));
     }
 
     /**
@@ -122,13 +122,13 @@ class WisherController extends AppBaseController
         if (empty($wisher)) {
             Flash::error('Wisher not found');
 
-            return redirect(route('wishers.index'));
+            return redirect(route('admin.wishers.index'));
         }
 
         $this->wisherRepository->delete($id);
 
         Flash::success('Wisher deleted successfully.');
 
-        return redirect(route('wishers.index'));
+        return redirect(route('admin.wishers.index'));
     }
 }

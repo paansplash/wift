@@ -58,7 +58,7 @@ class SubcategoryController extends AppBaseController
 
         Flash::success('Subcategory saved successfully.');
 
-        return redirect(route('subcategories.index'));
+        return redirect(route('admin.subcategories.index'));
     }
 
     /**
@@ -71,7 +71,7 @@ class SubcategoryController extends AppBaseController
         if (empty($subcategory)) {
             Flash::error('Subcategory not found');
 
-            return redirect(route('subcategories.index'));
+            return redirect(route('admin.subcategories.index'));
         }
 
         return view('pages.admin.subcategories.show')->with('subcategory', $subcategory);
@@ -89,7 +89,7 @@ class SubcategoryController extends AppBaseController
         if (empty($subcategory)) {
             Flash::error('Subcategory not found');
 
-            return redirect(route('subcategories.index'));
+            return redirect(route('admin.subcategories.index'));
         }
 
         return view('pages.admin.subcategories.edit', compact('subcategory', 'categories', 'statuses'));
@@ -105,14 +105,14 @@ class SubcategoryController extends AppBaseController
         if (empty($subcategory)) {
             Flash::error('Subcategory not found');
 
-            return redirect(route('subcategories.index'));
+            return redirect(route('admin.subcategories.index'));
         }
 
         $subcategory = $this->subcategoryRepository->update($request->all(), $id);
 
         Flash::success('Subcategory updated successfully.');
 
-        return redirect(route('subcategories.index'));
+        return redirect(route('admin.subcategories.index'));
     }
 
     /**
@@ -127,13 +127,13 @@ class SubcategoryController extends AppBaseController
         if (empty($subcategory)) {
             Flash::error('Subcategory not found');
 
-            return redirect(route('subcategories.index'));
+            return redirect(route('admin.subcategories.index'));
         }
 
         $this->subcategoryRepository->delete($id);
 
         Flash::success('Subcategory deleted successfully.');
 
-        return redirect(route('subcategories.index'));
+        return redirect(route('admin.subcategories.index'));
     }
 }

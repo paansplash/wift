@@ -54,7 +54,7 @@ class DeliveryController extends AppBaseController
 
         Flash::success('Delivery saved successfully.');
 
-        return redirect(route('deliveries.index'));
+        return redirect(route('admin.deliveries.index'));
     }
 
     /**
@@ -67,7 +67,7 @@ class DeliveryController extends AppBaseController
         if (empty($delivery)) {
             Flash::error('Delivery not found');
 
-            return redirect(route('deliveries.index'));
+            return redirect(route('admin.deliveries.index'));
         }
 
         return view('pages.admin.deliveries.show')->with('delivery', $delivery);
@@ -84,7 +84,7 @@ class DeliveryController extends AppBaseController
         if (empty($delivery)) {
             Flash::error('Delivery not found');
 
-            return redirect(route('deliveries.index'));
+            return redirect(route('admin.deliveries.index'));
         }
 
         return view('pages.admin.deliveries.edit', compact('delivery', 'statuses'));
@@ -100,14 +100,14 @@ class DeliveryController extends AppBaseController
         if (empty($delivery)) {
             Flash::error('Delivery not found');
 
-            return redirect(route('deliveries.index'));
+            return redirect(route('admin.deliveries.index'));
         }
 
         $delivery = $this->deliveryRepository->update($request->all(), $id);
 
         Flash::success('Delivery updated successfully.');
 
-        return redirect(route('deliveries.index'));
+        return redirect(route('admin.deliveries.index'));
     }
 
     /**
@@ -122,13 +122,13 @@ class DeliveryController extends AppBaseController
         if (empty($delivery)) {
             Flash::error('Delivery not found');
 
-            return redirect(route('deliveries.index'));
+            return redirect(route('admin.deliveries.index'));
         }
 
         $this->deliveryRepository->delete($id);
 
         Flash::success('Delivery deleted successfully.');
 
-        return redirect(route('deliveries.index'));
+        return redirect(route('admin.deliveries.index'));
     }
 }

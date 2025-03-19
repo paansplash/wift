@@ -19,7 +19,7 @@
 
         <div class="card">
 
-            {!! Form::model($inventory, ['route' => ['inventories.update', $inventory->id], 'method' => 'patch', 'files' => true]) !!}
+            {!! Form::model($inventory, ['route' => ['admin.inventories.update', $inventory->id], 'method' => 'patch', 'files' => true]) !!}
 
             <div class="card-body">
                 <div class="row">

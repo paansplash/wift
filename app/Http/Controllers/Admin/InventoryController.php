@@ -63,7 +63,7 @@ class InventoryController extends AppBaseController
 
         Flash::success('Inventory saved successfully.');
 
-        return redirect(route('inventories.index'));
+        return redirect(route('admin.inventories.index'));
     }
 
     /**
@@ -76,7 +76,7 @@ class InventoryController extends AppBaseController
         if (empty($inventory)) {
             Flash::error('Inventory not found');
 
-            return redirect(route('inventories.index'));
+            return redirect(route('admin.inventories.index'));
         }
 
         return view('pages.admin.inventories.show')->with('inventory', $inventory);
@@ -95,7 +95,7 @@ class InventoryController extends AppBaseController
         if (empty($inventory)) {
             Flash::error('Inventory not found');
 
-            return redirect(route('inventories.index'));
+            return redirect(route('admin.inventories.index'));
         }
 
         return view('pages.admin.inventories.edit', compact('inventory', 'statuses', 'subcategories', 'users'));
@@ -110,13 +110,14 @@ class InventoryController extends AppBaseController
 
     if (empty($inventory)) {
         Flash::error('Inventory not found');
-        return redirect(route('inventories.index'));
+        return redirect(route('admin.inventories.index'));
     }
 
     $data = $request->all();
-
+    // dd($data);
     // Handle file upload
     if ($request->hasFile('image')) {
+        // return ($request->file('image'));
         $imagePath = $request->file('image')->store('inventories', 'public'); // Stores in storage/app/public/inventories
         $data['image'] = $imagePath;
     }
@@ -125,7 +126,7 @@ class InventoryController extends AppBaseController
 
     Flash::success('Inventory updated successfully.');
 
-    return redirect(route('inventories.index'));
+    return redirect(route('admin.inventories.index'));
 }
 
 
@@ -141,13 +142,13 @@ class InventoryController extends AppBaseController
         if (empty($inventory)) {
             Flash::error('Inventory not found');
 
-            return redirect(route('inventories.index'));
+            return redirect(route('admin.inventories.index'));
         }
 
         $this->inventoryRepository->delete($id);
 
         Flash::success('Inventory deleted successfully.');
 
-        return redirect(route('inventories.index'));
+        return redirect(route('admin.inventories.index'));
     }
 }
