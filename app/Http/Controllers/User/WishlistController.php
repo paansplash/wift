@@ -58,7 +58,7 @@ class WishlistController extends AppBaseController
         if (empty($wishlist)) {
             Flash::error('Wishlist not found');
 
-            return redirect(route('wishlists.index'));
+            return redirect(route('user.wishlists.index'));
         }
 
         return view('pages.admin.wishlists.show')->with('wishlist', $wishlist);
@@ -74,7 +74,7 @@ class WishlistController extends AppBaseController
         if (empty($wishlist)) {
             Flash::error('Wishlist not found');
 
-            return redirect(route('wishlists.index'));
+            return redirect(route('user.wishlists.index'));
         }
 
         return view('pages.admin.wishlists.edit')->with('wishlist', $wishlist);
@@ -90,14 +90,14 @@ class WishlistController extends AppBaseController
         if (empty($wishlist)) {
             Flash::error('Wishlist not found');
 
-            return redirect(route('wishlists.index'));
+            return redirect(route('user.wishlists.index'));
         }
 
         $wishlist = $this->wishlistRepository->update($request->all(), $id);
 
         Flash::success('Wishlist updated successfully.');
 
-        return redirect(route('wishlists.index'));
+        return redirect(route('user.wishlists.index'));
     }
 
     /**
@@ -112,13 +112,13 @@ class WishlistController extends AppBaseController
         if (empty($wishlist)) {
             Flash::error('Wishlist not found');
 
-            return redirect(route('wishlists.index'));
+            return redirect(route('user.wishlists.index'));
         }
 
         $this->wishlistRepository->delete($id);
 
         Flash::success('Wishlist deleted successfully.');
 
-        return redirect(route('wishlists.index'));
+        return redirect(route('user.wishlists.index'));
     }
 }

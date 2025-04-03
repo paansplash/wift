@@ -15,7 +15,7 @@
         @include('adminlte-templates::common.errors')
 
         <div class="card">
-            {!! Form::open(['route' => 'wishlistItems.store', 'id' => 'wishlist-form']) !!}
+            {!! Form::open(['route' => 'admin.wishlistItems.store', 'id' => 'wishlist-form']) !!}
 
             <div class="card-body">
                 <div class="row">
