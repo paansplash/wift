@@ -19,7 +19,7 @@
 
         <div class="card">
 
-            {!! Form::model($wishlistItem, ['route' => ['wishlistItems.update', $wishlistItem->id], 'method' => 'patch']) !!}
+            {!! Form::model($wishlistItem, ['route' => ['admin.wishlistItems.update', $wishlistItem->id], 'method' => 'patch']) !!}
 
             <div class="card-body">
                 <div class="row">

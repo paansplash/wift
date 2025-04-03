@@ -18,7 +18,7 @@
                     <td>{{ $subcategory->description }}</td>
                     <td>{{ $subcategory->status->name }}</td>
                     <td  style="width: 120px">
-                        {!! Form::open(['route' => ['subcategories.destroy', $subcategory->id], 'method' => 'delete']) !!}
+                        {!! Form::open(['route' => ['admin.subcategories.destroy', $subcategory->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>
                             <a href="{{ route('admin.subcategories.show', [$subcategory->id]) }}"
                                class='btn btn-default btn-xs'>

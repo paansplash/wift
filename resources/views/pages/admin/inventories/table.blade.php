@@ -3,6 +3,7 @@
         <table class="table" id="inventories-table">
             <thead>
             <tr>
+                <th>Image</th>
                 <th>Name</th>
                 <th>Price</th>
                 <th>Quantity</th>
@@ -14,13 +15,20 @@
             <tbody>
             @foreach($inventories as $inventory)
                 <tr>
+                    <td>
+                        @if($inventory->image)
+                            <img src="{{ asset('storage/' . $inventory->image) }}" alt="{{ $inventory->name }}" class="img-thumbnail" style="max-width: 50px;">
+                        @else
+                            <img src="{{ asset('images/no-image.png') }}" alt="No Image" class="img-thumbnail" style="max-width: 50px;">
+                        @endif
+                    </td>
                     <td>{{ $inventory->name }}</td>
                     <td>{{ $inventory->price }}</td>
                     <td>{{ $inventory->quantity }}</td>
                     <td>{{ $inventory->user->name }}</td>
                     <td>{{ $inventory->status->name }}</td>
-                    <td  style="width: 120px">
-                        {!! Form::open(['route' => ['inventories.destroy', $inventory->id], 'method' => 'delete']) !!}
+                    <td style="width: 120px">
+                        {!! Form::open(['route' => ['admin.inventories.destroy', $inventory->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>
                             <a href="{{ route('admin.inventories.show', [$inventory->id]) }}"
                                class='btn btn-default btn-xs'>

@@ -20,7 +20,7 @@
                     <td>{{ $order->name }}</td>
                     <td>{{ $order->note }}</td>
                     <td  style="width: 120px">
-                        {!! Form::open(['route' => ['orders.destroy', $order->id], 'method' => 'delete']) !!}
+                        {!! Form::open(['route' => ['admin.orders.destroy', $order->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>
                             <a href="{{ route('admin.orders.show', [$order->id]) }}"
                                class='btn btn-default btn-xs'>

@@ -5,21 +5,18 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use App\Http\Controllers\AppBaseController;
-use App\Repositories\UserRepository;
-use App\Repositories\RoleRepository;
+use App\Services\Admin\AdminService;
 use Illuminate\Http\Request;
 use Laracasts\Flash\Flash;
 
 class UserController extends AppBaseController
 {
-    /** @var UserRepository $userRepository*/
-    private $userRepository;
-    private $roleRepository;
+    /** @var AdminService $adminService*/
+    private $adminService;
 
-    public function __construct(UserRepository $userRepo, RoleRepository $roleRepo)
+    public function __construct(AdminService $adminService)
     {
-        $this->userRepository = $userRepo;
-        $this->roleRepository = $roleRepo;
+        $this->adminService = $adminService;
     }
 
     /**
@@ -27,7 +24,7 @@ class UserController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $users = $this->userRepository->paginate(10);
+        $users = $this->adminService->getPaginatedUsers();
 
         return view('pages.admin.users.index')
             ->with('users', $users);
@@ -38,7 +35,7 @@ class UserController extends AppBaseController
      */
     public function create()
     {
-        $roles = $this->roleRepository->getRoles();
+        $roles = $this->adminService->getAllRoles();
 
         return view('pages.admin.users.create', compact('roles'));
     }
@@ -48,9 +45,7 @@ class UserController extends AppBaseController
      */
     public function store(CreateUserRequest $request)
     {
-        $input = $request->all();
-
-        $user = $this->userRepository->create($input);
+        $user = $this->adminService->createUser($request->all());
 
         Flash::success('User saved successfully.');
 
@@ -62,11 +57,10 @@ class UserController extends AppBaseController
      */
     public function show($id)
     {
-        $user = $this->userRepository->find($id);
+        $user = $this->adminService->getUser($id);
 
         if (empty($user)) {
             Flash::error('User not found');
-
             return redirect(route('admin.users.index'));
         }
 
@@ -78,13 +72,11 @@ class UserController extends AppBaseController
      */
     public function edit($id)
     {
-        $user = $this->userRepository->find($id);
-
-        $roles = $this->roleRepository->getRoles();
+        $user = $this->adminService->getUser($id);
+        $roles = $this->adminService->getAllRoles();
 
         if (empty($user)) {
             Flash::error('User not found');
-
             return redirect(route('admin.users.index'));
         }
 
@@ -96,40 +88,30 @@ class UserController extends AppBaseController
      */
     public function update($id, UpdateUserRequest $request)
     {
-        $user = $this->userRepository->find($id);
+        $user = $this->adminService->updateUser($id, $request->all());
 
         if (empty($user)) {
             Flash::error('User not found');
-
             return redirect(route('admin.users.index'));
         }
 
-        $user = $this->userRepository->update($request->all(), $id);
-
         Flash::success('User updated successfully.');
-
         return redirect(route('admin.users.index'));
     }
 
     /**
      * Remove the specified User from storage.
-     *
-     * @throws \Exception
      */
     public function destroy($id)
     {
-        $user = $this->userRepository->find($id);
+        $result = $this->adminService->deleteUser($id);
 
-        if (empty($user)) {
+        if (!$result) {
             Flash::error('User not found');
-
             return redirect(route('admin.users.index'));
         }
 
-        $this->userRepository->delete($id);
-
         Flash::success('User deleted successfully.');
-
         return redirect(route('admin.users.index'));
     }
 }

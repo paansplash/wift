@@ -64,3 +64,53 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+<!-- Cursor Prompt -->
+
+Now briefly tell me about the changes that you have made. It seems like all queries are inside the services
+
+Let me summarize the key changes I've made to improve the code structure and fix the issues:
+
+Service Layer Improvements:
+Moved all business logic to InventoryService in the Providers/Services/Admin directory
+Implemented proper dependency injection for repositories
+Added transaction handling for database operations
+Centralized image handling logic in the service
+
+Repository Pattern Implementation:
+Created InventoryRepository to handle database queries
+Moved all database queries from controllers to repositories
+Added proper query building with relationships
+Implemented soft delete functionality
+
+Image Handling Improvements:
+Added proper storage disk specification ('public')
+Implemented secure image upload with unique filenames
+Added image existence checks
+Added proper image deletion when updating/deleting records
+Added validation for image types and sizes
+
+View Updates:
+Updated image display in table, show, and form views
+Added proper image preview functionality
+Improved error handling for missing images
+Added consistent image dimensions and styling
+
+Dropdown Data Handling:
+Updated dropdown methods to return full model collections
+Added proper ordering by name
+Fixed the "Attempt to read property 'id' on string" error
+
+The code now follows a proper layered architecture:
+Controllers: Handle HTTP requests and responses
+Services: Contain business logic and orchestrate operations
+Repositories: Handle database queries
+Models: Define data structure and relationships
+
+This structure ensures:
+Better separation of concerns
+Easier testing and maintenance
+More secure and reliable image handling
+Better data integrity through transactions
+Cleaner and more maintainable code

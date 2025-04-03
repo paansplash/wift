@@ -19,11 +19,11 @@
 
         <div class="card">
 
-            {!! Form::open(['route' => 'statuses.store']) !!}
+            {!! Form::open(['route' => 'admin.statuses.store']) !!}
 
             <div class="card-body">
 
-                <div class="row">
+                <div class="row">   
                     @include('pages.admin.statuses.fields')
                 </div>
 

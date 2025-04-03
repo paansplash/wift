@@ -18,7 +18,7 @@
                     <td>{{ $wisher->phone_no }}</td>
                     <td>{{ implode(', ', array_filter([$wisher->addr1, $wisher->addr2, $wisher->addr3, $wisher->postcode, $wisher->city, $wisher->state])) }}</td>
                     <td  style="width: 120px">
-                        {!! Form::open(['route' => ['wishers.destroy', $wisher->id], 'method' => 'delete']) !!}
+                        {!! Form::open(['route' => ['admin.wishers.destroy', $wisher->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>
                             <a href="{{ route('admin.wishers.show', [$wisher->id]) }}"
                                class='btn btn-default btn-xs'>

@@ -35,13 +35,11 @@ class WisherController extends AppBaseController
     public function store(CreateWisherRequest $request)
     {
         $input = $request->all();
-
         $wisher = $this->wisherRepository->create($input);
 
         Flash::success('Wisher saved successfully.');
 
-        return view('pages.user.wishlists');
-
+        return view('pages.user.wishlists', compact('wisher'));
     }
 
     /**

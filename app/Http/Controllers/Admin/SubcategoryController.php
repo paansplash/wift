@@ -5,24 +5,22 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Requests\CreateSubcategoryRequest;
 use App\Http\Requests\UpdateSubcategoryRequest;
 use App\Http\Controllers\AppBaseController;
-use App\Repositories\CategoryRepository;
-use App\Repositories\StatusRepository;
-use App\Repositories\SubcategoryRepository;
+use App\Services\Admin\SubcategoryService;
+use App\Services\Admin\CategoryService;
 use Illuminate\Http\Request;
 use Laracasts\Flash\Flash;
 
 class SubcategoryController extends AppBaseController
 {
-    /** @var SubcategoryRepository $subcategoryRepository*/
-    private $subcategoryRepository;
-    private $categoryRepository;
-    private $statusRepository;
+    /** @var SubcategoryService $subcategoryService*/
+    private $subcategoryService;
+    /** @var CategoryService $categoryService*/
+    private $categoryService;
 
-    public function __construct(SubcategoryRepository $subcategoryRepo, CategoryRepository $categoryRepo, StatusRepository $statusRepo)
+    public function __construct(SubcategoryService $subcategoryService, CategoryService $categoryService)
     {
-        $this->subcategoryRepository = $subcategoryRepo;
-        $this->categoryRepository = $categoryRepo;
-        $this->statusRepository = $statusRepo;
+        $this->subcategoryService = $subcategoryService;
+        $this->categoryService = $categoryService;
     }
 
     /**
@@ -30,7 +28,7 @@ class SubcategoryController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $subcategories = $this->subcategoryRepository->paginate(10);
+        $subcategories = $this->subcategoryService->getPaginatedSubcategories();
 
         return view('pages.admin.subcategories.index')
             ->with('subcategories', $subcategories);
@@ -41,9 +39,8 @@ class SubcategoryController extends AppBaseController
      */
     public function create()
     {
-        $categories = $this->categoryRepository->getCategories();
-        $statuses = $this->statusRepository->getActivityStatuses();
-
+        $categories = $this->categoryService->getAllCategoriesForDropdown();
+        $statuses = $this->subcategoryService->getAllStatuses();
         return view('pages.admin.subcategories.create', compact('categories', 'statuses'));
     }
 
@@ -52,9 +49,7 @@ class SubcategoryController extends AppBaseController
      */
     public function store(CreateSubcategoryRequest $request)
     {
-        $input = $request->all();
-
-        $subcategory = $this->subcategoryRepository->create($input);
+        $subcategory = $this->subcategoryService->createSubcategory($request->all());
 
         Flash::success('Subcategory saved successfully.');
 
@@ -66,11 +61,10 @@ class SubcategoryController extends AppBaseController
      */
     public function show($id)
     {
-        $subcategory = $this->subcategoryRepository->find($id);
+        $subcategory = $this->subcategoryService->getSubcategory($id);
 
         if (empty($subcategory)) {
             Flash::error('Subcategory not found');
-
             return redirect(route('admin.subcategories.index'));
         }
 
@@ -82,17 +76,16 @@ class SubcategoryController extends AppBaseController
      */
     public function edit($id)
     {
-        $subcategory = $this->subcategoryRepository->find($id);
-        $categories = $this->categoryRepository->getCategories();
-        $statuses = $this->statusRepository->getActivityStatuses();
+        $subcategory = $this->subcategoryService->getSubcategory($id);
+        $categories = $this->categoryService->getAllCategoriesForDropdown();
+        $statuses = $this->subcategoryService->getAllStatuses();
 
         if (empty($subcategory)) {
             Flash::error('Subcategory not found');
-
             return redirect(route('admin.subcategories.index'));
         }
 
-        return view('pages.admin.subcategories.edit', compact('subcategory', 'categories', 'statuses'));
+        return view('pages.admin.subcategories.edit', compact('categories', 'subcategory', 'statuses'));
     }
 
     /**
@@ -100,40 +93,30 @@ class SubcategoryController extends AppBaseController
      */
     public function update($id, UpdateSubcategoryRequest $request)
     {
-        $subcategory = $this->subcategoryRepository->find($id);
+        $subcategory = $this->subcategoryService->updateSubcategory($id, $request->all());
 
         if (empty($subcategory)) {
             Flash::error('Subcategory not found');
-
             return redirect(route('admin.subcategories.index'));
         }
 
-        $subcategory = $this->subcategoryRepository->update($request->all(), $id);
-
         Flash::success('Subcategory updated successfully.');
-
         return redirect(route('admin.subcategories.index'));
     }
 
     /**
      * Remove the specified Subcategory from storage.
-     *
-     * @throws \Exception
      */
     public function destroy($id)
     {
-        $subcategory = $this->subcategoryRepository->find($id);
+        $result = $this->subcategoryService->deleteSubcategory($id);
 
-        if (empty($subcategory)) {
+        if (!$result) {
             Flash::error('Subcategory not found');
-
             return redirect(route('admin.subcategories.index'));
         }
 
-        $this->subcategoryRepository->delete($id);
-
         Flash::success('Subcategory deleted successfully.');
-
         return redirect(route('admin.subcategories.index'));
     }
 }

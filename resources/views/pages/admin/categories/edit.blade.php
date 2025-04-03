@@ -19,7 +19,7 @@
 
         <div class="card">
 
-            {!! Form::model($category, ['route' => ['categories.update', $category->id], 'method' => 'patch']) !!}
+            {!! Form::model($category, ['route' => ['admin.categories.update', $category->id], 'method' => 'patch']) !!}
 
             <div class="card-body">
                 <div class="row">

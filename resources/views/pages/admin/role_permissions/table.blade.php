@@ -14,7 +14,7 @@
                     <td>{{ $rolePermission->role_id }}</td>
                     <td>{{ $rolePermission->permission_id }}</td>
                     <td  style="width: 120px">
-                        {!! Form::open(['route' => ['rolePermissions.destroy', $rolePermission->id], 'method' => 'delete']) !!}
+                        {!! Form::open(['route' => ['admin.rolePermissions.destroy', $rolePermission->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>
                             <a href="{{ route('admin.rolePermissions.show', [$rolePermission->id]) }}"
                                class='btn btn-default btn-xs'>

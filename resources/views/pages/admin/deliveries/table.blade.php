@@ -16,7 +16,7 @@
                     <td>{{ $delivery->status_id }}</td>
                     <td>{{ $delivery->user_id }}</td>
                     <td  style="width: 120px">
-                        {!! Form::open(['route' => ['deliveries.destroy', $delivery->id], 'method' => 'delete']) !!}
+                        {!! Form::open(['route' => ['admin.deliveries.destroy', $delivery->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>
                             <a href="{{ route('admin.deliveries.show', [$delivery->id]) }}"
                                class='btn btn-default btn-xs'>

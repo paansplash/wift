@@ -19,7 +19,7 @@
 
         <div class="card">
 
-            {!! Form::model($rolePermission, ['route' => ['rolePermissions.update', $rolePermission->id], 'method' => 'patch']) !!}
+            {!! Form::model($rolePermission, ['route' => ['admin.rolePermissions.update', $rolePermission->id], 'method' => 'patch']) !!}
 
             <div class="card-body">
                 <div class="row">

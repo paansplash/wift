@@ -16,7 +16,7 @@
                     <td>{{ $wishlist->title }}</td>
                     <td>{{ $wishlist->description }}</td>
                     <td  style="width: 120px">
-                        {!! Form::open(['route' => ['wishlists.destroy', $wishlist->id], 'method' => 'delete']) !!}
+                        {!! Form::open(['route' => ['admin.wishlists.destroy', $wishlist->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>
                             <a href="{{ route('admin.wishlists.show', [$wishlist->id]) }}"
                                class='btn btn-default btn-xs'>

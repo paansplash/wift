@@ -5,28 +5,18 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Requests\CreateInventoryRequest;
 use App\Http\Requests\UpdateInventoryRequest;
 use App\Http\Controllers\AppBaseController;
-use App\Repositories\InventoryRepository;
-use App\Repositories\StatusRepository;
-use App\Repositories\SubcategoryRepository;
-use App\Repositories\UserRepository;
+use App\Services\Admin\InventoryService;
 use Illuminate\Http\Request;
 use Laracasts\Flash\Flash;
 
 class InventoryController extends AppBaseController
 {
-    /** @var InventoryRepository $inventoryRepository*/
-    private $inventoryRepository;
-    private $subcategoryRepository;
-    private $userRepository;
-    private $statusRepository;
+    /** @var InventoryService $inventoryService*/
+    private $inventoryService;
 
-    public function __construct(InventoryRepository $inventoryRepo, SubcategoryRepository $subcategoryRepo, 
-    UserRepository $userRepo, StatusRepository $statusRepo)
+    public function __construct(InventoryService $inventoryService)
     {
-        $this->inventoryRepository = $inventoryRepo;
-        $this->subcategoryRepository = $subcategoryRepo;
-        $this->userRepository = $userRepo;
-        $this->statusRepository = $statusRepo;
+        $this->inventoryService = $inventoryService;
     }
 
     /**
@@ -34,7 +24,7 @@ class InventoryController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $inventories = $this->inventoryRepository->paginate(10);
+        $inventories = $this->inventoryService->getPaginatedInventories();
 
         return view('pages.admin.inventories.index')
             ->with('inventories', $inventories);
@@ -45,9 +35,9 @@ class InventoryController extends AppBaseController
      */
     public function create()
     {
-        $subcategories = $this->subcategoryRepository->getSubcategories();
-        $users = $this->userRepository->getAllUsers();
-        $statuses = $this->statusRepository->getActivityStatuses();
+        $subcategories = $this->inventoryService->getAllSubcategoriesForDropdown();
+        $users = $this->inventoryService->getAllUsersForDropdown();
+        $statuses = $this->inventoryService->getAllStatusesForDropdown();
 
         return view('pages.admin.inventories.create', compact('subcategories', 'users', 'statuses'));
     }
@@ -57,9 +47,7 @@ class InventoryController extends AppBaseController
      */
     public function store(CreateInventoryRequest $request)
     {
-        $input = $request->all();
-
-        $inventory = $this->inventoryRepository->create($input);
+        $inventory = $this->inventoryService->createInventory($request->all());
 
         Flash::success('Inventory saved successfully.');
 
@@ -71,11 +59,10 @@ class InventoryController extends AppBaseController
      */
     public function show($id)
     {
-        $inventory = $this->inventoryRepository->find($id);
+        $inventory = $this->inventoryService->getInventory($id);
 
         if (empty($inventory)) {
             Flash::error('Inventory not found');
-
             return redirect(route('admin.inventories.index'));
         }
 
@@ -87,68 +74,48 @@ class InventoryController extends AppBaseController
      */
     public function edit($id)
     {
-        $inventory = $this->inventoryRepository->find($id);
-        $statuses = $this->statusRepository->getActivityStatuses();
-        $subcategories = $this->subcategoryRepository->getSubcategories();
-        $users = $this->userRepository->getAllUsers();
+        $inventory = $this->inventoryService->getInventory($id);
+        $subcategories = $this->inventoryService->getAllSubcategoriesForDropdown();
+        $users = $this->inventoryService->getAllUsersForDropdown();
+        $statuses = $this->inventoryService->getAllStatusesForDropdown();
 
         if (empty($inventory)) {
             Flash::error('Inventory not found');
-
             return redirect(route('admin.inventories.index'));
         }
 
-        return view('pages.admin.inventories.edit', compact('inventory', 'statuses', 'subcategories', 'users'));
+        return view('pages.admin.inventories.edit', compact('inventory', 'subcategories', 'users', 'statuses'));
     }
 
     /**
      * Update the specified Inventory in storage.
      */
     public function update($id, UpdateInventoryRequest $request)
-{
-    $inventory = $this->inventoryRepository->find($id);
-
-    if (empty($inventory)) {
-        Flash::error('Inventory not found');
-        return redirect(route('admin.inventories.index'));
-    }
-
-    $data = $request->all();
-    // dd($data);
-    // Handle file upload
-    if ($request->hasFile('image')) {
-        // return ($request->file('image'));
-        $imagePath = $request->file('image')->store('inventories', 'public'); // Stores in storage/app/public/inventories
-        $data['image'] = $imagePath;
-    }
-
-    $inventory = $this->inventoryRepository->update($data, $id);
-
-    Flash::success('Inventory updated successfully.');
-
-    return redirect(route('admin.inventories.index'));
-}
-
-
-    /**
-     * Remove the specified Inventory from storage.
-     *
-     * @throws \Exception
-     */
-    public function destroy($id)
     {
-        $inventory = $this->inventoryRepository->find($id);
+        $inventory = $this->inventoryService->updateInventory($id, $request->all());
 
         if (empty($inventory)) {
             Flash::error('Inventory not found');
-
             return redirect(route('admin.inventories.index'));
         }
 
-        $this->inventoryRepository->delete($id);
+        Flash::success('Inventory updated successfully.');
+        return redirect(route('admin.inventories.index'));
+    }
+
+    /**
+     * Remove the specified Inventory from storage.
+     */
+    public function destroy($id)
+    {
+        $result = $this->inventoryService->deleteInventory($id);
+
+        if (!$result) {
+            Flash::error('Inventory not found');
+            return redirect(route('admin.inventories.index'));
+        }
 
         Flash::success('Inventory deleted successfully.');
-
         return redirect(route('admin.inventories.index'));
     }
 }

@@ -19,7 +19,7 @@
 
         <div class="card">
 
-            {!! Form::model($subcategory, ['route' => ['subcategories.update', $subcategory->id], 'method' => 'patch']) !!}
+            {!! Form::model($subcategory, ['route' => ['admin.subcategories.update', $subcategory->id], 'method' => 'patch']) !!}
 
             <div class="card-body">
                 <div class="row">

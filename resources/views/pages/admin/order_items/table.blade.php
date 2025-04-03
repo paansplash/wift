@@ -18,7 +18,7 @@
                     <td>{{ $orderItem->price }}</td>
                     <td>{{ $orderItem->quantity }}</td>
                     <td  style="width: 120px">
-                        {!! Form::open(['route' => ['orderItems.destroy', $orderItem->id], 'method' => 'delete']) !!}
+                        {!! Form::open(['route' => ['admin.orderItems.destroy', $orderItem->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>
                             <a href="{{ route('admin.orderItems.show', [$orderItem->id]) }}"
                                class='btn btn-default btn-xs'>

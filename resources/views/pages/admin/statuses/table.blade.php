@@ -12,7 +12,7 @@
                 <tr>
                     <td>{{ $status->name }}</td>
                     <td  style="width: 120px">
-                        {!! Form::open(['route' => ['statuses.destroy', $status->id], 'method' => 'delete']) !!}
+                        {!! Form::open(['route' => ['admin.statuses.destroy', $status->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>
                             <a href="{{ route('admin.statuses.show', [$status->id]) }}"
                                class='btn btn-default btn-xs'>

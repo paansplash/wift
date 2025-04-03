@@ -19,11 +19,11 @@
 
         <div class="card">
 
-            {!! Form::model($user, ['route' => ['users.update', $user->id], 'method' => 'patch']) !!}
+            {!! Form::model($user, ['route' => ['admin.users.update', $user->id], 'method' => 'patch']) !!}
 
             <div class="card-body">
                 <div class="row">
-                    @include('pages.admin.users.fields')
+                    @include('pages.admin.fields')
                 </div>
             </div>
 

@@ -19,7 +19,7 @@
 
         <div class="card">
 
-            {!! Form::model($wisher, ['route' => ['wishers.update', $wisher->id], 'method' => 'patch']) !!}
+            {!! Form::model($wisher, ['route' => ['admin.wishers.update', $wisher->id], 'method' => 'patch']) !!}
 
             <div class="card-body">
                 <div class="row">

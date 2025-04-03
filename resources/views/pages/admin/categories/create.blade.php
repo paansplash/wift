@@ -19,7 +19,7 @@
 
         <div class="card">
 
-            {!! Form::open(['route' => 'categories.store']) !!}
+            {!! Form::open(['route' => 'admin.categories.store']) !!}
 
             <div class="card-body">
 

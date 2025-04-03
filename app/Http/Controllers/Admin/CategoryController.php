@@ -5,21 +5,18 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Requests\CreateCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
 use App\Http\Controllers\AppBaseController;
-use App\Repositories\CategoryRepository;
-use App\Repositories\StatusRepository;
+use App\Services\Admin\CategoryService;
 use Illuminate\Http\Request;
 use Laracasts\Flash\Flash;
 
 class CategoryController extends AppBaseController
 {
-    /** @var CategoryRepository $categoryRepository*/
-    private $categoryRepository;
-    private $statusRepository;
+    /** @var CategoryService $categoryService*/
+    private $categoryService;
 
-    public function __construct(CategoryRepository $categoryRepo, StatusRepository $statusRepo)
+    public function __construct(CategoryService $categoryService)
     {
-        $this->categoryRepository = $categoryRepo;
-        $this->statusRepository = $statusRepo;
+        $this->categoryService = $categoryService;
     }
 
     /**
@@ -27,7 +24,7 @@ class CategoryController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $categories = $this->categoryRepository->paginate(10);
+        $categories = $this->categoryService->getPaginatedCategories();
 
         return view('pages.admin.categories.index')
             ->with('categories', $categories);
@@ -38,9 +35,9 @@ class CategoryController extends AppBaseController
      */
     public function create()
     {
-        $statuses = $this->statusRepository->getActivityStatuses();
-
-        return view('pages.admin.categories.create', compact('statuses'));
+        $statuses = $this->categoryService->getAllStatuses();
+        return view('pages.admin.categories.create')
+            ->with('statuses', $statuses);
     }
 
     /**
@@ -48,9 +45,7 @@ class CategoryController extends AppBaseController
      */
     public function store(CreateCategoryRequest $request)
     {
-        $input = $request->all();
-
-        $category = $this->categoryRepository->create($input);
+        $category = $this->categoryService->createCategory($request->all());
 
         Flash::success('Category saved successfully.');
 
@@ -62,11 +57,10 @@ class CategoryController extends AppBaseController
      */
     public function show($id)
     {
-        $category = $this->categoryRepository->find($id);
+        $category = $this->categoryService->getCategory($id);
 
         if (empty($category)) {
             Flash::error('Category not found');
-
             return redirect(route('admin.categories.index'));
         }
 
@@ -78,16 +72,17 @@ class CategoryController extends AppBaseController
      */
     public function edit($id)
     {
-        $category = $this->categoryRepository->find($id);
-        $statuses = $this->statusRepository->getActivityStatuses();
+        $category = $this->categoryService->getCategory($id);
+        $statuses = $this->categoryService->getAllStatuses();
 
         if (empty($category)) {
             Flash::error('Category not found');
-
             return redirect(route('admin.categories.index'));
         }
 
-        return view('pages.admin.categories.edit', compact('category', 'statuses'));
+        return view('pages.admin.categories.edit')
+            ->with('category', $category)
+            ->with('statuses', $statuses);
     }
 
     /**
@@ -95,40 +90,30 @@ class CategoryController extends AppBaseController
      */
     public function update($id, UpdateCategoryRequest $request)
     {
-        $category = $this->categoryRepository->find($id);
+        $category = $this->categoryService->updateCategory($id, $request->all());
 
         if (empty($category)) {
             Flash::error('Category not found');
-
             return redirect(route('admin.categories.index'));
         }
 
-        $category = $this->categoryRepository->update($request->all(), $id);
-
         Flash::success('Category updated successfully.');
-
         return redirect(route('admin.categories.index'));
     }
 
     /**
      * Remove the specified Category from storage.
-     *
-     * @throws \Exception
      */
     public function destroy($id)
     {
-        $category = $this->categoryRepository->find($id);
+        $result = $this->categoryService->deleteCategory($id);
 
-        if (empty($category)) {
+        if (!$result) {
             Flash::error('Category not found');
-
             return redirect(route('admin.categories.index'));
         }
 
-        $this->categoryRepository->delete($id);
-
         Flash::success('Category deleted successfully.');
-
         return redirect(route('admin.categories.index'));
     }
 }

@@ -20,20 +20,21 @@ class Inventory extends Model
 
     protected $casts = [
         'name' => 'string',
-        'price' => 'decimal:2'
+        'price' => 'decimal:2',
+        'quantity' => 'integer'
     ];
 
     public static array $rules = [
         'name' => 'required|string|max:255',
-        'price' => 'required|numeric',
-        'quantity' => 'nullable',
-        'deleted_at' => 'nullable',
+        'price' => 'required|numeric|min:0',
+        'quantity' => 'required|integer|min:0',
+        'user_id' => 'required|exists:users,id',
+        'subcategory_id' => 'required|exists:subcategories,id',
+        'status_id' => 'required|exists:statuses,id',
+        'image' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:2048', // max 2MB
         'created_at' => 'nullable',
         'updated_at' => 'nullable',
-        'user_id' => 'nullable',
-        'subcategory_id' => 'required',
-        'status_id' => 'required',
-        'image' => 'nullable|image|mimes:jpeg,jpg,png,gif',
+        'deleted_at' => 'nullable'
     ];
 
     public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo

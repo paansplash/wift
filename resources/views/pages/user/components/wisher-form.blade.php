@@ -7,14 +7,14 @@
         data-appear-animation="fadeInUpShorter" data-appear-animation-delay="2800">
         @csrf
 
-        {{-- <div class="contact-form-success alert alert-success d-none mt-4">
+        <!-- <div class="contact-form-success alert alert-success d-none mt-4">
             <strong>Success!</strong> Your message has been sent to us.
         </div>
 
         <div class="contact-form-error alert alert-danger d-none mt-4">
             <strong>Error!</strong> There was an error sending your message.
             <span class="mail-error-message text-1 d-block"></span>
-        </div> --}}
+        </div> -->
 
         <div class="row">
             <!-- User ID Field -->
@@ -90,7 +90,7 @@
         <div class="card-footer">
             <button type="submit"
                 class="btn btn-primary custom-btn-style-1 font-weight-bold text-3 px-5 py-3 m-3">Save</button>
-            <a href="{{ route('admin.user.wishers.index') }}"
+            <a href="{{ route('user.wishers.index') }}"
                 class="btn btn-default custom-btn-style-1 font-weight-bold text-3 px-5 py-3">Cancel</a>
         </div>
 
