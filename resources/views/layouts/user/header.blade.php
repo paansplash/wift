@@ -1,7 +1,7 @@
 <header id="header" class="header-transparent header-effect-shrink"
     data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'shrink', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': false, 'stickyHeaderContainerHeight': 80, 'stickyStartAt': 50, 'stickyChangeLogo': false}">
     <div class="header-body border-top-0 bg-primary-100 appear-animation" data-appear-animation="fadeInUpShorterPlus"
-        data-appear-animation-delay="2000" data-plugin-options="{'forceAnimation': true}">
+        data-appear-animation-delay="1000" data-plugin-options="{'forceAnimation': true}">
         <div class="header-container container-fluid">
             <div class="header-row">
                 <div class="header-column align-items-start justify-content-center">
@@ -28,28 +28,31 @@
                                     <li><a href="{{ route('contact') }}"
                                             class="nav-link {{ Request::routeIs('contact') ? 'active' : '' }}">Contact Us</a>
                                     </li>
+                                    <li><a href="{{ route('shop') }}"
+                                            class="nav-link {{ Request::routeIs('shop') ? 'active' : '' }}">Shop</a>
+                                    </li>
                                     @auth
-                                        <li><a href="{{ route('user.wishers.index') }}"
-                                                class="nav-link {{ Request::routeIs('user.wishers.index') ? 'active' : '' }}">Get Started</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="nav-link text-danger"
-                                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                                Logout
-                                            </a>
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                                @csrf
-                                            </form>
-                                        </li>
+                                    <li><a href="{{ route('user.wishers.index') }}"
+                                            class="nav-link {{ Request::routeIs('user.wishers.index') ? 'active' : '' }}">Get Started</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="nav-link text-danger"
+                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
+                                    </li>
                                     @endauth
                                     @guest
-                                        <li><a href="{{ route('login') }}"
-                                                class="nav-link {{ Request::routeIs('login') ? 'active' : '' }}">Login</a>
-                                        </li>
+                                    <li><a href="{{ route('login') }}"
+                                            class="nav-link {{ Request::routeIs('login') ? 'active' : '' }}">Login</a>
+                                    </li>
                                     @endguest
                                 </ul>
                             </nav>
-                            
+
 
                         </div>
                     </div>
