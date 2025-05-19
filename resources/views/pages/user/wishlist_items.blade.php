@@ -19,9 +19,8 @@
                             <div class="overflow-hidden">
                                 <ul class="custom-breadcrumb-style-1 breadcrumb breadcrumb-light custom-font-secondary d-block text-center custom-ls-1 text-5 appear-animation"
                                     data-appear-animation="maskUp" data-appear-animation-delay="1450">
-                                    <li class="text-transform-none"><a href="demo-architecture-2.html"
-                                            class="text-decoration-none">User</a></li>
-                                    <li class="text-transform-none active">Wisher</li>
+                                    <li class="text-transform-none"><a href="{{ route('user.home.index') }}" class="text-decoration-none">User</a></li>
+                                    <li class="text-transform-none active">Wishlist Items</li>
                                 </ul>
                             </div>
                         </div>
@@ -34,110 +33,287 @@
     <div class="custom-page-wrapper pt-5 pb-1">
         <div class="spacer py-4 my-5"></div>
         <div class="container container-xl-custom pb-5 mb-5">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-md-6">
-                        <form role="search" action="page-search-results.html" method="get">
-                            <div class="search-with-select">
-                                <a href="#" class="mobile-search-toggle-btn text-decoration-none" data-toggle-class="open">
-                                    <i class="icons icon-magnifier text-color-dark text-color-hover-primary"></i>
-                                </a>
-                                <div class="search-form-wrapper input-group">
-                                    <input class="form-control text-1" id="headerSearch" name="q" type="search" value="" placeholder="Search...">
-                                    <div class="search-form-select-wrapper">
-                                        <div class="custom-select-1 d-none d-lg-block">
-                                            <select name="category" class="form-control form-select">
-                                                <option value="all" selected>All Categories</option>
-                                                <option value="fashion">Fashion</option>
-                                                <option value="electronics">Electronics</option>
-                                                <option value="homegarden">Home & Garden</option>
-                                                <option value="motors">Motors</option>
-                                                <option value="features">Features</option>
-                                            </select>
+            <div class="row">
+                <!-- Sidebar Categories -->
+                <div class="col-lg-3">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title mb-3">Categories</h5>
+                            <form action="{{ route('user.wishlistItems.index') }}" method="get" id="filterForm">
+                                <input type="hidden" name="search" value="{{ request('search') }}">
+                                <input type="hidden" name="sort" value="{{ request('sort') }}">
+                                
+                                <div class="accordion" id="categoryAccordion">
+                                    @foreach($categories as $category)
+                                        <div class="card border-0 mb-2">
+                                            <div class="card-header bg-light p-0" id="heading{{ $category->id }}">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="custom-control custom-checkbox mr-2">
+                                                        <input type="checkbox" class="custom-control-input category-checkbox" 
+                                                               id="category{{ $category->id }}" 
+                                                               name="category" 
+                                                               value="{{ $category->id }}"
+                                                               {{ request('category') == $category->id ? 'checked' : '' }}>
+                                                        <label class="custom-control-label" for="category{{ $category->id }}"></label>
+                                                    </div>
+                                                    <h2 class="mb-0">
+                                                        <button class="btn btn-link text-dark text-decoration-none" type="button" 
+                                                                data-toggle="collapse" 
+                                                                data-target="#collapse{{ $category->id }}" 
+                                                                aria-expanded="{{ request('category') == $category->id ? 'true' : 'false' }}" 
+                                                                aria-controls="collapse{{ $category->id }}">
+                                                            {{ $category->name }}
+                                                        </button>
+                                                    </h2>
+                                                </div>
+                                            </div>
+                                            <div id="collapse{{ $category->id }}" 
+                                                 class="collapse {{ request('category') == $category->id ? 'show' : '' }}" 
+                                                 aria-labelledby="heading{{ $category->id }}" 
+                                                 data-parent="#categoryAccordion">
+                                                <div class="card-body pt-0">
+                                                    <div class="list-group list-group-flush">
+                                                        @foreach($subcategories->where('category_id', $category->id) as $subcategory)
+                                                            <div class="list-group-item border-0 px-0">
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input subcategory-checkbox" 
+                                                                           id="subcategory{{ $subcategory->id }}" 
+                                                                           name="subcategory" 
+                                                                           value="{{ $subcategory->id }}"
+                                                                           {{ request('subcategory') == $subcategory->id ? 'checked' : '' }}>
+                                                                    <label class="custom-control-label" for="subcategory{{ $subcategory->id }}">
+                                                                        {{ $subcategory->name }}
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        @endforeach
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <button class="btn" type="submit" aria-label="Search">
-                                            <i class="icons icon-magnifier header-nav-top-icon text-color-dark"></i>
-                                        </button>
-                                    </div>
+                                    @endforeach
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Sort Options -->
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title mb-3">Sort By</h5>
+                            <div class="list-group list-group-flush">
+                                <a href="#" class="list-group-item list-group-item-action {{ request('sort') == 'price_asc' ? 'active' : '' }}" 
+                                   onclick="event.preventDefault(); document.getElementById('sort').value = 'price_asc'; document.getElementById('filterForm').submit();">
+                                    Price: Low to High
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action {{ request('sort') == 'price_desc' ? 'active' : '' }}"
+                                   onclick="event.preventDefault(); document.getElementById('sort').value = 'price_desc'; document.getElementById('filterForm').submit();">
+                                    Price: High to Low
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action {{ request('sort') == 'name_asc' ? 'active' : '' }}"
+                                   onclick="event.preventDefault(); document.getElementById('sort').value = 'name_asc'; document.getElementById('filterForm').submit();">
+                                    Name: A to Z
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action {{ request('sort') == 'name_desc' ? 'active' : '' }}"
+                                   onclick="event.preventDefault(); document.getElementById('sort').value = 'name_desc'; document.getElementById('filterForm').submit();">
+                                    Name: Z to A
+                                </a>
+                            </div>
+                            <input type="hidden" name="sort" id="sort" value="{{ request('sort') }}">
+                        </div>
+                    </div>
+
+                    <!-- Wishlist Button -->
+                    <button type="button" class="btn btn-primary btn-block mb-4" data-toggle="modal" data-target="#wishlistModal">
+                        <i class="fas fa-heart mr-2"></i> View My Wishlist ({{ $wishlist->wishlistItems->count() }})
+                    </button>
+                </div>
+
+                <!-- Main Content -->
+                <div class="col-lg-9">
+                    <!-- Search Bar -->
+                    <div class="mb-4">
+                        <form action="{{ route('user.wishlistItems.index') }}" method="get" id="searchForm">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="search" value="{{ request('search') }}" placeholder="Search items...">
+                                <input type="hidden" name="category" value="{{ request('category') }}">
+                                <input type="hidden" name="subcategory" value="{{ request('subcategory') }}">
+                                <input type="hidden" name="sort" value="{{ request('sort') }}">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="submit">
+                                        <i class="fas fa-search"></i>
+                                    </button>
                                 </div>
                             </div>
                         </form>
                     </div>
+
+                    <!-- Inventory Grid -->
+                    <div class="row">
+                        @forelse($inventories as $inventory)
+                            <div class="col-12 col-sm-6 col-lg-4 mb-4">
+                                <div class="card h-100">
+                                    @if($inventory->image)
+                                        <img src="{{ asset('storage/' . $inventory->image) }}" class="card-img-top" alt="{{ $inventory->name }}" style="height: 200px; object-fit: cover;">
+                                    @else
+                                        <img src="{{ asset('images/no-image.png') }}" class="card-img-top" alt="No Image" style="height: 200px; object-fit: cover;">
+                                    @endif
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ $inventory->name }}</h5>
+                                        <p class="card-text">
+                                            <strong>Price:</strong> ${{ number_format($inventory->price, 2) }}<br>
+                                            <strong>Category:</strong> {{ $inventory->subcategory->name }}<br>
+                                            <strong>Available:</strong> {{ $inventory->quantity }}
+                                        </p>
+                                        <form action="{{ route('user.wishlistItems.store') }}" method="POST" class="wishlist-form">
+                                            @csrf
+                                            <input type="hidden" name="wishlist_id" value="{{ $wishlist->id }}">
+                                            <input type="hidden" name="inventory_id" value="{{ $inventory->id }}">
+                                            <button type="submit" class="btn btn-primary btn-block {{ $wishlist->wishlistItems->contains('inventory_id', $inventory->id) ? 'btn-success' : '' }}">
+                                                <i class="fas fa-heart mr-2"></i>
+                                                {{ $wishlist->wishlistItems->contains('inventory_id', $inventory->id) ? 'Added to Wishlist' : 'Add to Wishlist' }}
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        @empty
+                            <div class="col-12">
+                                <div class="alert alert-info">
+                                    No items found. Please try different search criteria.
+                                </div>
+                            </div>
+                        @endforelse
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            {{ $inventories->appends(request()->query())->links() }}
+                        </div>
+                    </div>
                 </div>
             </div>
-
-
-            @include('pages.user.shop.cart')
         </div>
     </div>
 </div>
 
-{{-- <div class="custom-page-wrapper pt-5 pb-1">
-    <div class="spacer py-4 my-5"></div>
-    <div class="container container-xl-custom pb-5 mb-5">
-        <div class="row pb-3">
-            <div class="col-lg-6 position-relative">
-                <div class="position-absolute z-index-0 appear-animation" data-appear-animation="fadeInRightShorter"
-                    data-appear-animation-delay="3000" style="top: 110px; left: -206px;">
-                    <h2
-                        class="text-color-dark custom-stroke-text-effect-1 custom-big-font-size-1 font-weight-black opacity-1 mb-0">
-                        YOUR WISH</h2>
-                </div>
-                <div class="overflow-hidden mb-2">
-                    <h2 class="text-color-default positive-ls-3 line-height-3 text-4 mb-0 appear-animation"
-                        data-appear-animation="maskUp" data-appear-animation-delay="1500">WE'RE HERE TO HELP</h2>
-                </div>
-                <div class="overflow-hidden mb-4">
-                    <h3 class="text-transform-none text-color-dark font-weight-black text-10 line-height-2 mb-0 appear-animation"
-                        data-appear-animation="maskUp" data-appear-animation-delay="1700">Get Your Wishlist Done</h3>
-                </div>
-                <img src="img/demos/architecture-2/divider.jpg"
-                    class="img-fluid opacity-5 mb-4 mt-2 appear-animation"
-                    data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="1900" alt="" />
-                <p class="custom-font-tertiary text-5 line-height-4 mb-4 mt-2 appear-animation"
-                    data-appear-animation="fadeInUpShorter" data-appear-animation-delay="2100">Create your wishlist by filling in the form on the right.</p>
-                <p class="text-3-5 pb-2 mb-5 appear-animation" data-appear-animation="fadeInUpShorter"
-                    data-appear-animation-delay="2300">Make sure that you fill in all the blank fields.</p>
-                <div class="row">
-                    <div class="col-lg-4 appear-animation" data-appear-animation="fadeInUpShorter"
-                        data-appear-animation-delay="2500">
-                        <h4 class="alternative-font-4 text-color-dark font-weight-bold line-height-3 text-3-5 mb-0">
-                            Work Inquiries</h4>
-                        <a href="tel:1234567890"
-                            class="text-decoration-none text-color-default text-color-hover-primary">(60)
-                            16-619 3227</a>
-                        <h4
-                            class="alternative-font-4 text-color-dark font-weight-bold line-height-3 text-3-5 mt-4 mb-0">
-                            Careers & Press</h4>
-                        <a href="tel:1234567890"
-                            class="text-decoration-none text-color-default text-color-hover-primary">(60)
-                            16-619 3227</a>
-                    </div>
-                    <div class="col-lg-4 appear-animation" data-appear-animation="fadeInUpShorter"
-                        data-appear-animation-delay="2700">
-                        <h4
-                            class="alternative-font-4 text-color-dark font-weight-bold line-height-3 text-3-5 mt-4 mt-lg-0 mb-0">
-                            Address</h4>
-                        <p class="mb-0">E-06-21, Symphony Heights<br>68100, Batu Cave<br>Selangor</p>
-                        <h4
-                            class="alternative-font-4 text-color-dark font-weight-bold line-height-3 text-3-5 mt-4 mb-0">
-                            Email</h4>
-                        <a href="/cdn-cgi/l/email-protection#b6dbd7dfdaf6d3ced7dbc6dad398d5d9db"
-                            class="text-decoration-none text-color-default text-color-hover-primary"><span
-                                class="__cf_email__"
-                                data-cfemail="4528242c2905203d24283529206b262a28">wift@enquiries.com</span></a>
-                    </div>
-                    <div class="col-lg-4 appear-animation" data-appear-animation="fadeInUpShorter"
-                        data-appear-animation-delay="2900">
-                        <h4
-                            class="alternative-font-4 text-color-dark font-weight-bold line-height-3 text-3-5 mt-4 mt-lg-0 mb-0">
-                            Business Hours</h4>
-                        <p class="mb-0">Mon - Sat 9:00am - 6:00pm<br>Sunday - CLOSED</p>
-                    </div>
+<!-- Wishlist Modal -->
+<div class="modal fade" id="wishlistModal" tabindex="-1" role="dialog" aria-labelledby="wishlistModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="wishlistModalLabel">My Wishlist</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Price</th>
+                                <th>Category</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @forelse($wishlist->wishlistItems as $item)
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            @if($item->inventory->image)
+                                                <img src="{{ asset('storage/' . $item->inventory->image) }}" class="img-fluid mr-3" style="max-width: 50px;" alt="{{ $item->inventory->name }}">
+                                            @else
+                                                <img src="{{ asset('images/no-image.png') }}" class="img-fluid mr-3" style="max-width: 50px;" alt="No Image">
+                                            @endif
+                                            <span>{{ $item->inventory->name }}</span>
+                                        </div>
+                                    </td>
+                                    <td>${{ number_format($item->inventory->price, 2) }}</td>
+                                    <td>{{ $item->inventory->subcategory->name }}</td>
+                                    <td>{{ $item->status->name }}</td>
+                                    <td>
+                                        <form action="{{ route('user.wishlistItems.destroy', $item->id) }}" method="POST" class="d-inline">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger btn-sm">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td colspan="5" class="text-center">No items in your wishlist</td>
+                                </tr>
+                            @endforelse
+                        </tbody>
+                    </table>
                 </div>
             </div>
-            @include('pages.user.components.wishlist-items-form')
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <a href="{{ route('user.wishlists.index') }}" class="btn btn-primary">View Full Wishlist</a>
+            </div>
         </div>
     </div>
-</div> --}}
+</div>
 @endsection
+
+@push('scripts')
+<script>
+    // Update button state after adding to wishlist
+    document.querySelectorAll('.wishlist-form').forEach(form => {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const button = this.querySelector('button');
+            const formData = new FormData(this);
+
+            fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'Accept': 'application/json'
+                },
+                credentials: 'same-origin'
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.success) {
+                    button.classList.remove('btn-primary');
+                    button.classList.add('btn-success');
+                    button.innerHTML = '<i class="fas fa-heart mr-2"></i> Added to Wishlist';
+                    
+                    // Update wishlist count in the button
+                    const wishlistButton = document.querySelector('[data-target="#wishlistModal"]');
+                    const currentCount = parseInt(wishlistButton.textContent.match(/\d+/)[0]);
+                    wishlistButton.innerHTML = `<i class="fas fa-heart mr-2"></i> View My Wishlist (${currentCount + 1})`;
+                } else {
+                    alert(data.message || 'Error adding item to wishlist');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error adding item to wishlist');
+            });
+        });
+    });
+
+    // Handle category and subcategory checkboxes
+    document.querySelectorAll('.category-checkbox, .subcategory-checkbox').forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            document.getElementById('filterForm').submit();
+        });
+    });
+</script>
+@endpush

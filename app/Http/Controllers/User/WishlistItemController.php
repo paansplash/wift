@@ -9,6 +9,8 @@ use App\Repositories\InventoryRepository;
 use App\Repositories\StatusRepository;
 use App\Repositories\WishlistItemRepository;
 use App\Repositories\WishlistRepository;
+use App\Repositories\SubcategoryRepository;
+use App\Repositories\CategoryRepository;
 use Illuminate\Http\Request;
 use Laracasts\Flash\Flash;
 
@@ -19,9 +21,11 @@ class WishlistItemController extends AppBaseController
     private $wishlistRepository;
     private $inventoryRepository;
     private $statusRepository;
+    private $subcategoryRepository;
+    private $categoryRepository;
 
     public function __construct(WishlistItemRepository $wishlistItemRepo, WishlistRepository $wishlistRepo, 
-    InventoryRepository $inventoryRepo, StatusRepository $statusRepo)
+    InventoryRepository $inventoryRepo, StatusRepository $statusRepo, SubcategoryRepository $subcategoryRepo, CategoryRepository $categoryRepo)
     {
         $this->middleware('auth'); // Ensure the user is authenticated
 
@@ -29,6 +33,8 @@ class WishlistItemController extends AppBaseController
         $this->wishlistRepository = $wishlistRepo;
         $this->inventoryRepository = $inventoryRepo;
         $this->statusRepository = $statusRepo;
+        $this->subcategoryRepository = $subcategoryRepo;
+        $this->categoryRepository = $categoryRepo;
     }
 
     /**
@@ -36,11 +42,55 @@ class WishlistItemController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $wishlistItems = $this->wishlistItemRepository->paginate(10);
-        $wishlist = $this->wishlistRepository->getLatestWishlist();
-        $inventories = $this->inventoryRepository->getInventories();
+        $query = $this->inventoryRepository->allQuery()
+            ->with(['subcategory', 'user', 'status']);
 
-        return view('pages.user.wishlist_items', compact('wishlistItems', 'wishlist', 'inventories'));
+        // Apply search filter
+        if ($request->has('search')) {
+            $search = $request->get('search');
+            $query->where('name', 'like', "%{$search}%");
+        }
+
+        // Apply category filter
+        if ($request->has('category') && $request->get('category')) {
+            $query->whereHas('subcategory', function($q) use ($request) {
+                $q->where('category_id', $request->get('category'));
+            });
+        }
+
+        // Apply subcategory filter
+        if ($request->has('subcategory') && $request->get('subcategory')) {
+            $query->where('subcategory_id', $request->get('subcategory'));
+        }
+
+        // Apply sorting
+        if ($request->has('sort')) {
+            switch ($request->get('sort')) {
+                case 'price_asc':
+                    $query->orderBy('price', 'asc');
+                    break;
+                case 'price_desc':
+                    $query->orderBy('price', 'desc');
+                    break;
+                case 'name_asc':
+                    $query->orderBy('name', 'asc');
+                    break;
+                case 'name_desc':
+                    $query->orderBy('name', 'desc');
+                    break;
+                default:
+                    $query->orderBy('created_at', 'desc');
+            }
+        } else {
+            $query->orderBy('created_at', 'desc');
+        }
+
+        $inventories = $query->paginate(12);
+        $wishlist = $this->wishlistRepository->getLatestWishlist();
+        $categories = $this->categoryRepository->all();
+        $subcategories = $this->subcategoryRepository->all();
+
+        return view('pages.user.wishlist_items', compact('inventories', 'wishlist', 'categories', 'subcategories'));
     }
 
     /**
@@ -57,12 +107,38 @@ class WishlistItemController extends AppBaseController
     public function store(CreateWishlistItemRequest $request)
     {
         $input = $request->all();
+        
+        // Check if item already exists in wishlist
+        $existingItem = $this->wishlistItemRepository->allQuery()
+            ->where('wishlist_id', $input['wishlist_id'])
+            ->where('inventory_id', $input['inventory_id'])
+            ->first();
+
+        if ($existingItem) {
+            if ($request->ajax()) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'This item is already in your wishlist.'
+                ]);
+            }
+            Flash::error('This item is already in your wishlist.');
+            return redirect()->back();
+        }
+
+        // Get default status for new wishlist items
+        $input['status_id'] = 5;
 
         $wishlistItem = $this->wishlistItemRepository->create($input);
 
-        Flash::success('Wishlist Item saved successfully.');
+        if ($request->ajax()) {
+            return response()->json([
+                'success' => true,
+                'message' => 'Item added to wishlist successfully.'
+            ]);
+        }
 
-        return redirect(route('user.wishlistItems.index'));
+        Flash::success('Item added to wishlist successfully.');
+        return redirect()->back();
     }
 
     /**
