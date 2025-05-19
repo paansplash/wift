@@ -6,7 +6,7 @@
             <div class="header-row">
                 <div class="header-column align-items-start justify-content-center">
                     <div class="header-logo z-index-2 col-lg-2 px-3">
-                        <a href="demo-architecture-2.html">
+                        <a href="{{ route('welcome') }}">
                             <img alt="Porto" width="70" height="auto"
                                 src={{ asset('assets/images/logos/icon2.png') }}>
                         </a>
@@ -19,8 +19,8 @@
                             class="header-nav-main header-nav-main-arrows header-nav-main-mobile-dark header-nav-main-dropdown-no-borders header-nav-main-effect-3 header-nav-main-sub-effect-1">
                             <nav class="collapse">
                                 <ul class="nav nav-pills" id="mainNav">
-                                    <li><a href="{{ route('user.home.index') }}"
-                                            class="nav-link {{ Request::routeIs('user.home.index') ? 'active' : '' }}">Home</a>
+                                    <li><a href="{{ route('user.dashboard.index') }}"
+                                            class="nav-link {{ Request::routeIs('user.dashboard') ? 'active' : '' }}">Home</a>
                                     </li>
                                     <li><a href="{{ route('about-us') }}"
                                             class="nav-link {{ Request::routeIs('about-us') ? 'active' : '' }}">About</a>

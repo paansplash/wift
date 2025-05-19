@@ -61,6 +61,7 @@ Route::middleware(['role:Super Admin,Admin'])->prefix('admin')->group(function (
 
 Route::middleware(['role:User'])->prefix('user')->group(function () {
     Route::resource('home', App\Http\Controllers\User\HomeController::class)->names('user.home');
+    Route::resource('dashboard', App\Http\Controllers\User\DashboardController::class)->names('user.dashboard');
     Route::resource('wishers', App\Http\Controllers\User\WisherController::class)->names('user.wishers');
     Route::resource('wishlists', App\Http\Controllers\User\WishlistController::class)->names('user.wishlists');
     Route::resource('wishlistItems', App\Http\Controllers\User\WishlistItemController::class)->names('user.wishlistItems');
