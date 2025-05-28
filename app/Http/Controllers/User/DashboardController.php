@@ -18,7 +18,23 @@ class DashboardController extends AppBaseController
 
     public function index()
     {
-        $wishlist = $this->wishlistRepository->getLatestWishlist();
-        return view('pages.user.dashboard', compact('wishlist'));
+        // Get the latest wishlist with related items and their relationships
+        $wishlist = $this->wishlistRepository->getLatestWishlist([
+            'wishlistItems.inventory.subcategory',
+            'wishlistItems.status',
+        ]);
+
+        // Calculate progress metrics
+        $totalItems = $wishlist?->wishlistItems->count() ?? 0;
+        $completedItems = $wishlist?->wishlistItems->where('status_id', 3)->count() ?? 0;
+        $progressPercentage = $totalItems > 0 ? ($completedItems / $totalItems) * 100 : 0;
+
+        // Pass data to view
+        return view('pages.user.dashboard', compact(
+            'wishlist',
+            'totalItems',
+            'completedItems',
+            'progressPercentage'
+        ));
     }
-} 
+}

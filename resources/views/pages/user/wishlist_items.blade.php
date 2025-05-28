@@ -37,7 +37,7 @@
             <div class="container container-xl-custom pb-5 mb-5">
                 <div class="row">
                     <!-- Sidebar Categories -->
-                    <div class="col-lg-3">
+                    <div class="col-lg-3 mb-4">
                         <div class="card mb-4">
                             <div class="card-body">
                                 <h5 class="card-title mb-3">Categories</h5>
@@ -60,7 +60,7 @@
                                                                 for="category{{ $category->id }}"></label>
                                                         </div>
                                                         <h2 class="mb-0">
-                                                            <button class="btn btn-link text-dark text-decoration-none"
+                                                            <button class="btn btn-link text-dark text-decoration-none w-100 text-left"
                                                                 type="button" data-toggle="collapse"
                                                                 data-target="#collapse{{ $category->id }}"
                                                                 aria-expanded="{{ request('category') == $category->id ? 'true' : 'false' }}"
@@ -171,15 +171,15 @@
                                             <img src="{{ asset('images/no-image.png') }}" class="card-img-top"
                                                 alt="No Image" style="height: 200px; object-fit: cover;">
                                         @endif
-                                        <div class="card-body">
+                                        <div class="card-body d-flex flex-column">
                                             <h5 class="card-title">{{ $inventory->name }}</h5>
-                                            <p class="card-text">
+                                            <p class="card-text flex-grow-1">
                                                 <strong>Price:</strong> ${{ number_format($inventory->price, 2) }}<br>
                                                 <strong>Category:</strong> {{ $inventory->subcategory->name }}<br>
                                                 <strong>Available:</strong> {{ $inventory->quantity }}
                                             </p>
                                             <form action="{{ route('user.wishlistItems.store') }}" method="POST"
-                                                class="wishlist-form">
+                                                class="wishlist-form mt-auto">
                                                 @csrf
                                                 <input type="hidden" name="wishlist_id" value="{{ $wishlist->id }}">
                                                 <input type="hidden" name="inventory_id" value="{{ $inventory->id }}">
