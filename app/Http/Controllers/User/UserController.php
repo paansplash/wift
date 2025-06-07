@@ -31,7 +31,7 @@ class UserController extends AppBaseController
     {
         $users = $this->userRepository->paginate(10);
 
-        return view('pages.admin.users.index')
+        return view('admin.users.index')
             ->with('users', $users);
     }
 
@@ -40,7 +40,7 @@ class UserController extends AppBaseController
      */
     public function create()
     {
-        return view('pages.admin.users.create');
+        return view('admin.users.create');
     }
 
     /**
@@ -70,7 +70,7 @@ class UserController extends AppBaseController
             return redirect(route('users.index'));
         }
 
-        return view('pages.admin.users.show')->with('user', $user);
+        return view('admin.users.show')->with('user', $user);
     }
 
     /**
@@ -88,7 +88,7 @@ class UserController extends AppBaseController
             return redirect(route('users.index'));
         }
 
-        return view('pages.admin.users.edit', compact('roles', 'user'));
+        return view('admin.users.edit', compact('roles', 'user'));
     }
 
     /**

@@ -26,7 +26,7 @@ class OrderItemController extends AppBaseController
     {
         $orderItems = $this->orderItemRepository->paginate(10);
 
-        return view('pages.admin.order_items.index')
+        return view('admin.order_items.index')
             ->with('orderItems', $orderItems);
     }
 
@@ -35,7 +35,7 @@ class OrderItemController extends AppBaseController
      */
     public function create()
     {
-        return view('pages.admin.order_items.create');
+        return view('admin.order_items.create');
     }
 
     /**
@@ -65,7 +65,7 @@ class OrderItemController extends AppBaseController
             return redirect(route('admin.orderItems.index'));
         }
 
-        return view('pages.admin.order_items.show')->with('orderItem', $orderItem);
+        return view('admin.order_items.show')->with('orderItem', $orderItem);
     }
 
     /**
@@ -81,7 +81,7 @@ class OrderItemController extends AppBaseController
             return redirect(route('admin.orderItems.index'));
         }
 
-        return view('pages.admin.order_items.edit')->with('orderItem', $orderItem);
+        return view('admin.order_items.edit')->with('orderItem', $orderItem);
     }
 
     /**

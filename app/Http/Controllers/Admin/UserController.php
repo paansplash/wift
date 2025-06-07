@@ -26,7 +26,7 @@ class UserController extends AppBaseController
     {
         $users = $this->adminService->getPaginatedUsers();
 
-        return view('pages.admin.users.index')
+        return view('admin.users.index')
             ->with('users', $users);
     }
 
@@ -37,7 +37,7 @@ class UserController extends AppBaseController
     {
         $roles = $this->adminService->getAllRoles();
 
-        return view('pages.admin.users.create', compact('roles'));
+        return view('admin.users.create', compact('roles'));
     }
 
     /**
@@ -64,7 +64,7 @@ class UserController extends AppBaseController
             return redirect(route('admin.users.index'));
         }
 
-        return view('pages.admin.users.show')->with('user', $user);
+        return view('admin.users.show')->with('user', $user);
     }
 
     /**
@@ -80,7 +80,7 @@ class UserController extends AppBaseController
             return redirect(route('admin.users.index'));
         }
 
-        return view('pages.admin.users.edit', compact('roles', 'user'));
+        return view('admin.users.edit', compact('roles', 'user'));
     }
 
     /**

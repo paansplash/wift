@@ -26,7 +26,7 @@ class WisherController extends AppBaseController
      */
     public function index(Request $request)
     {
-        return view('pages.user.wishers');
+        return view('user.wishers');
     }
 
     /**
@@ -39,7 +39,7 @@ class WisherController extends AppBaseController
 
         Flash::success('Wisher saved successfully.');
 
-        return view('pages.user.wishlists', compact('wisher'));
+        return view('user.wishlists', compact('wisher'));
     }
 
     /**
@@ -55,7 +55,7 @@ class WisherController extends AppBaseController
             return redirect(route('wishers.index'));
         }
 
-        return view('pages.admin.wishers.show')->with('wisher', $wisher);
+        return view('admin.wishers.show')->with('wisher', $wisher);
     }
 
     /**
@@ -71,7 +71,7 @@ class WisherController extends AppBaseController
             return redirect(route('wishers.index'));
         }
 
-        return view('pages.admin.wishers.edit')->with('wisher', $wisher);
+        return view('admin.wishers.edit')->with('wisher', $wisher);
     }
 
     /**

@@ -26,7 +26,7 @@ class CategoryController extends AppBaseController
     {
         $categories = $this->categoryService->getPaginatedCategories();
 
-        return view('pages.admin.categories.index')
+        return view('admin.categories.index')
             ->with('categories', $categories);
     }
 
@@ -36,7 +36,7 @@ class CategoryController extends AppBaseController
     public function create()
     {
         $statuses = $this->categoryService->getAllStatuses();
-        return view('pages.admin.categories.create')
+        return view('admin.categories.create')
             ->with('statuses', $statuses);
     }
 
@@ -64,7 +64,7 @@ class CategoryController extends AppBaseController
             return redirect(route('admin.categories.index'));
         }
 
-        return view('pages.admin.categories.show')->with('category', $category);
+        return view('admin.categories.show')->with('category', $category);
     }
 
     /**
@@ -80,7 +80,7 @@ class CategoryController extends AppBaseController
             return redirect(route('admin.categories.index'));
         }
 
-        return view('pages.admin.categories.edit')
+        return view('admin.categories.edit')
             ->with('category', $category)
             ->with('statuses', $statuses);
     }

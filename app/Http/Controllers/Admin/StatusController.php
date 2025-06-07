@@ -26,7 +26,7 @@ class StatusController extends AppBaseController
     {
         $statuses = $this->statusRepository->paginate(10);
 
-        return view('pages.admin.statuses.index')
+        return view('admin.statuses.index')
             ->with('statuses', $statuses);
     }
 
@@ -35,7 +35,7 @@ class StatusController extends AppBaseController
      */
     public function create()
     {
-        return view('pages.admin.statuses.create');
+        return view('admin.statuses.create');
     }
 
     /**
@@ -65,7 +65,7 @@ class StatusController extends AppBaseController
             return redirect(route('admin.statuses.index'));
         }
 
-        return view('pages.admin.statuses.show')->with('status', $status);
+        return view('admin.statuses.show')->with('status', $status);
     }
 
     /**
@@ -81,7 +81,7 @@ class StatusController extends AppBaseController
             return redirect(route('admin.statuses.index'));
         }
 
-        return view('pages.admin.statuses.edit')->with('status', $status);
+        return view('admin.statuses.edit')->with('status', $status);
     }
 
     /**

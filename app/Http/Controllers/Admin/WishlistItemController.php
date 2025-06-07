@@ -35,7 +35,7 @@ class WishlistItemController extends AppBaseController
     {
         $wishlistItems = $this->wishlistItemRepository->paginate(10);
 
-        return view('pages.admin.wishlist_items.index')
+        return view('admin.wishlist_items.index')
             ->with('wishlistItems', $wishlistItems);
     }
 
@@ -48,7 +48,7 @@ class WishlistItemController extends AppBaseController
         $inventories = $this->inventoryRepository->getInventories();
         $statuses = $this->statusRepository->getActivityStatuses();
 
-        return view('pages.admin.wishlist_items.create', compact('wishlists', 'inventories', 'statuses'));
+        return view('admin.wishlist_items.create', compact('wishlists', 'inventories', 'statuses'));
     }
 
     /**
@@ -87,7 +87,7 @@ class WishlistItemController extends AppBaseController
             return redirect(route('admin.wishlistItems.index'));
         }
 
-        return view('pages.admin.wishlist_items.show')->with('wishlistItem', $wishlistItem);
+        return view('admin.wishlist_items.show')->with('wishlistItem', $wishlistItem);
     }
 
     /**
@@ -103,7 +103,7 @@ class WishlistItemController extends AppBaseController
             return redirect(route('admin.wishlistItems.index'));
         }
 
-        return view('pages.admin.wishlist_items.edit')->with('wishlistItem', $wishlistItem);
+        return view('admin.wishlist_items.edit')->with('wishlistItem', $wishlistItem);
     }
 
     /**

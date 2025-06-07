@@ -44,6 +44,6 @@ class HomeController extends Controller
         $totalInventories = $this->inventoryRepository->count();
         $totalDelivered = $this->deliveryRepository->count();
 
-        return view('pages.admin.home', compact('totalWishers', 'totalRegisteredUsers', 'totalInventories', 'totalDelivered'));
+        return view('admin.home', compact('totalWishers', 'totalRegisteredUsers', 'totalInventories', 'totalDelivered'));
     }
 }

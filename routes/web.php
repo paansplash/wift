@@ -33,8 +33,8 @@ Route::get('/contact', function () {
 })->name('contact'); // Name the route "contact"
 
 Route::get('/shop', function () {
-    return view('pages.user.shop.index');
-})->name('shop'); // Name the route "welcome"
+    return view('user.shop.shop');
+})->name('shop');
 
 
 Auth::routes();

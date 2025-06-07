@@ -31,7 +31,7 @@ class WishlistController extends AppBaseController
     {
         $wisher = $this->wisherRepository->getWisherByUser();
 
-        return view('pages.user.wishlists', compact('wisher'));
+        return view('user.wishlists', compact('wisher'));
     }
 
     /**
@@ -61,7 +61,7 @@ class WishlistController extends AppBaseController
             return redirect(route('user.wishlists.index'));
         }
 
-        return view('pages.admin.wishlists.show')->with('wishlist', $wishlist);
+        return view('admin.wishlists.show')->with('wishlist', $wishlist);
     }
 
     /**
@@ -77,7 +77,7 @@ class WishlistController extends AppBaseController
             return redirect(route('user.wishlists.index'));
         }
 
-        return view('pages.admin.wishlists.edit')->with('wishlist', $wishlist);
+        return view('admin.wishlists.edit')->with('wishlist', $wishlist);
     }
 
     /**

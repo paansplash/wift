@@ -3,7 +3,7 @@
 @section('content')
     <div role="main" class="main">
 
-        @include('pages.welcomes.carousels')
+        @include('welcomes.carousels')
 
         <div class="position-relative">
             <img src="assets/img/demos/architecture-2/backgrounds/arch-plan-1.jpg"
@@ -16,7 +16,7 @@
 
                 <div class="container container-xl-custom custom-container-style custom-margin-top">
 
-                    @include('pages.welcomes.company')
+                    @include('welcomes.company')
 
                     <div class="container-fluid">
                         <div class="row">
@@ -25,7 +25,7 @@
                             </div>
                         </div>
                     </div>
-                    @include('pages.welcomes.steps')
+                    @include('welcomes.steps')
 
 
                     <div class="container-fluid">
@@ -35,7 +35,7 @@
                             </div>
                         </div>
                     </div>
-                    @include('pages.welcomes.objectives')
+                    @include('welcomes.objectives')
 
 
                 </div>
@@ -48,24 +48,24 @@
                     </div>
                 </div>
 
-                @include('pages.welcomes.collaborators')
+                @include('welcomes.collaborators')
 
 
-                {{-- @include('pages.welcomes.stats') --}}
+                {{-- @include('welcomes.stats') --}}
 
             </section>
 
-            {{-- @include('pages.welcomes.statistics') --}}
+            {{-- @include('welcomes.statistics') --}}
 
-            {{-- @include('pages.welcomes.gallery') --}}
+            {{-- @include('welcomes.gallery') --}}
 
-            {{-- @include('pages.welcomes.contact-us') --}}
+            {{-- @include('welcomes.contact-us') --}}
 
-            @include('pages.welcomes.faq')
+            @include('welcomes.faq')
 
-            {{-- @include('pages.welcomes.teams') --}}
+            {{-- @include('welcomes.teams') --}}
 
-            {{-- @include('pages.welcomes.news') --}}
+            {{-- @include('welcomes.news') --}}
         </div>
     </div>
 

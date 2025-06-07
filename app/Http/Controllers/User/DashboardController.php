@@ -30,11 +30,16 @@ class DashboardController extends AppBaseController
         $progressPercentage = $totalItems > 0 ? ($completedItems / $totalItems) * 100 : 0;
 
         // Pass data to view
-        return view('pages.user.dashboard', compact(
+        return view('user.dashboard', compact(
             'wishlist',
             'totalItems',
             'completedItems',
             'progressPercentage'
         ));
+    }
+
+    public function create()
+    {
+        return view('user.shop.shop');
     }
 }

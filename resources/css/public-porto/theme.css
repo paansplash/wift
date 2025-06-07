@@ -1330,7 +1330,7 @@ html #header.header-transparent .header-body:not(.header-border-bottom) {
 }
 
 html:not(.sticky-header-active) #header.header-transparent:not(.header-semi-transparent) .header-body {
-	background-color: transparent !important;
+	background-color: var(--primary-300) !important;
 }
 
 html:not(.sticky-header-active) #header.header-semi-transparent-light .header-body {

@@ -29,7 +29,7 @@ class WishlistController extends AppBaseController
     {
         $wishlists = $this->wishlistRepository->paginate(10);
 
-        return view('pages.admin.wishlists.index')
+        return view('admin.wishlists.index')
             ->with('wishlists', $wishlists);
     }
 
@@ -40,7 +40,7 @@ class WishlistController extends AppBaseController
     {
         $wishers = $this->wisherRepository->getWishers();
 
-        return view('pages.admin.wishlists.create', compact('wishers'));
+        return view('admin.wishlists.create', compact('wishers'));
     }
 
     /**
@@ -70,7 +70,7 @@ class WishlistController extends AppBaseController
             return redirect(route('admin.wishlists.index'));
         }
 
-        return view('pages.admin.wishlists.show')->with('wishlist', $wishlist);
+        return view('admin.wishlists.show')->with('wishlist', $wishlist);
     }
 
     /**
@@ -87,7 +87,7 @@ class WishlistController extends AppBaseController
             return redirect(route('admin.wishlists.index'));
         }
 
-        return view('pages.admin.wishlists.edit', compact('wishlist', 'wishers'));
+        return view('admin.wishlists.edit', compact('wishlist', 'wishers'));
     }
 
     /**

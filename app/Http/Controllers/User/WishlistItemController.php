@@ -90,7 +90,7 @@ class WishlistItemController extends AppBaseController
         $categories = $this->categoryRepository->all();
         $subcategories = $this->subcategoryRepository->all();
 
-        return view('pages.user.wishlist_items', compact('inventories', 'wishlist', 'categories', 'subcategories'));
+        return view('user.wishlist_items', compact('inventories', 'wishlist', 'categories', 'subcategories'));
     }
 
     /**
@@ -98,7 +98,7 @@ class WishlistItemController extends AppBaseController
      */
     public function create()
     {
-        return view('pages.user.wishlist_items.create');
+        return view('user.wishlist_items.create');
     }
 
     /**
@@ -154,7 +154,7 @@ class WishlistItemController extends AppBaseController
             return redirect(route('user.wishlistItems.index'));
         }
 
-        return view('pages.admin.wishlist_items.show')->with('wishlistItem', $wishlistItem);
+        return view('admin.wishlist_items.show')->with('wishlistItem', $wishlistItem);
     }
 
     /**
@@ -170,7 +170,7 @@ class WishlistItemController extends AppBaseController
             return redirect(route('user.wishlistItems.index'));
         }
 
-        return view('pages.admin.wishlist_items.edit')->with('wishlistItem', $wishlistItem);
+        return view('admin.wishlist_items.edit')->with('wishlistItem', $wishlistItem);
     }
 
     /**

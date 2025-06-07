@@ -26,7 +26,7 @@ class PermissionController extends AppBaseController
     {
         $permissions = $this->permissionRepository->paginate(10);
 
-        return view('pages.admin.permissions.index')
+        return view('admin.permissions.index')
             ->with('permissions', $permissions);
     }
 
@@ -35,7 +35,7 @@ class PermissionController extends AppBaseController
      */
     public function create()
     {
-        return view('pages.admin.permissions.create');
+        return view('admin.permissions.create');
     }
 
     /**
@@ -65,7 +65,7 @@ class PermissionController extends AppBaseController
             return redirect(route('admin.permissions.index'));
         }
 
-        return view('pages.admin.permissions.show')->with('permission', $permission);
+        return view('admin.permissions.show')->with('permission', $permission);
     }
 
     /**
@@ -81,7 +81,7 @@ class PermissionController extends AppBaseController
             return redirect(route('admin.permissions.index'));
         }
 
-        return view('pages.admin.permissions.edit')->with('permission', $permission);
+        return view('admin.permissions.edit')->with('permission', $permission);
     }
 
     /**

@@ -30,7 +30,7 @@ class SubcategoryController extends AppBaseController
     {
         $subcategories = $this->subcategoryService->getPaginatedSubcategories();
 
-        return view('pages.admin.subcategories.index')
+        return view('admin.subcategories.index')
             ->with('subcategories', $subcategories);
     }
 
@@ -41,7 +41,7 @@ class SubcategoryController extends AppBaseController
     {
         $categories = $this->categoryService->getAllCategoriesForDropdown();
         $statuses = $this->subcategoryService->getAllStatuses();
-        return view('pages.admin.subcategories.create', compact('categories', 'statuses'));
+        return view('admin.subcategories.create', compact('categories', 'statuses'));
     }
 
     /**
@@ -68,7 +68,7 @@ class SubcategoryController extends AppBaseController
             return redirect(route('admin.subcategories.index'));
         }
 
-        return view('pages.admin.subcategories.show')->with('subcategory', $subcategory);
+        return view('admin.subcategories.show')->with('subcategory', $subcategory);
     }
 
     /**
@@ -85,7 +85,7 @@ class SubcategoryController extends AppBaseController
             return redirect(route('admin.subcategories.index'));
         }
 
-        return view('pages.admin.subcategories.edit', compact('categories', 'subcategory', 'statuses'));
+        return view('admin.subcategories.edit', compact('categories', 'subcategory', 'statuses'));
     }
 
     /**

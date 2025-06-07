@@ -29,7 +29,7 @@ class OrderController extends AppBaseController
     {
         $orders = $this->orderRepository->paginate(10);
 
-        return view('pages.admin.orders.index')
+        return view('admin.orders.index')
             ->with('orders', $orders);
     }
 
@@ -40,7 +40,7 @@ class OrderController extends AppBaseController
     {
         $statuses = $this->statusRepository->getActivityStatuses();
 
-        return view('pages.admin.orders.create', compact('statuses'));
+        return view('admin.orders.create', compact('statuses'));
     }
 
     /**
@@ -70,7 +70,7 @@ class OrderController extends AppBaseController
             return redirect(route('admin.orders.index'));
         }
 
-        return view('pages.admin.orders.show')->with('order', $order);
+        return view('admin.orders.show')->with('order', $order);
     }
 
     /**
@@ -87,7 +87,7 @@ class OrderController extends AppBaseController
             return redirect(route('admin.orders.index'));
         }
 
-        return view('pages.admin.orders.edit', compact('order', 'statuses'));
+        return view('admin.orders.edit', compact('order', 'statuses'));
     }
 
     /**

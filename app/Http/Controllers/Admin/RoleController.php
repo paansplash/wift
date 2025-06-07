@@ -26,7 +26,7 @@ class RoleController extends AppBaseController
     {
         $roles = $this->roleRepository->paginate(10);
 
-        return view('pages.admin.roles.index')
+        return view('admin.roles.index')
             ->with('roles', $roles);
     }
 
@@ -35,7 +35,7 @@ class RoleController extends AppBaseController
      */
     public function create()
     {
-        return view('pages.admin.roles.create');
+        return view('admin.roles.create');
     }
 
     /**
@@ -65,7 +65,7 @@ class RoleController extends AppBaseController
             return redirect(route('admin.roles.index'));
         }
 
-        return view('pages.admin.roles.show')->with('role', $role);
+        return view('admin.roles.show')->with('role', $role);
     }
 
     /**
@@ -81,7 +81,7 @@ class RoleController extends AppBaseController
             return redirect(route('admin.roles.index'));
         }
 
-        return view('pages.admin.roles.edit')->with('role', $role);
+        return view('admin.roles.edit')->with('role', $role);
     }
 
     /**

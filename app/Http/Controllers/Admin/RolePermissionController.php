@@ -26,7 +26,7 @@ class RolePermissionController extends AppBaseController
     {
         $rolePermissions = $this->rolePermissionRepository->paginate(10);
 
-        return view('pages.admin.role_permissions.index')
+        return view('admin.role_permissions.index')
             ->with('rolePermissions', $rolePermissions);
     }
 
@@ -35,7 +35,7 @@ class RolePermissionController extends AppBaseController
      */
     public function create()
     {
-        return view('pages.admin.role_permissions.create');
+        return view('admin.role_permissions.create');
     }
 
     /**
@@ -65,7 +65,7 @@ class RolePermissionController extends AppBaseController
             return redirect(route('admin.rolePermissions.index'));
         }
 
-        return view('pages.admin.role_permissions.show')->with('rolePermission', $rolePermission);
+        return view('admin.role_permissions.show')->with('rolePermission', $rolePermission);
     }
 
     /**
@@ -81,7 +81,7 @@ class RolePermissionController extends AppBaseController
             return redirect(route('admin.rolePermissions.index'));
         }
 
-        return view('pages.admin.role_permissions.edit')->with('rolePermission', $rolePermission);
+        return view('admin.role_permissions.edit')->with('rolePermission', $rolePermission);
     }
 
     /**

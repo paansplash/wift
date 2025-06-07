@@ -26,7 +26,7 @@ class InventoryController extends AppBaseController
     {
         $inventories = $this->inventoryService->getPaginatedInventories();
 
-        return view('pages.admin.inventories.index')
+        return view('admin.inventories.index')
             ->with('inventories', $inventories);
     }
 
@@ -39,7 +39,7 @@ class InventoryController extends AppBaseController
         $users = $this->inventoryService->getAllUsersForDropdown();
         $statuses = $this->inventoryService->getAllStatusesForDropdown();
 
-        return view('pages.admin.inventories.create', compact('subcategories', 'users', 'statuses'));
+        return view('admin.inventories.create', compact('subcategories', 'users', 'statuses'));
     }
 
     /**
@@ -66,7 +66,7 @@ class InventoryController extends AppBaseController
             return redirect(route('admin.inventories.index'));
         }
 
-        return view('pages.admin.inventories.show')->with('inventory', $inventory);
+        return view('admin.inventories.show')->with('inventory', $inventory);
     }
 
     /**
@@ -84,7 +84,7 @@ class InventoryController extends AppBaseController
             return redirect(route('admin.inventories.index'));
         }
 
-        return view('pages.admin.inventories.edit', compact('inventory', 'subcategories', 'users', 'statuses'));
+        return view('admin.inventories.edit', compact('inventory', 'subcategories', 'users', 'statuses'));
     }
 
     /**

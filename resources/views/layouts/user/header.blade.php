@@ -28,7 +28,7 @@
                                     <li><a href="{{ route('contact') }}"
                                             class="nav-link {{ Request::routeIs('contact') ? 'active' : '' }}">Contact Us</a>
                                     </li>
-                                    <li><a href="{{ route('shop') }}"
+                                    <li><a href="{{ route('user.dashboard.create') }}"
                                             class="nav-link {{ Request::routeIs('shop') ? 'active' : '' }}">Shop</a>
                                     </li>
                                     @auth

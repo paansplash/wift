@@ -29,7 +29,7 @@ class DeliveryController extends AppBaseController
     {
         $deliveries = $this->deliveryRepository->paginate(10);
 
-        return view('pages.admin.deliveries.index')
+        return view('admin.deliveries.index')
             ->with('deliveries', $deliveries);
     }
 
@@ -40,7 +40,7 @@ class DeliveryController extends AppBaseController
     {
         $statuses = $this->statusRepository->getDeliveryStatuses();
 
-        return view('pages.admin.deliveries.create', compact('statuses'));
+        return view('admin.deliveries.create', compact('statuses'));
     }
 
     /**
@@ -70,7 +70,7 @@ class DeliveryController extends AppBaseController
             return redirect(route('admin.deliveries.index'));
         }
 
-        return view('pages.admin.deliveries.show')->with('delivery', $delivery);
+        return view('admin.deliveries.show')->with('delivery', $delivery);
     }
 
     /**
@@ -87,7 +87,7 @@ class DeliveryController extends AppBaseController
             return redirect(route('admin.deliveries.index'));
         }
 
-        return view('pages.admin.deliveries.edit', compact('delivery', 'statuses'));
+        return view('admin.deliveries.edit', compact('delivery', 'statuses'));
     }
 
     /**
