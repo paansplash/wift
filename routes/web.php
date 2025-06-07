@@ -37,6 +37,13 @@ Route::get('/shop', function () {
 })->name('shop');
 
 
+Route::resource('shop/home', App\Http\Controllers\Shop\ShopController::class)->names('shop');
+Route::get('shop/cart', [App\Http\Controllers\Shop\ShopController::class, 'cart'])->name('shop.cart');
+Route::get('shop/checkout', [App\Http\Controllers\Shop\ShopController::class, 'checkout'])->name('shop.checkout');
+Route::get('shop/completed', [App\Http\Controllers\Shop\ShopController::class, 'completed'])->name('shop.completed');
+
+
+
 Auth::routes();
 
 Route::middleware(['role:Super Admin,Admin'])->prefix('admin')->group(function () {

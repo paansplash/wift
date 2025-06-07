@@ -40,6 +40,6 @@ class DashboardController extends AppBaseController
 
     public function create()
     {
-        return view('user.shop.shop');
+        return view('shop.shop');
     }
 }
