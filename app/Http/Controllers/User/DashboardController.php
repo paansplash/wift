@@ -18,6 +18,8 @@ class DashboardController extends AppBaseController
 
     public function index()
     {
+        $user = auth()->user();
+
         // Get the latest wishlist with related items and their relationships
         $wishlist = $this->wishlistRepository->getLatestWishlist([
             'wishlistItems.inventory.subcategory',
@@ -31,6 +33,7 @@ class DashboardController extends AppBaseController
 
         // Pass data to view
         return view('user.dashboard', compact(
+            'user',
             'wishlist',
             'totalItems',
             'completedItems',

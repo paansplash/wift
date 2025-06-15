@@ -34,4 +34,14 @@ class WishlistRepository extends BaseRepository
             $query->where('user_id', auth()->id());
         })->latest()->first();
     }
+
+    public function findByUserAndTitle(int $userId, string $title): Wishlist
+    {
+        return Wishlist::whereHas('wisher', function ($query) use ($userId) {
+            $query->where('user_id', $userId);
+        })
+        ->where('title', $title)
+        ->with(['wishlistItems.inventory', 'wishlistItems.status'])
+        ->firstOrFail();
+    }
 }

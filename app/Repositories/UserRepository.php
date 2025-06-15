@@ -39,4 +39,9 @@ class UserRepository extends BaseRepository
     {
         return User::where('role_id', '=', 4)->count();
     }
+
+    public function findByName(string $name): User
+    {
+        return User::where('name', $name)->firstOrFail();
+    }
 }

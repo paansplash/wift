@@ -42,7 +42,11 @@ Route::get('shop/cart', [App\Http\Controllers\Shop\ShopController::class, 'cart'
 Route::get('shop/checkout', [App\Http\Controllers\Shop\ShopController::class, 'checkout'])->name('shop.checkout');
 Route::get('shop/completed', [App\Http\Controllers\Shop\ShopController::class, 'completed'])->name('shop.completed');
 
+// Public view
+Route::get('/gift/{name}/{title}', [App\Http\Controllers\PublicWishlistController::class, 'show'])->name('public.wishlist.show');
 
+// Public gift purchase
+Route::post('/gift/purchase/{item}', [App\Http\Controllers\PublicWishlistController::class, 'buy'])->name('public.wishlist.buy');
 
 Auth::routes();
 
