@@ -7,8 +7,8 @@
 
 <!-- Inventory Id Field -->
 <div class="form-group col-sm-6">
-    <label class="ms-0" for="inventory_id">Inventory</label>
-    <input type="number" id="inventory_id" name="inventory_id" value="{{ old('inventory_id', $orderItem->inventory_id ?? '') }}" 
+    <label class="ms-0" for="wishlist_item_id">Wishlist Item</label>
+    <input type="number" id="wishlist_item_id" name="wishlist_item_id" value="{{ old('wishlist_item_id', $orderItem->wishlist_item_id ?? '') }}" 
         class="form-control" required>
 </div>
 

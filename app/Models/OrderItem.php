@@ -10,7 +10,7 @@ class OrderItem extends Model
 
     public $fillable = [
         'order_id',
-        'inventory_id',
+        'wishlist_item_id',
         'price',
         'quantity'
     ];
@@ -21,7 +21,7 @@ class OrderItem extends Model
 
     public static array $rules = [
         'order_id' => 'required',
-        'inventory_id' => 'required',
+        'wishlist_item_id' => 'required',
         'price' => 'required|numeric',
         'quantity' => 'nullable',
         'deleted_at' => 'nullable',
@@ -29,9 +29,9 @@ class OrderItem extends Model
         'updated_at' => 'nullable'
     ];
 
-    public function inventory(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function wishlistItem(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(\App\Models\Inventory::class, 'inventory_id');
+        return $this->belongsTo(\App\Models\WishlistItem::class, 'wishlist_item_id');
     }
 
     public function order(): \Illuminate\Database\Eloquent\Relations\BelongsTo

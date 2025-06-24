@@ -82,7 +82,7 @@ class CreateForeignKeys extends Migration {
 						->onUpdate('no action');
 		});
 		Schema::table('order_items', function(Blueprint $table) {
-			$table->foreign('inventory_id')->references('id')->on('inventories')
+			$table->foreign('wishlist_item_id')->references('id')->on('wishlist_items')
 						->onDelete('cascade')
 						->onUpdate('no action');
 		});
@@ -165,7 +165,7 @@ class CreateForeignKeys extends Migration {
 			$table->dropForeign('order_items_order_id_foreign');
 		});
 		Schema::table('order_items', function(Blueprint $table) {
-			$table->dropForeign('order_items_inventory_id_foreign');
+			$table->dropForeign('order_items_wishlist_item_id_foreign');
 		});
 		Schema::table('deliveries', function(Blueprint $table) {
 			$table->dropForeign('deliveries_order_item_id_foreign');

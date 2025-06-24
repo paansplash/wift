@@ -11,7 +11,7 @@ class CreateOrderItemsTable extends Migration {
 		Schema::create('order_items', function(Blueprint $table) {
 			$table->bigIncrements('id');
 			$table->bigInteger('order_id')->unsigned();
-			$table->bigInteger('inventory_id')->unsigned();
+			$table->bigInteger('wishlist_item_id')->unsigned();
 			$table->decimal('price');
 			$table->integer('quantity')->nullable();
 			$table->softDeletes();

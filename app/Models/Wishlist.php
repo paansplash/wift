@@ -21,7 +21,7 @@ class Wishlist extends Model
 
     public static array $rules = [
         'wisher_id' => 'required',
-        'title' => 'required|string|max:255',
+        'title' => 'required|string|max:255|unique:wishlists,title',
         'description' => 'nullable|string|max:65535',
         'deleted_at' => 'nullable',
         'created_at' => 'nullable',

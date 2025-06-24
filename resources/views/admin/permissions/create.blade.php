@@ -19,7 +19,7 @@
 
         <div class="card">
 
-            {!! Form::open(['route' => 'permissions.store']) !!}
+            {!! Form::open(['route' => 'admin.permissions.store']) !!}
 
             <div class="card-body">
 
