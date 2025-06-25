@@ -1,53 +1,35 @@
-<div class="col-lg-6">
-    <div class="overflow-hidden mb-4 mt-4">
-        <h3 class="text-transform-none text-color-dark font-weight-black text-7 line-height-2 mb-0 pt-3 appear-animation"
-            data-appear-animation="maskUp" data-appear-animation-delay="2600">Fill in your details.</h3>
+<div class="row mb-5">
+    <div class="col-12 d-flex justify-content-end mb-3">
+        <a href="{{ route('user.dashboard.index') }}" class="btn btn-primary me-2">
+            <i class="fas fa-eye mr-2"></i> View Wishlist
+        </a>
     </div>
-    <form class="custom-form-style-1 appear-animation" action="{{ route('user.wishlistItems.store') }}" method="POST"
-    data-appear-animation="fadeInUpShorter" data-appear-animation-delay="2800">
-        @csrf
+</div>
 
-        {{-- <div class="contact-form-success alert alert-success d-none mt-4">
-            <strong>Success!</strong> Your message has been sent to us.
-        </div>
+<div class="row">
+    <div class="col-lg-3 order-2 order-lg-1">
+        @include('user.wishlist_items.filters')
 
-        <div class="contact-form-error alert alert-danger d-none mt-4">
-            <strong>Error!</strong> There was an error sending your message.
-            <span class="mail-error-message text-1 d-block"></span>
-        </div> --}}
-
-        <div class="row">
-            <!-- Wishlist Id Field -->
-            <div class="form-group col-sm-6">
-                <label class="ms-0" for="wishlist_id">Wishlist</label>
-                <input type="text" class="form-control" value="{{ $wishlist->title ?? 'No Wisher Found' }}" readonly>
-                <input type="hidden" name="wishlist_id" value="{{ $wishlist->id ?? '' }}">
+    </div>
+    <div class="col-lg-9 order-1 order-lg-2">
+        <div class="masonry-loader masonry-loader-showing">
+            <div class="products product-thumb-info-list" data-plugin-masonry
+                data-plugin-options="{'layoutMode': 'fitRows'}">
+                @include('user.wishlist_items.items')
             </div>
-
-            <!-- Inventory Id Field -->
-            <div class="form-group col-sm-6">
-                <label class="ms-0" for="inventory_id">Inventory</label>
-                <select class="form-control" id="inventory_id" name="inventory_id">
-                    <option value=''>- Choose an Inventory -</option>
-                    @foreach ($inventories as $inventory)
-                        <option {{ ($wishlistItem->inventory_id ?? old('inventory_id')) == $inventory->id ? 'selected' : '' }}
-                            value="{{ $inventory->id }}">
-                            {{ $inventory->name }}
-                        </option>
-                    @endforeach
-                </select>
+            <div class="row">
+                <div class="col">
+                    <ul class="pagination float-end">
+                        <li class="page-item"><a class="page-link" href="#"><i
+                                    class="fas fa-angle-left"></i></a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#"><i
+                                    class="fas fa-angle-right"></i></a></li>
+                    </ul>
+                </div>
             </div>
-        
-            <!-- Status Id Field -->
-            <input type="hidden" name="status_id" value="5">
-
         </div>
-        
-
-        <!-- Submit & Cancel Buttons -->
-        <div class="card-footer">
-            <button type="submit" class="btn btn-primary custom-btn-style-1 font-weight-bold text-3 px-5 py-3 m-3">Save</button>
-            <a href="{{ route('user.wishlists.index') }}" class="btn btn-default custom-btn-style-1 font-weight-bold text-3 px-5 py-3">Cancel</a>
-        </div>
-    </form>
+    </div>
 </div>

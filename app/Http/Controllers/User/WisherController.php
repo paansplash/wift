@@ -32,14 +32,34 @@ class WisherController extends AppBaseController
     /**
      * Store a newly created Wisher in storage.
      */
-    public function store(CreateWisherRequest $request)
+    public function store(Request $request)
     {
-        $input = $request->all();
-        $wisher = $this->wisherRepository->create($input);
+        $request->validate([
+            // Wisher
+            'user_id' => 'required|exists:users,id',
+            'name' => 'required|string|max:255',
+            'phone_no' => 'required|string|max:255',
+            'addr1' => 'required|string|max:255',
+            'addr2' => 'nullable|string|max:255',
+            'addr3' => 'nullable|string|max:255',
+            'postcode' => 'required|string|max:255',
+            'city' => 'required|string|max:255',
+            'state' => 'required|string|max:255',
 
-        Flash::success('Wisher saved successfully.');
+            // Wishlist
+            'title' => 'required|string|max:255|unique:wishlists,title',
+            'description' => 'nullable|string|max:65535',
+        ]);
 
-        return view('user.wishlists', compact('wisher'));
+        try {
+            $wisher = $this->wisherRepository->createWithWishlist($request->all());
+
+            Flash::success('Wisher and Wishlist saved successfully.');
+            return redirect()->route('user.wishlistItems.index');
+        } catch (\Exception $e) {
+            Flash::error('Failed to save: ' . $e->getMessage());
+            return back()->withInput();
+        }
     }
 
     /**
