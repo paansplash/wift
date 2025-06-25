@@ -13,6 +13,7 @@ use App\Repositories\SubcategoryRepository;
 use App\Repositories\CategoryRepository;
 use Illuminate\Http\Request;
 use Laracasts\Flash\Flash;
+use Illuminate\Support\Facades\Log;
 
 class WishlistItemController extends AppBaseController
 {
@@ -24,9 +25,14 @@ class WishlistItemController extends AppBaseController
     private $subcategoryRepository;
     private $categoryRepository;
 
-    public function __construct(WishlistItemRepository $wishlistItemRepo, WishlistRepository $wishlistRepo, 
-    InventoryRepository $inventoryRepo, StatusRepository $statusRepo, SubcategoryRepository $subcategoryRepo, CategoryRepository $categoryRepo)
-    {
+    public function __construct(
+        WishlistItemRepository $wishlistItemRepo,
+        WishlistRepository $wishlistRepo,
+        InventoryRepository $inventoryRepo,
+        StatusRepository $statusRepo,
+        SubcategoryRepository $subcategoryRepo,
+        CategoryRepository $categoryRepo
+    ) {
         $this->middleware('auth'); // Ensure the user is authenticated
 
         $this->wishlistItemRepository = $wishlistItemRepo;
@@ -53,7 +59,7 @@ class WishlistItemController extends AppBaseController
 
         // Apply category filter
         if ($request->has('category') && $request->get('category')) {
-            $query->whereHas('subcategory', function($q) use ($request) {
+            $query->whereHas('subcategory', function ($q) use ($request) {
                 $q->where('category_id', $request->get('category'));
             });
         }
@@ -106,40 +112,17 @@ class WishlistItemController extends AppBaseController
      */
     public function store(CreateWishlistItemRequest $request)
     {
-        $input = $request->all();
-        
-        // Check if item already exists in wishlist
-        $existingItem = $this->wishlistItemRepository->allQuery()
-            ->where('wishlist_id', $input['wishlist_id'])
-            ->where('inventory_id', $input['inventory_id'])
-            ->first();
-
-        if ($existingItem) {
-            if ($request->ajax()) {
-                return response()->json([
-                    'success' => false,
-                    'message' => 'This item is already in your wishlist.'
-                ]);
-            }
-            Flash::error('This item is already in your wishlist.');
-            return redirect()->back();
+        try {
+            $this->wishlistItemRepository->addToLatestUserWishlist($request->inventory_id);
+            Flash::success('Item added to wishlist successfully.');
+        } catch (\Exception $e) {
+            Log::error('Wishlist insert error', ['error' => $e->getMessage()]);
+            Flash::error($e->getMessage());
         }
-
-        // Get default status for new wishlist items
-        $input['status_id'] = 5;
-
-        $wishlistItem = $this->wishlistItemRepository->create($input);
-
-        if ($request->ajax()) {
-            return response()->json([
-                'success' => true,
-                'message' => 'Item added to wishlist successfully.'
-            ]);
-        }
-
-        Flash::success('Item added to wishlist successfully.');
+    
         return redirect()->back();
     }
+
 
     /**
      * Display the specified WishlistItem.

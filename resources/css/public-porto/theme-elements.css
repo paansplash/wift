@@ -1917,8 +1917,15 @@ Theme Version:	10.2.0
 	color: var(--light);
 }
 
-.breadcrumb.breadcrumb-light .active {
+/* .breadcrumb.breadcrumb-light .active {
 	opacity: 0.7;
+	#f586a3
+} */
+
+.breadcrumb.breadcrumb-light .active a {
+	color: #f586a3; /* or your desired highlight color */
+	font-weight: bold;
+	opacity: 1 !important;
 }
 
 /* Buttons */

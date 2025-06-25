@@ -17,13 +17,6 @@ class CheckRole
 
         $user = Auth::user();
 
-        // Debug: Print user role
-        if ($user->role) {
-            Log::info('User Role: ' . $user->role->name);
-        } else {
-            Log::info('User Role: Not assigned');
-        }
-
         if (!in_array($user->role->name, $roles)) {
             abort(403, 'Unauthorized action - Role mismatch.');
         }

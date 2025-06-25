@@ -27,7 +27,7 @@
                                             <a href="{{ route('user.wishers.index') }}" class="text-decoration-none">Wisher</a>
                                         </li>
                                         <li class="text-transform-none">
-                                            <a href="{{ route('user.wishlists.index') }}" class="text-decoration-none">Wishlists</a>
+                                            <a href="{{ route('user.wishlistItems.index') }}" class="text-decoration-none">Wishlists</a>
                                         </li>
                                     </ul>
                                 </div>
