@@ -11,6 +11,7 @@
                         <form action="{{ route('user.wishlistItems.store') }}" method="POST">
                             @csrf
                             <input type="hidden" name="inventory_id" value="{{ $inventory->id }}">
+                            <input type="hidden" name="wishlist_id" value="{{ request('wishlist_id', $wishlist->id ?? null) }}">
                             <button type="submit" class="btn btn-link text-decoration-none addtocart-btn p-0"
                                 title="Add to Wishlist">
                                 <i class="fa-solid fa-gift"></i>

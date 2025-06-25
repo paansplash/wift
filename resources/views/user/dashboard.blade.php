@@ -42,6 +42,19 @@
             <div class="spacer py-3 my-3"></div>
 
             <div class="container container-xl-custom pb-5 mb-5">
+                <!-- Wishlist Selection -->
+                <div class="row mb-4">
+                    <div class="col-lg-12">
+                        <form method="GET" action="{{ route('user.dashboard.index') }}" class="form-inline mb-3">
+                            <label for="wishlist_id" class="me-2">Select Wishlist:</label>
+                            <select name="wishlist_id" id="wishlist_id" class="form-select me-2" onchange="this.form.submit()">
+                                @foreach($wishlists as $w)
+                                    <option value="{{ $w->id }}" {{ (request('wishlist_id', $wishlist->id ?? null) == $w->id) ? 'selected' : '' }}>{{ $w->title }}</option>
+                                @endforeach
+                            </select>
+                        </form>
+                    </div>
+                </div>
                 <!-- Progress Overview -->
                 <div class="row mb-4">
                     <div class="col-lg-12">
@@ -73,9 +86,12 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-12 d-flex justify-content-end mb-3">
-                                        <a href="{{ route('user.wishlistItems.index') }}" class="btn btn-primary me-2">
-                                            <i class="fas fa-plus mr-2"></i> Add Items to Wishlist
-                                        </a>
+                                        <form action="{{ route('user.wishlistItems.index') }}" method="GET" class="d-inline">
+                                            <input type="hidden" name="wishlist_id" value="{{ request('wishlist_id', $wishlist->id ?? null) }}">
+                                            <button type="submit" class="btn btn-primary me-2">
+                                                <i class="fas fa-plus mr-2"></i> Add Items to Wishlist
+                                            </button>
+                                        </form>
                                         <button onclick="copyWishlistLink()" class="btn btn-secondary">
                                             <i class="fas fa-share-alt mr-2"></i> Share
                                         </button>

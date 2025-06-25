@@ -44,4 +44,11 @@ class WishlistRepository extends BaseRepository
         ->with(['wishlistItems.inventory', 'wishlistItems.status'])
         ->firstOrFail();
     }
+
+    public function getUserWishlists($userId)
+    {
+        return Wishlist::whereHas('wisher', function ($query) use ($userId) {
+            $query->where('user_id', $userId);
+        })->get();
+    }
 }

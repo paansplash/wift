@@ -113,7 +113,11 @@ class WishlistItemController extends AppBaseController
     public function store(CreateWishlistItemRequest $request)
     {
         try {
-            $this->wishlistItemRepository->addToLatestUserWishlist($request->inventory_id);
+            if ($request->filled('wishlist_id')) {
+                $this->wishlistItemRepository->addToWishlist($request->wishlist_id, $request->inventory_id);
+            } else {
+                $this->wishlistItemRepository->addToLatestUserWishlist($request->inventory_id);
+            }
             Flash::success('Item added to wishlist successfully.');
         } catch (\Exception $e) {
             Log::error('Wishlist insert error', ['error' => $e->getMessage()]);

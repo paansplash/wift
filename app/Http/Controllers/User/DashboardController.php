@@ -26,6 +26,9 @@ class DashboardController extends AppBaseController
             'wishlistItems.status',
         ]);
 
+        // Get all wishlists for the user
+        $wishlists = $this->wishlistRepository->getUserWishlists($user->id);
+
         // Calculate progress metrics
         $totalItems = $wishlist?->wishlistItems->count() ?? 0;
         $completedItems = $wishlist?->wishlistItems->where('status_id', 3)->count() ?? 0;
@@ -35,6 +38,7 @@ class DashboardController extends AppBaseController
         return view('user.dashboard', compact(
             'user',
             'wishlist',
+            'wishlists',
             'totalItems',
             'completedItems',
             'progressPercentage'

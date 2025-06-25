@@ -78,4 +78,34 @@ class WishlistItemRepository extends BaseRepository
 
         return $item;
     }
+
+    public function addToWishlist($wishlistId, $inventoryId)
+    {
+        // Step 1: Check if wishlist exists
+        $wishlist = Wishlist::find($wishlistId);
+        if (!$wishlist) {
+            Log::warning('No wishlist found for given ID.', ['wishlist_id' => $wishlistId]);
+            throw new \Exception("No wishlist found for the given ID.");
+        }
+
+        // Step 2: Check for duplicate
+        $exists = $this->existsInWishlist($wishlistId, $inventoryId);
+        Log::info('Checked for existing wishlist item', ['exists' => $exists]);
+
+        if ($exists) {
+            Log::notice('Item already exists in wishlist.', ['wishlist_id' => $wishlistId, 'inventory_id' => $inventoryId]);
+            throw new \Exception("This item is already in your wishlist.");
+        }
+
+        // Step 3: Insert item
+        $item = WishlistItem::create([
+            'wishlist_id' => $wishlistId,
+            'inventory_id' => $inventoryId,
+            'status_id' => 5,
+        ]);
+
+        Log::info('Wishlist item created successfully.', ['wishlist_item' => $item]);
+
+        return $item;
+    }
 }
