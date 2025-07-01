@@ -15,23 +15,7 @@
                                         data-appear-animation="maskUp" data-appear-animation-delay="1200">My Dashboard</h1>
                                 </div>
                             </div>
-                            <div class="col-md-12 align-self-center"> 
-                                <div class="overflow-hidden">
-                                    <ul class="custom-breadcrumb-style-1 breadcrumb breadcrumb-light custom-font-secondary d-block text-center custom-ls-1 text-5 appear-animation"
-                                        data-appear-animation="maskUp" data-appear-animation-delay="1450">
-                                        
-                                        <li class="text-transform-none active">
-                                            <a href="{{ route('user.dashboard.index') }}" class="text-decoration-none">Home</a>
-                                        </li>
-                                        <li class="text-transform-none">
-                                            <a href="{{ route('user.wishers.index') }}" class="text-decoration-none">Wisher</a>
-                                        </li>
-                                        <li class="text-transform-none">
-                                            <a href="{{ route('user.wishlistItems.index') }}" class="text-decoration-none">Wishlists</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                            @include('user.components.breadcrumbs')
                         </div>
                     </div>
                 </div>
@@ -42,19 +26,6 @@
             <div class="spacer py-3 my-3"></div>
 
             <div class="container container-xl-custom pb-5 mb-5">
-                <!-- Wishlist Selection -->
-                <div class="row mb-4">
-                    <div class="col-lg-12">
-                        <form method="GET" action="{{ route('user.dashboard.index') }}" class="form-inline mb-3">
-                            <label for="wishlist_id" class="me-2">Select Wishlist:</label>
-                            <select name="wishlist_id" id="wishlist_id" class="form-select me-2" onchange="this.form.submit()">
-                                @foreach($wishlists as $w)
-                                    <option value="{{ $w->id }}" {{ (request('wishlist_id', $wishlist->id ?? null) == $w->id) ? 'selected' : '' }}>{{ $w->title }}</option>
-                                @endforeach
-                            </select>
-                        </form>
-                    </div>
-                </div>
                 <!-- Progress Overview -->
                 <div class="row mb-4">
                     <div class="col-lg-12">
@@ -86,8 +57,10 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-12 d-flex justify-content-end mb-3">
-                                        <form action="{{ route('user.wishlistItems.index') }}" method="GET" class="d-inline">
-                                            <input type="hidden" name="wishlist_id" value="{{ request('wishlist_id', $wishlist->id ?? null) }}">
+                                        <form action="{{ route('user.wishlistItems.index') }}" method="GET"
+                                            class="d-inline">
+                                            <input type="hidden" name="wishlist_id"
+                                                value="{{ request('wishlist_id', $wishlist->id ?? null) }}">
                                             <button type="submit" class="btn btn-primary me-2">
                                                 <i class="fas fa-plus mr-2"></i> Add Items to Wishlist
                                             </button>
@@ -97,60 +70,73 @@
                                         </button>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    @forelse($wishlist->wishlistItems as $item)
-                                        <div class="col-md-4 mb-4">
-                                            <div class="card h-100">
-                                                <div class="card-header">
-                                                    <h5 class="card-title mb-0">{{ $item->inventory->name }}</h5>
-                                                </div>
-                                                <div class="card-body">
-                                                    <div class="text-center mb-3">
-                                                        @if ($item->inventory->image)
-                                                            <img src="{{ asset('storage/' . $item->inventory->image) }}"
-                                                                class="img-fluid" style="max-height: 150px;"
-                                                                alt="{{ $item->inventory->name }}">
-                                                        @else
-                                                            <img src="{{ asset('images/no-image.png') }}" class="img-fluid"
-                                                                style="max-height: 150px;" alt="No Image">
-                                                        @endif
+                                @if ($wishlist)
+                                    <div class="row">
+                                        @forelse($wishlist->wishlistItems as $item)
+                                            <div class="col-md-4 mb-4">
+                                                <div class="card h-100">
+                                                    <div class="card-header">
+                                                        <h5 class="card-title mb-0">{{ $item->inventory->name }}</h5>
                                                     </div>
-                                                    <p><strong>Price:</strong>
-                                                        ${{ number_format($item->inventory->price, 2) }}</p>
-                                                    <p><strong>Category:</strong> {{ $item->inventory->subcategory->name }}
-                                                    </p>
-                                                    <p><strong>Status:</strong> <span
-                                                            class="badge badge-{{ $item->status_id == 3 ? 'success' : 'warning' }}">{{ $item->status->name }}</span>
-                                                    </p>
-                                                    <p><strong>Added Date:</strong>
-                                                        {{ $item->created_at->format('M d, Y') }}</p>
-                                                </div>
-                                                <div class="card-footer">
-                                                    <div class="btn-group">
-                                                        <button type="button" class="btn btn-sm btn-outline-primary"
-                                                            data-toggle="modal"
-                                                            data-target="#itemModal{{ $item->id }}">
-                                                            <i class="fas fa-eye"></i> View Details
-                                                        </button>
-                                                        <form action="{{ route('user.wishlistItems.destroy', $item->id) }}"
-                                                            method="POST" class="d-inline">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button type="submit" class="btn btn-sm btn-outline-danger"
-                                                                onclick="return confirm('Are you sure you want to remove this item?')">
-                                                                <i class="fas fa-trash"></i> Remove
+                                                    <div class="card-body">
+                                                        <div class="text-center mb-3">
+                                                            @if ($item->inventory->image)
+                                                                <img src="{{ asset('storage/' . $item->inventory->image) }}"
+                                                                    class="img-fluid" style="max-height: 150px;"
+                                                                    alt="{{ $item->inventory->name }}">
+                                                            @else
+                                                                <img src="{{ asset('images/no-image.png') }}"
+                                                                    class="img-fluid" style="max-height: 150px;"
+                                                                    alt="No Image">
+                                                            @endif
+                                                        </div>
+                                                        <p><strong>Price:</strong>
+                                                            ${{ number_format($item->inventory->price, 2) }}</p>
+                                                        <p><strong>Category:</strong>
+                                                            {{ $item->inventory->subcategory->name }}
+                                                        </p>
+                                                        <p><strong>Status:</strong> <span
+                                                                class="badge badge-{{ $item->status_id == 3 ? 'success' : 'warning' }}">{{ $item->status->name }}</span>
+                                                        </p>
+                                                        <p><strong>Added Date:</strong>
+                                                            {{ $item->created_at->format('M d, Y') }}</p>
+                                                    </div>
+                                                    <div class="card-footer">
+                                                        <div class="btn-group">
+                                                            <button type="button" class="btn btn-sm btn-outline-primary"
+                                                                data-toggle="modal"
+                                                                data-target="#itemModal{{ $item->id }}">
+                                                                <i class="fas fa-eye"></i> View Details
                                                             </button>
-                                                        </form>
+                                                            <form
+                                                                action="{{ route('user.wishlistItems.destroy', $item->id) }}"
+                                                                method="POST" class="d-inline">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <button type="submit" class="btn btn-sm btn-outline-danger"
+                                                                    onclick="return confirm('Are you sure you want to remove this item?')">
+                                                                    <i class="fas fa-trash"></i> Remove
+                                                                </button>
+                                                            </form>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    @empty
+                                        @empty
+                                            <div class="col-12 text-center">
+                                                <p>No items in your wishlist</p>
+                                            </div>
+                                        @endforelse
+                                    </div>
+                                @else
+                                    <div class="row">
                                         <div class="col-12 text-center">
-                                            <p>No items in your wishlist</p>
+                                            <p class="text-danger">Wishlist not found. Please create a new
+                                                <a class="btn btn-primary custom-btn-style-1 font-weight-bold" href="{{ route('user.wishers.index') }}"> wishlist.</a></p>
                                         </div>
-                                    @endforelse
-                                </div>
+                                    </div>
+                                @endif
+
                             </div>
                         </div>
                     </div>
@@ -161,24 +147,29 @@
 @endsection
 
 @push('scripts')
-<script>
-function copyWishlistLink() {
-    const wishlistUrl = "{{ route('public.wishlist.show', ['name' => $user->name, 'title' => $wishlist->title]) }}";
-    
-    // Create a temporary input element
-    const tempInput = document.createElement('input');
-    tempInput.value = wishlistUrl;
-    document.body.appendChild(tempInput);
-    
-    // Select and copy the text
-    tempInput.select();
-    document.execCommand('copy');
-    
-    // Remove the temporary input
-    document.body.removeChild(tempInput);
-    
-    // Show a success message
-    alert('Wishlist link copied to clipboard!');
-}
-</script>
+    @if ($wishlist)
+        <script>
+            function copyWishlistLink() {
+                const wishlistUrl =
+                "{{ route('public.wishlist.show', ['name' => $user->name, 'title' => $wishlist->title]) }}";
+
+                const tempInput = document.createElement('input');
+                tempInput.value = wishlistUrl;
+                document.body.appendChild(tempInput);
+
+                tempInput.select();
+                document.execCommand('copy');
+
+                document.body.removeChild(tempInput);
+
+                alert('Wishlist link copied to clipboard!');
+            }
+        </script>
+    @else
+        <script>
+            function copyWishlistLink() {
+                alert('Cannot share: Wishlist not available.');
+            }
+        </script>
+    @endif
 @endpush
