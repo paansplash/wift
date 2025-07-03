@@ -1,29 +1,10 @@
-@extends('layouts.user.app')
+@extends('layouts.shop.app')
 
 @section('content')
     <div role="main" class="main shop pb-4">
-        <section
-            class="custom-page-header-1 page-header page-header-modern page-header-lg bg-primary border-0 z-index-1 my-0">
-            <div class="custom-page-header-1-wrapper overflow-hidden">
-                <div class="custom-bg-grey-1 py-5 appear-animation" data-appear-animation="maskUp"
-                    data-appear-animation-delay="800">
-                    <div class="container py-3 my-3">
-                        <div class="row">
-                            <div class="col-md-12 align-self-center p-static text-center">
-                                <div class="overflow-hidden mb-2">
-                                    <h1 class="font-weight-black text-12 mb-0 appear-animation"
-                                        data-appear-animation="maskUp" data-appear-animation-delay="1200">My Dashboard</h1>
-                                </div>
-                            </div>
-                            @include('user.components.breadcrumbs')
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <div class="custom-page-wrapper pt-5 pb-1">
-            <div class="spacer py-3 my-3"></div>
+        <div class="container">
+            @include('user.components.breadcrumbs')
 
             <div class="container container-xl-custom pb-5 mb-5">
                 <!-- Progress Overview -->
@@ -132,7 +113,9 @@
                                     <div class="row">
                                         <div class="col-12 text-center">
                                             <p class="text-danger">Wishlist not found. Please create a new
-                                                <a class="btn btn-primary custom-btn-style-1 font-weight-bold" href="{{ route('user.wishers.index') }}"> wishlist.</a></p>
+                                                <a class="btn btn-primary custom-btn-style-1 font-weight-bold"
+                                                    href="{{ route('user.wishers.index') }}"> wishlist.</a>
+                                            </p>
                                         </div>
                                     </div>
                                 @endif
@@ -151,7 +134,7 @@
         <script>
             function copyWishlistLink() {
                 const wishlistUrl =
-                "{{ route('public.wishlist.show', ['name' => $user->name, 'title' => $wishlist->title]) }}";
+                    "{{ route('public.wishlist.show', ['name' => $user->name, 'title' => $wishlist->title]) }}";
 
                 const tempInput = document.createElement('input');
                 tempInput.value = wishlistUrl;

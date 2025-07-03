@@ -66,7 +66,7 @@
     </form>
 
 
-    <div class="row mb-5">
+    {{-- <div class="row mb-5">
         <div class="col-sm-4 col-lg-12">
             <h5 class="font-weight-semi-bold pt-5">Recent Products</h5>
             <div class="product row row-gutter-sm align-items-center mb-4">
@@ -159,7 +159,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 </aside>
 
 @push('scripts')

@@ -12,8 +12,8 @@
 
     </div>
     <div class="col-lg-9 order-1 order-lg-2">
-        <div class="masonry-loader masonry-loader-showing">
-            <div class="products product-thumb-info-list" data-plugin-masonry
+        <div class="masonry-loader masonry-loader-loaded">
+            <div class="row products product-thumb-info-list" data-plugin-masonry
                 data-plugin-options="{'layoutMode': 'fitRows'}">
                 @include('user.wishlist_items.items')
             </div>

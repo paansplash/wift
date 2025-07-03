@@ -50,32 +50,59 @@ class WisherRepository extends BaseRepository
     public function createWithWishlist(array $data): Wisher
     {
         return DB::transaction(function () use ($data) {
-            // 1. If wisher_id is given, fetch existing
-            if (!empty($data['wisher_id'])) {
-                $wisher = $this->find($data['wisher_id']);
-            } else {
-                // 2. Otherwise, create new Wisher
-                $wisher = $this->create([
-                    'user_id' => $data['user_id'],
-                    'name' => $data['name'],
-                    'phone_no' => $data['phone_no'],
-                    'addr1' => $data['addr1'],
-                    'addr2' => $data['addr2'] ?? null,
-                    'addr3' => $data['addr3'] ?? null,
-                    'postcode' => $data['postcode'],
-                    'city' => $data['city'],
-                    'state' => $data['state'],
-                ]);
-            }
+            $wisher = $this->create([
+                'user_id' => $data['user_id'],
+                'name' => $data['name'],
+                'phone_no' => $data['phone_no'],
+                'addr1' => $data['addr1'],
+                'addr2' => $data['addr2'] ?? null,
+                'addr3' => $data['addr3'] ?? null,
+                'postcode' => $data['postcode'],
+                'city' => $data['city'],
+                'state' => $data['state'],
+            ]);
 
-            // 3. Create associated wishlist
             $wishlist = new Wishlist([
                 'title' => $data['title'],
                 'description' => $data['description'] ?? null,
             ]);
-
             $wishlist->wisher()->associate($wisher);
             $wishlist->save();
+
+            return $wisher;
+        });
+    }
+
+    public function updateWithWishlist(array $data, int $id): Wisher
+    {
+        return DB::transaction(function () use ($data, $id) {
+            $wisher = $this->find($id);
+
+            $wisher->update([
+                'name' => $data['name'],
+                'phone_no' => $data['phone_no'],
+                'addr1' => $data['addr1'],
+                'addr2' => $data['addr2'] ?? null,
+                'addr3' => $data['addr3'] ?? null,
+                'postcode' => $data['postcode'],
+                'city' => $data['city'],
+                'state' => $data['state'],
+            ]);
+
+            $wishlist = $wisher->wishlist()->first();
+            if ($wishlist) {
+                $wishlist->update([
+                    'title' => $data['title'],
+                    'description' => $data['description'] ?? null,
+                ]);
+            } else {
+                $wishlist = new Wishlist([
+                    'title' => $data['title'],
+                    'description' => $data['description'] ?? null,
+                ]);
+                $wishlist->wisher()->associate($wisher);
+                $wishlist->save();
+            }
 
             return $wisher;
         });

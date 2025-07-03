@@ -1,111 +1,63 @@
-<div class="col-lg-6">
-    <div class="overflow-hidden mb-4 mt-4">
-        <h3 class="text-transform-none text-color-dark font-weight-black text-7 line-height-2 mb-0 pt-3 appear-animation"
-            data-appear-animation="maskUp" data-appear-animation-delay="2600">Fill in your details.</h3>
+<form role="form" class="needs-validation" method="post" action="{{ route('user.wishers.store') }}" novalidate>
+    @csrf
+    <div class="row">
+        <div class="col-lg-7 mb-4 mb-lg-0">
+            <h2 class="text-color-dark font-weight-bold text-5-5 mb-3">Wisher & Wishlist Details</h2>
+
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <label class="form-label">User Email <span class="text-color-danger">*</span></label>
+                    <input type="text" class="form-control h-auto py-2" value="{{ auth()->user()->email }}" readonly>
+                    <input type="hidden" id="user_id" name="user_id" value="{{ auth()->id() }}">
+                </div>
+            </div>
+
+            @foreach ([
+                'name' => 'Name',
+                'title' => 'Title',
+                'phone_no' => 'Phone No',
+                'addr1' => 'Address 1',
+                'addr2' => 'Address 2',
+                'addr3' => 'Address 3',
+                'postcode' => 'Postcode',
+                'city' => 'City',
+                'state' => 'State'
+            ] as $field => $label)
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <label class="form-label">{{ $label }} {!! in_array($field, ['name','title','phone_no','addr1','postcode','city','state']) ? '<span class="text-color-danger">*</span>' : '' !!}</label>
+                    <input type="text" class="form-control h-auto py-2" id="{{ $field }}" name="{{ $field }}"
+                        value="{{ old($field, ${isset($wisher) ? 'wisher' : 'wishlist'}->$field ?? '') }}"
+                        {{ in_array($field, ['name','title','phone_no','addr1','postcode','city','state']) ? 'required' : '' }} maxlength="255">
+                </div>
+            </div>
+            @endforeach
+
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <label class="form-label">Description</label>
+                    <textarea class="form-control h-auto py-2" id="description" name="description" maxlength="65535">{{ old('description', $wishlist->description ?? '') }}</textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-5 position-relative">
+            <div class="card border-width-3 border-radius-0 border-color-hover-dark" data-plugin-sticky data-plugin-options="{'minWidth': 991, 'containerSelector': '.row', 'padding': {'top': 85}}">
+                <div class="card-body">
+                    <h4 class="font-weight-bold text-uppercase text-4 mb-3">Tips for Filling Out the Form</h4>
+                    <ul class="list-unstyled text-color-dark text-2 mb-4">
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Ensure your name matches your ID.</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Use a valid phone number.</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Complete your address to avoid issues.</li>
+                    </ul>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="{{ route('user.dashboard.index') }}"
+                            class="btn btn-dark btn-primary w-50 text-uppercase bg-color-hover-primary border-color-hover-primary border-radius-0 text-3 py-3">Cancel</a>
+                        <button type="submit"
+                            class="btn btn-dark btn-modern w-50 text-uppercase bg-color-hover-primary border-color-hover-primary border-radius-0 text-3 py-3">Save <i class="fas fa-arrow-right ms-2"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <form class="custom-form-style-1 appear-animation" action="{{ route('user.wishers.store') }}" method="POST"
-        data-appear-animation="fadeInUpShorter" data-appear-animation-delay="2800">
-        @csrf
-
-        <!-- <div class="contact-form-success alert alert-success d-none mt-4">
-            <strong>Success!</strong> Your message has been sent to us.
-        </div>
-
-        <div class="contact-form-error alert alert-danger d-none mt-4">
-            <strong>Error!</strong> There was an error sending your message.
-            <span class="mail-error-message text-1 d-block"></span>
-        </div> -->
-
-        <div class="row">
-            <!-- User ID Field -->
-            <div class="form-group col-sm-6">
-                <label for="user_email">User</label>
-                <!-- Display User Email -->
-                <input type="text" value="{{ auth()->user()->email }}" class="form-control border-radius-0" readonly>
-
-                <!-- Hidden User ID Field -->
-                <input type="hidden" id="user_id" name="user_id" value="{{ auth()->id() }}">
-            </div>
-
-            <!-- Name Field -->
-            <div class="form-group col-sm-6">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" value="{{ old('name', $wisher->name ?? '') }}"
-                    class="form-control border-radius-0" required maxlength="255">
-            </div>
-
-             <!-- Title Field -->
-             <div class="form-group col-sm-6">
-                <label class="ms-0" for="title">Title</label>
-                <input type="text" id="title" name="title" value="{{ old('title', $wishlist->title ?? '') }}"
-                    class="form-control" required maxlength="255">
-            </div>
-
-            <!-- Description Field -->
-            <div class="form-group col-sm-12 col-lg-12">
-                <label class="ms-0" for="description">Description</label>
-                <textarea id="description" name="description" class="form-control" maxlength="65535">{{ old('description', $wishlist->description ?? '') }}</textarea>
-            </div>
-
-            <!-- Phone No Field -->
-            <div class="form-group col-sm-6">
-                <label for="phone_no">Phone No</label>
-                <input type="text" id="phone_no" name="phone_no"
-                    value="{{ old('phone_no', $wisher->phone_no ?? '') }}" class="form-control border-radius-0" required
-                    maxlength="255">
-            </div>
-
-            <!-- Addr1 Field -->
-            <div class="form-group col-sm-6">
-                <label for="addr1">Address 1</label>
-                <input type="text" id="addr1" name="addr1" value="{{ old('addr1', $wisher->addr1 ?? '') }}"
-                    class="form-control border-radius-0" required maxlength="255">
-            </div>
-
-            <!-- Addr2 Field -->
-            <div class="form-group col-sm-6">
-                <label for="addr2">Address 2</label>
-                <input type="text" id="addr2" name="addr2" value="{{ old('addr2', $wisher->addr2 ?? '') }}"
-                    class="form-control border-radius-0" maxlength="255">
-            </div>
-
-            <!-- Addr3 Field -->
-            <div class="form-group col-sm-6">
-                <label for="addr3">Address 3</label>
-                <input type="text" id="addr3" name="addr3" value="{{ old('addr3', $wisher->addr3 ?? '') }}"
-                    class="form-control border-radius-0" maxlength="255">
-            </div>
-
-            <!-- Postcode Field -->
-            <div class="form-group col-sm-6">
-                <label for="postcode">Postcode</label>
-                <input type="text" id="postcode" name="postcode"
-                    value="{{ old('postcode', $wisher->postcode ?? '') }}" class="form-control border-radius-0" required
-                    maxlength="255">
-            </div>
-
-            <!-- City Field -->
-            <div class="form-group col-sm-6">
-                <label for="city">City</label>
-                <input type="text" id="city" name="city" value="{{ old('city', $wisher->city ?? '') }}"
-                    class="form-control border-radius-0" required maxlength="255">
-            </div>
-
-            <!-- State Field -->
-            <div class="form-group col-sm-6">
-                <label for="state">State</label>
-                <input type="text" id="state" name="state" value="{{ old('state', $wisher->state ?? '') }}"
-                    class="form-control border-radius-0" required maxlength="255">
-            </div>
-        </div>
-
-        <!-- Submit & Cancel Buttons -->
-        <div class="card-footer">
-            <button type="submit"
-                class="btn btn-primary custom-btn-style-1 font-weight-bold text-3 px-5 py-3 m-3">Save</button>
-            <a href="{{ route('user.wishers.index') }}"
-                class="btn btn-default custom-btn-style-1 font-weight-bold text-3 px-5 py-3">Cancel</a>
-        </div>
-
-    </form>
-</div>
+</form>

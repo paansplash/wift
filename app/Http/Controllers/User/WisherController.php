@@ -16,26 +16,22 @@ class WisherController extends AppBaseController
 
     public function __construct(WisherRepository $wisherRepo)
     {
-        $this->middleware('auth'); // Ensure the user is authenticated
-
+        $this->middleware('auth');
         $this->wisherRepository = $wisherRepo;
     }
 
-    /**
-     * Display a listing of the Wisher.
-     */
     public function index(Request $request)
     {
-        return view('user.wishers');
+        // Get latest wisher for the authenticated user
+        $wisher = $this->wisherRepository->getWisherByUser();
+        $wishlist = $wisher?->wishlist; // Get wishlist if exists
+
+        return view('user.wishers', compact('wisher', 'wishlist'));
     }
 
-    /**
-     * Store a newly created Wisher in storage.
-     */
     public function store(Request $request)
     {
         $request->validate([
-            // Wisher
             'user_id' => 'required|exists:users,id',
             'name' => 'required|string|max:255',
             'phone_no' => 'required|string|max:255',
@@ -45,16 +41,22 @@ class WisherController extends AppBaseController
             'postcode' => 'required|string|max:255',
             'city' => 'required|string|max:255',
             'state' => 'required|string|max:255',
-
-            // Wishlist
-            'title' => 'required|string|max:255|unique:wishlists,title',
+            'title' => 'required|string|max:255',
             'description' => 'nullable|string|max:65535',
         ]);
 
         try {
-            $wisher = $this->wisherRepository->createWithWishlist($request->all());
+            // Check if the user already has a wisher record
+            $existingWisher = $this->wisherRepository->getWisherByUser();
 
-            Flash::success('Wisher and Wishlist saved successfully.');
+            if ($existingWisher) {
+                $this->wisherRepository->updateWithWishlist($request->all(), $existingWisher->id);
+                Flash::success('Wisher and Wishlist updated successfully.');
+            } else {
+                $this->wisherRepository->createWithWishlist($request->all());
+                Flash::success('Wisher and Wishlist created successfully.');
+            }
+
             return redirect()->route('user.wishlistItems.index');
         } catch (\Exception $e) {
             Flash::error('Failed to save: ' . $e->getMessage());

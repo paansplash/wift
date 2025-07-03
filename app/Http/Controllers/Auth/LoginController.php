@@ -16,7 +16,7 @@ class LoginController extends Controller
             $roleId = Auth::user()->role_id; // Ensure you're checking role_id
 
             if ($roleId == 4) { // Example: Assuming 'User' role has ID 2
-                return '/user/home';
+                return '/user/dashboard';
             } elseif ($roleId == 1 || $roleId == 2) { // Example: Assuming 'Admin' has ID 1, 'Super Admin' has ID 3
                 return '/admin/home';
             }
