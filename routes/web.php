@@ -42,11 +42,18 @@ Route::get('shop/cart', [App\Http\Controllers\Shop\ShopController::class, 'cart'
 Route::get('shop/checkout', [App\Http\Controllers\Shop\ShopController::class, 'checkout'])->name('shop.checkout');
 Route::get('shop/completed', [App\Http\Controllers\Shop\ShopController::class, 'completed'])->name('shop.completed');
 
-// Public view
+// Public wishlist views and purchase flow
 Route::get('/gift/{name}/{title}', [App\Http\Controllers\PublicWishlistController::class, 'show'])->name('public.wishlist.show');
-
-// Public gift purchase
 Route::post('/gift/purchase/{item}', [App\Http\Controllers\PublicWishlistController::class, 'buy'])->name('public.wishlist.buy');
+
+Route::get('/public/wishlist/checkout/{item}', [App\Http\Controllers\PublicWishlistController::class, 'checkout'])->name('public.wishlist.checkout');
+Route::post('/public/wishlist/checkout/{item}', [App\Http\Controllers\PublicWishlistController::class, 'processCheckout'])->name('public.wishlist.processCheckout');
+
+// Redirect URL: Billplz sends user here after payment
+Route::get('/public/wishlist/payment/{order}', [App\Http\Controllers\PublicWishlistController::class, 'payment'])->name('public.wishlist.payment');
+
+// Callback URL: Billplz server sends POST confirmation here
+Route::post('/wishlist/payment-callback', [App\Http\Controllers\PublicWishlistController::class, 'paymentCallback'])->name('public.wishlist.paymentCallback');
 
 Auth::routes();
 

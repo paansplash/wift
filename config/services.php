@@ -31,4 +31,9 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'billplz' => [
+    'key' => env('BILLPLZ_SECRET_KEY', 'your_default'),
+    'collection_id' => env('BILLPLZ_COLLECTION_ID', 'your_default'),
+],
+
 ];

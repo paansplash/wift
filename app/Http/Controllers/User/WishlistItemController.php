@@ -93,10 +93,17 @@ class WishlistItemController extends AppBaseController
 
         $inventories = $query->paginate(12);
         $wishlist = $this->wishlistRepository->getLatestWishlist();
+
+        $wishlistItemsMap = [];
+        if ($wishlist) {
+            // Create a mapping of inventory_id => wishlist_item_id for quick lookup
+            $wishlistItemsMap = $wishlist->wishlistItems->pluck('id', 'inventory_id')->toArray();
+        }
+
         $categories = $this->categoryRepository->all();
         $subcategories = $this->subcategoryRepository->all();
 
-        return view('user.wishlist_items', compact('inventories', 'wishlist', 'categories', 'subcategories'));
+        return view('user.wishlist_items', compact('inventories', 'wishlist', 'categories', 'subcategories', 'wishlistItemsMap'));
     }
 
     /**
@@ -123,7 +130,7 @@ class WishlistItemController extends AppBaseController
             Log::error('Wishlist insert error', ['error' => $e->getMessage()]);
             Flash::error($e->getMessage());
         }
-    
+
         return redirect()->back();
     }
 

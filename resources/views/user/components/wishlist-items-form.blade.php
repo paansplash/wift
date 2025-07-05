@@ -8,14 +8,14 @@
 
 <div class="row">
     <div class="col-lg-3 order-2 order-lg-1">
-        @include('user.wishlist_items.filters')
+        @include('user.components.wishlist_items.filters')
 
     </div>
     <div class="col-lg-9 order-1 order-lg-2">
         <div class="masonry-loader masonry-loader-loaded">
             <div class="row products product-thumb-info-list" data-plugin-masonry
                 data-plugin-options="{'layoutMode': 'fitRows'}">
-                @include('user.wishlist_items.items')
+                @include('user.components.wishlist_items.items')
             </div>
             <div class="row">
                 <div class="col">
